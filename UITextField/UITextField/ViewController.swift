@@ -13,93 +13,73 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var myButton = UIButton()
     var myTextField = UITextField()
     var textFieldArray = [String]()
+    let myString = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.createButton()
-        self.createTextField()
-        
+        createButton()
+        createTextField()
         myTextField.delegate = self
-        //self.myTextField.becomeFirstResponder()
     }
 
     func createButton() {
-        let buttonFrame = CGRect(x: 0, y: 0, width: 200, height: 31)
+        let buttonFrame = CGRect(x: UIScreen.main.bounds.width/4, y: 200, width: 200, height: 31)
         
         myButton = UIButton(frame: buttonFrame)
         myButton.setTitle("Добавить", for: .normal)
         myButton.setTitleColor(.black, for: .normal)
         myButton.backgroundColor = .white
         myButton.contentVerticalAlignment = .center
-        myButton.center = .init(x: 190, y: 300)
+        //myButton.isEnabled = false
+        myButton.alpha = 0.5
         myButton.addTarget(self, action: #selector(pressedButton), for: .touchUpInside)
         view.addSubview(self.myButton)
         
     }
     
     func createTextField() {
-        let textFieldFrame = CGRect(x: 0, y: 0, width: 300, height: 31)
+        let textFieldFrame = CGRect(x: UIScreen.main.bounds.width/9, y: 50, width: 300, height: 31)
         
         myTextField = UITextField(frame: textFieldFrame)
         myTextField.borderStyle = .roundedRect
         myTextField.contentVerticalAlignment = .center
         myTextField.textAlignment = .center
         myTextField.placeholder = "Введите текст"
-        myTextField.center = .init(x: 190, y: 100)
         myTextField.clearButtonMode = .always
+        //myTextField.addTarget(self, action: #selector(editTextField), for: .editingChanged)
         view.addSubview(self.myTextField)
         }
     
     @objc func pressedButton(_ sender: UIButton) {
-        textFieldArray.append(myTextField.text!)
         
-    }
-    
+        if myTextField.text != "" {
+            textFieldArray.append(myTextField.text!)
+        } else {
         
-        func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-            
-            return true
         }
-        
-        func textFieldDidBeginEditing(_ textField: UITextField) {
-            
-        }
-
-
-        func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-            return true
-        }
-        
-
-        func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-            
     }
-   
 
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
-    }
-   
-    
     func textField(_ textField: UITextField, shouldChangeCharactersIn: NSRange, replacementString: String) -> Bool {
-            
-        if myTextField.text!.isEmpty {
+        
+        let text = myTextField.text {
             myButton.isEnabled = false
+            myButton.alpha = 0.5
         } else {
             myButton.isEnabled = true
-        }
-        
+            myButton.alpha = 1.0
+       }
         return true
-        
+
     }
-   
-    func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        return true
-    }
-   
+
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if myTextField.text != "" {
+            textFieldArray.append(myTextField.text!)
+        } else {
+        
+        }
         return true
     }
     
