@@ -13,7 +13,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var myButton = UIButton()
     var myTextField = UITextField()
     var textFieldArray = [String]()
-    let myString = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +46,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         myTextField.textAlignment = .center
         myTextField.placeholder = "Введите текст"
         myTextField.clearButtonMode = .always
-        //myTextField.addTarget(self, action: #selector(editTextField), for: .editingChanged)
         view.addSubview(self.myTextField)
         }
     
@@ -62,24 +60,31 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn: NSRange, replacementString: String) -> Bool {
         
-        let text = myTextField.text {
-            myButton.isEnabled = false
-            myButton.alpha = 0.5
-        } else {
-            myButton.isEnabled = true
-            myButton.alpha = 1.0
-       }
-        return true
-
-    }
-
-
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if myTextField.text != "" {
-            textFieldArray.append(myTextField.text!)
-        } else {
         
+        if let text = myTextField.text,
+            let textRange = Range(shouldChangeCharactersIn, in: text) {
+            let updatedText = text.replacingCharacters(in: textRange,
+                                                       with: replacementString)
+            if updatedText.isEmpty {
+                myButton.isEnabled = false
+                myButton.alpha = 0.5
+                
+            } else {
+                myButton.isEnabled = true
+                myButton.alpha = 1.0
+                
+            }
         }
+         return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.text!.isEmpty == false {
+            textFieldArray.append(textField.text!)
+        } else {
+
+        }
+        textField.resignFirstResponder()
         return true
     }
     
