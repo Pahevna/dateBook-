@@ -24,13 +24,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     func createButton() {
         let buttonFrame = CGRect(x: UIScreen.main.bounds.width/4, y: 200, width: 200, height: 31)
-        
         myButton = UIButton(frame: buttonFrame)
         myButton.setTitle("Добавить", for: .normal)
         myButton.setTitleColor(.black, for: .normal)
         myButton.backgroundColor = .white
         myButton.contentVerticalAlignment = .center
-        //myButton.isEnabled = false
         myButton.alpha = 0.5
         myButton.addTarget(self, action: #selector(pressedButton), for: .touchUpInside)
         view.addSubview(self.myButton)
@@ -39,7 +37,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func createTextField() {
         let textFieldFrame = CGRect(x: UIScreen.main.bounds.width/9, y: 50, width: 300, height: 31)
-        
         myTextField = UITextField(frame: textFieldFrame)
         myTextField.borderStyle = .roundedRect
         myTextField.contentVerticalAlignment = .center
@@ -57,8 +54,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn: NSRange, replacementString: String) -> Bool {
-        
-        
         if let text = myTextField.text,
             let textRange = Range(shouldChangeCharactersIn, in: text) {
             let updatedText = text.replacingCharacters(in: textRange,
@@ -69,7 +64,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             } else {
                 myButton.isEnabled = true
                 myButton.alpha = 1.0
-                
             }
         }
          return true
