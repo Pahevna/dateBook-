@@ -50,11 +50,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     
     @objc func pressedButton(_ sender: UIButton) {
-        
         if myTextField.text != "" {
             textFieldArray.append(myTextField.text!)
         } else {
-        
         }
     }
 
@@ -68,7 +66,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             if updatedText.isEmpty {
                 myButton.isEnabled = false
                 myButton.alpha = 0.5
-                
             } else {
                 myButton.isEnabled = true
                 myButton.alpha = 1.0
@@ -82,11 +79,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if textField.text!.isEmpty == false {
             textFieldArray.append(textField.text!)
         } else {
-
         }
         textField.resignFirstResponder()
         return true
     }
-    
 }
 
