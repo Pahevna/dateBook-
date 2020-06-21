@@ -10,72 +10,61 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
-    var myButton = UIButton()
-    var myTextField = UITextField()
-    var textFieldArray = [String]()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        createButton()
-        createTextField()
-        myTextField.delegate = self
-    }
-
-    func createButton() {
-        let buttonFrame = CGRect(x: UIScreen.main.bounds.width/4, y: 200, width: 200, height: 31)
-        myButton = UIButton(frame: buttonFrame)
+    let myButton: UIButton = {
+        let myButton = UIButton()
+        myButton.translatesAutoresizingMaskIntoConstraints = false
+        myButton.frame = CGRect(x: UIScreen.main.bounds.width/4, y: 200, width: 200, height: 31)
         myButton.setTitle("Добавить", for: .normal)
         myButton.setTitleColor(.black, for: .normal)
         myButton.backgroundColor = .white
         myButton.contentVerticalAlignment = .center
         myButton.alpha = 0.5
         myButton.addTarget(self, action: #selector(pressedButton), for: .touchUpInside)
-        view.addSubview(self.myButton)
-        
-    }
+        return myButton
+    }()
     
-    func createTextField() {
-        let textFieldFrame = CGRect(x: UIScreen.main.bounds.width/9, y: 50, width: 300, height: 31)
-        myTextField = UITextField(frame: textFieldFrame)
+    let myTextField: UITextField = {
+        let myTextField = UITextField()
+        myTextField.frame = CGRect(x: UIScreen.main.bounds.width/9, y: 50, width: 300, height: 31)
         myTextField.borderStyle = .roundedRect
-        myTextField.contentVerticalAlignment = .center
-        myTextField.textAlignment = .center
         myTextField.placeholder = "Введите текст"
         myTextField.clearButtonMode = .always
-        view.addSubview(self.myTextField)
-        }
+        return myTextField
+    }()
+        
+    var textFieldArray = [String]()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.addSubview(myButton)
+        view.addSubview(myTextField)
+        myTextField.delegate = self
+    }
     
     @objc func pressedButton(_ sender: UIButton) {
-        if myTextField.text != "" {
+        if myTextField.text?.isEmpty == false {
             textFieldArray.append(myTextField.text!)
-        } else {
         }
     }
-
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn: NSRange, replacementString: String) -> Bool {
-        if let text = myTextField.text,
+        if let text = textField.text,
             let textRange = Range(shouldChangeCharactersIn, in: text) {
             let updatedText = text.replacingCharacters(in: textRange,
                                                        with: replacementString)
-            if updatedText.isEmpty {
-                myButton.isEnabled = false
-                myButton.alpha = 0.5
-            } else {
-                myButton.isEnabled = true
-                myButton.alpha = 1.0
-            }
+            myButton.isEnabled = updatedText.isEmpty ? false : true
+            myButton.alpha = updatedText.isEmpty ? 0.5 : 1 
         }
          return true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField.text!.isEmpty == false {
-            textFieldArray.append(textField.text!)
-        } else {
+        guard let text = textField.text, !text.isEmpty else {
+            return false
         }
+        textFieldArray.append(text)
         textField.resignFirstResponder()
         return true
+        }
     }
-}
-
