@@ -50,9 +50,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
         registerForKeybordNotifications()
     }
     
+    deinit {
+        removeKeybordNotifications()
+    }
+    
     func registerForKeybordNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(kbWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(kbWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func removeKeybordNotifications() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @objc func kbWillShow(_ notification: Notification) {
