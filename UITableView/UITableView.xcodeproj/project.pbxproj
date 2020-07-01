@@ -13,6 +13,8 @@
 		04A030F024A66CD200EA94EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A030EE24A66CD200EA94EF /* Main.storyboard */; };
 		04A030F224A66CD800EA94EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A030F124A66CD800EA94EF /* Assets.xcassets */; };
 		04A030F524A66CD800EA94EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A030F324A66CD800EA94EF /* LaunchScreen.storyboard */; };
+		04A030FD24ACE6F000EA94EF /* FootballersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A030FC24ACE6F000EA94EF /* FootballersTableViewCell.swift */; };
+		04A0310124ACF20000EA94EF /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A0310024ACF20000EA94EF /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		04A030F124A66CD800EA94EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04A030F424A66CD800EA94EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04A030F624A66CD800EA94EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04A030FC24ACE6F000EA94EF /* FootballersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FootballersTableViewCell.swift; sourceTree = "<group>"; };
+		04A0310024ACF20000EA94EF /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				04A030F124A66CD800EA94EF /* Assets.xcassets */,
 				04A030F324A66CD800EA94EF /* LaunchScreen.storyboard */,
 				04A030F624A66CD800EA94EF /* Info.plist */,
+				04A030FC24ACE6F000EA94EF /* FootballersTableViewCell.swift */,
+				04A0310024ACF20000EA94EF /* SecondViewController.swift */,
 			);
 			path = UITableView;
 			sourceTree = "<group>";
@@ -139,7 +145,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				04A030ED24A66CD200EA94EF /* ViewController.swift in Sources */,
+				04A030FD24ACE6F000EA94EF /* FootballersTableViewCell.swift in Sources */,
 				04A030E924A66CD200EA94EF /* AppDelegate.swift in Sources */,
+				04A0310124ACF20000EA94EF /* SecondViewController.swift in Sources */,
 				04A030EB24A66CD200EA94EF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
