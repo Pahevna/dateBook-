@@ -10,14 +10,13 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
-    var player: TopFootballers?
-
     @IBOutlet weak var labelBiography: UILabel!
     
+    var players: TopFootballers?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        labelBiography.text = "\(String(describing: player?.biography))"
+        labelBiography.text = "\((players?.biography)!)"
     }
 }

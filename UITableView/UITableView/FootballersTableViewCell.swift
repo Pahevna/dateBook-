@@ -10,6 +10,9 @@ import UIKit
 
 class FootballersTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblLastName: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }

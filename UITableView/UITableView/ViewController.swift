@@ -29,14 +29,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
        }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! FootballersTableViewCell
-        cell.textLabel?.text = array[indexPath.row].fistName + " " + array[indexPath.row].lastName
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as! FootballersTableViewCell
+        cell.lblName.text = array[indexPath.row].fistName
+        cell.lblLastName.text = array[indexPath.row].lastName
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "showBiography", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? SecondViewController {
+            destination.players = array[(tableView.indexPathForSelectedRow?.row)!]
+            tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: true)
+        }
     }
     
     override func viewDidLoad() {
