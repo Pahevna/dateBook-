@@ -29,9 +29,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
        }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as! FootballersTableViewCell
-        cell.lblName.text = array[indexPath.row].fistName
-        cell.lblLastName.text = array[indexPath.row].lastName
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as? FootballersTableViewCell else {
+            return UITableViewCell()
+        }
+        let cellPlayers = array[indexPath.row]
+        cell.lblName.text = cellPlayers.fistName
+        cell.lblLastName.text = cellPlayers.lastName
         return cell
     }
     
@@ -44,9 +47,5 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             destination.players = array[(tableView.indexPathForSelectedRow?.row)!]
             tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: true)
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
     }
 }
