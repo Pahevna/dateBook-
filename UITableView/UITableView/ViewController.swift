@@ -56,8 +56,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? SecondViewController {
-            destination.player = array[(tableView.indexPathForSelectedRow?.row)!]
-            tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: true)
+            guard let selectRow = tableView.indexPathForSelectedRow else {
+                return
+            }
+            destination.player = array[selectRow.row]
+            tableView.deselectRow(at: selectRow, animated: true)
         }
     }
 }
