@@ -64,6 +64,6 @@ class FirstVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let secondVC = SecondVC()
-        navigationController?.pushViewController(secondVC, animated: true)    
+        navigationController?.pushViewController(secondVC, animated: true)
     }
 }

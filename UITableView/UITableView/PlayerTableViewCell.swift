@@ -33,7 +33,6 @@ class PlayerTableViewCell: UITableViewCell {
         nameLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 10).isActive = true
         nameLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         
-        
         lastNameLabel.leftAnchor.constraint(equalTo: self.nameLabel.leftAnchor, constant: 140).isActive = true
         lastNameLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
     }
