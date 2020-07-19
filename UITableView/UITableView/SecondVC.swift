@@ -16,6 +16,7 @@ class SecondVC: UIViewController {
         let label = UILabel()
         label.textAlignment = NSTextAlignment.center
         label.font = UIFont.italicSystemFont(ofSize: 35)
+        label.textColor = .systemBlue
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -23,6 +24,9 @@ class SecondVC: UIViewController {
     let biographyLabel:UILabel = {
         let label = UILabel()
         label.font = UIFont.italicSystemFont(ofSize: 18)
+        label.numberOfLines = 12
+        label.textAlignment = NSTextAlignment.center
+        label.textColor = .systemBlue
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -30,7 +34,7 @@ class SecondVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemYellow
+        view.backgroundColor = .secondarySystemBackground
         
         view.addSubview(familyLabel)
         view.addSubview(biographyLabel)
@@ -42,7 +46,7 @@ class SecondVC: UIViewController {
         
         familyLabel.text = player?.lastName
         
-        biographyLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 120).isActive = true
+        biographyLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -80).isActive = true
         biographyLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         biographyLabel.widthAnchor.constraint(equalToConstant: 350).isActive = true
         biographyLabel.heightAnchor.constraint(equalToConstant: 300).isActive = true

@@ -30,16 +30,14 @@ class PlayerTableViewCell: UITableViewCell {
         contentView.addSubview(nameLabel)
         contentView.addSubview(lastNameLabel)
         
-        nameLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 10).isActive = true
+        nameLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10).isActive = true
         nameLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         
-        lastNameLabel.leftAnchor.constraint(equalTo: self.nameLabel.leftAnchor, constant: 140).isActive = true
+        lastNameLabel.leftAnchor.constraint(equalTo: nameLabel.leftAnchor, constant: 140).isActive = true
         lastNameLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-       
     }
-
 }
