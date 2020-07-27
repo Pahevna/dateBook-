@@ -14,8 +14,8 @@ class SecondVC: UIViewController {
     
     let familyLabel:UILabel = {
         let label = UILabel()
-        label.textAlignment = NSTextAlignment.center
-        label.font = UIFont.italicSystemFont(ofSize: 35)
+        label.textAlignment = .center
+        label.font = .italicSystemFont(ofSize: 35)
         label.textColor = .systemBlue
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -23,9 +23,9 @@ class SecondVC: UIViewController {
     
     let biographyLabel:UILabel = {
         let label = UILabel()
-        label.font = UIFont.italicSystemFont(ofSize: 18)
-        label.numberOfLines = 12
-        label.textAlignment = NSTextAlignment.center
+        label.font = .italicSystemFont(ofSize: 18)
+        label.numberOfLines = 0
+        label.textAlignment = .center
         label.textColor = .systemBlue
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -42,14 +42,12 @@ class SecondVC: UIViewController {
         familyLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -240).isActive = true
         familyLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         familyLabel.widthAnchor.constraint(equalToConstant: 300).isActive = true
-        familyLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         familyLabel.text = player?.lastName
         
         biographyLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -80).isActive = true
         biographyLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         biographyLabel.widthAnchor.constraint(equalToConstant: 350).isActive = true
-        biographyLabel.heightAnchor.constraint(equalToConstant: 300).isActive = true
         
         biographyLabel.text = player?.biography
     }

@@ -52,8 +52,7 @@ class FirstVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         let cellPlayer = array[indexPath.row]
-        cell.nameLabel.text = cellPlayer.fistName
-        cell.lastNameLabel.text = cellPlayer.lastName
+        cell.nameLabel.attributedText = makeAttributedString(name: cellPlayer.fistName, family: cellPlayer.lastName)
         return cell
         }
    
@@ -65,5 +64,18 @@ class FirstVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let secondVC = SecondVC()
         secondVC.player = array[indexPath.row]
         navigationController?.pushViewController(secondVC, animated: true)
+    }
+    func makeAttributedString(name: String, family: String) -> NSMutableAttributedString {
+        let nameAttributes = [NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 35),
+                              NSAttributedString.Key.foregroundColor: UIColor.purple]
+        let familyAttributes = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 35),
+                                NSAttributedString.Key.foregroundColor: UIColor.red]
+
+        let nameString = NSMutableAttributedString(string: name + " ", attributes: nameAttributes)
+        let familyString = NSMutableAttributedString(string: family, attributes: familyAttributes)
+        
+        nameString.append(familyString)
+
+        return nameString
     }
 }
