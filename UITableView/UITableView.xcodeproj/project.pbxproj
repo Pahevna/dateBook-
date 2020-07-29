@@ -11,6 +11,7 @@
 		0430C75624BF290300586C7F /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430C75524BF290300586C7F /* SecondVC.swift */; };
 		0430C75824C0434D00586C7F /* TopFootballer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430C75724C0434D00586C7F /* TopFootballer.swift */; };
 		0430C75E24C0739C00586C7F /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430C75D24C0739C00586C7F /* PlayerTableViewCell.swift */; };
+		0430C76224D1E94C00586C7F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430C76124D1E94C00586C7F /* StringExtension.swift */; };
 		04A030E924A66CD200EA94EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A030E824A66CD200EA94EF /* AppDelegate.swift */; };
 		04A030EB24A66CD200EA94EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A030EA24A66CD200EA94EF /* SceneDelegate.swift */; };
 		04A030F224A66CD800EA94EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A030F124A66CD800EA94EF /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		0430C75524BF290300586C7F /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
 		0430C75724C0434D00586C7F /* TopFootballer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopFootballer.swift; sourceTree = "<group>"; };
 		0430C75D24C0739C00586C7F /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
+		0430C76124D1E94C00586C7F /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		04A030E524A66CD100EA94EF /* UITableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UITableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A030E824A66CD200EA94EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04A030EA24A66CD200EA94EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				04A030E624A66CD100EA94EF /* Products */,
 				0430C75324BF28E300586C7F /* FirstVC.swift */,
 				0430C75524BF290300586C7F /* SecondVC.swift */,
+				0430C76124D1E94C00586C7F /* StringExtension.swift */,
 				0430C75724C0434D00586C7F /* TopFootballer.swift */,
 				0430C75D24C0739C00586C7F /* PlayerTableViewCell.swift */,
 			);
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0430C75E24C0739C00586C7F /* PlayerTableViewCell.swift in Sources */,
+				0430C76224D1E94C00586C7F /* StringExtension.swift in Sources */,
 				04A030E924A66CD200EA94EF /* AppDelegate.swift in Sources */,
 				0430C75824C0434D00586C7F /* TopFootballer.swift in Sources */,
 				0430C75424BF28E300586C7F /* FirstVC.swift in Sources */,

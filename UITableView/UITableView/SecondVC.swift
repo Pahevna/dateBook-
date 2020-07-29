@@ -16,16 +16,16 @@ class SecondVC: UIViewController {
         let label = UILabel()
         label.textAlignment = .center
         label.font = .italicSystemFont(ofSize: 35)
-        label.textColor = .systemBlue
+        label.textColor = .red
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     let biographyLabel:UILabel = {
         let label = UILabel()
-        label.font = .italicSystemFont(ofSize: 18)
         label.numberOfLines = 0
         label.textAlignment = .center
+        label.font = .italicSystemFont(ofSize: 18)
         label.textColor = .systemBlue
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -39,15 +39,23 @@ class SecondVC: UIViewController {
         view.addSubview(familyLabel)
         view.addSubview(biographyLabel)
         
-        familyLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -240).isActive = true
-        familyLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        familyLabel.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        let lastName = player?.lastName ?? ""
+        let width = UIScreen.main.bounds.width
+        let height = lastName.height(withConstrainedWidth: width, font: familyLabel.font)
+        familyLabel.heightAnchor.constraint(equalToConstant: height).isActive = true
+        familyLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        familyLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        familyLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         
         familyLabel.text = player?.lastName
         
-        biographyLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -80).isActive = true
-        biographyLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        biographyLabel.widthAnchor.constraint(equalToConstant: 350).isActive = true
+        let biography = player?.biography ?? ""
+        let widthLabel = UIScreen.main.bounds.width
+        let heightLabel = biography.height(withConstrainedWidth: widthLabel, font: biographyLabel.font)
+        biographyLabel.heightAnchor.constraint(equalToConstant: heightLabel).isActive = true
+        biographyLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        biographyLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        biographyLabel.topAnchor.constraint(equalTo: familyLabel.bottomAnchor).isActive = true
         
         biographyLabel.text = player?.biography
     }
