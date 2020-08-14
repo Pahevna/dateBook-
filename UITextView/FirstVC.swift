@@ -12,12 +12,21 @@ var array = [BestFootballerOfTheSeason]()
 
 class FirstVC: UIViewController, UITableViewDelegate, UITableViewDataSource, SecondViewControllerDelegate {
     
-    func passData(editBiography: String) {
-        for i in 0..<array.count {
-            if array[i].biography == editBiography {
-                print(editBiography)
+    func passData(editBiography: String, ID: Int) {
+        var indexOfPlayer: Int?
+        for (index, player) in array.enumerated() {
+            if player.id == ID  {
+                indexOfPlayer = index
+                break;
             }
         }
+        
+        guard let indexPlayer = indexOfPlayer else {
+            return
+        }
+        
+        array[indexPlayer].biography = editBiography
+        footballerTableView.reloadData()
     }
     
     let footballerTableView = UITableView()
@@ -53,7 +62,7 @@ class FirstVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Sec
         let player3 = BestFootballerOfTheSeason(fistName: "Kevin",
                                                 lastName: "De Bruyne",
                                                 biography: "is a Belgian professional footballer who plays as a midfielder for Premier League club Manchester City and the Belgian national team. Recognised for his exceptional passing and shooting ability, as well as dribbling, he is considered among the best players in the world, and he has often been described as a complete footballer. De Bruyne has been named in the IFFHS Men's World Team twice, the UEFA Team of the Year twice, the UEFA Champions League Squad of the Season twice, the France Football World XI, and the Bundesliga Team of the Year. He won the Premier League Playmaker of the Season and the Manchester City's Player of the Year twice each, the Bundesliga Player of the Year, the Footballer of the Year in Germany, and the Belgian Sportsman of the Year.",
-                                                id: 1)
+                                                id: 3)
         
         array.append(player1)
         array.append(player2)
@@ -80,6 +89,7 @@ class FirstVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Sec
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let secondVC = SecondVC()
         secondVC.player = array[indexPath.row]
+        secondVC.player?.id = array[indexPath.row].id
         navigationController?.pushViewController(secondVC, animated: true)
         secondVC.delegate = self
     }

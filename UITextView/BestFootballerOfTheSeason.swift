@@ -11,6 +11,6 @@ import Foundation
 struct BestFootballerOfTheSeason {
     let fistName: String
     let lastName: String
-    let biography: String
-    let id: Int 
+    var biography: String
+    var id: Int
 }

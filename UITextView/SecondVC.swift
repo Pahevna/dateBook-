@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SecondViewControllerDelegate: class {
-    func passData(editBiography: String)
+    func passData(editBiography: String, ID: Int)
 }
 
 var temp = ""
@@ -71,6 +71,7 @@ class SecondVC: UIViewController, UITextViewDelegate, SecondViewControllerDelega
         biographyTextView.topAnchor.constraint(equalTo: familyLabel.bottomAnchor, constant: 10).isActive = true
         
         biographyTextView.text = player?.biography
+        
     }
     
     @objc func updateTextView(notification: Notification) {
@@ -86,22 +87,21 @@ class SecondVC: UIViewController, UITextViewDelegate, SecondViewControllerDelega
         biographyTextView.scrollRangeToVisible(biographyTextView.selectedRange)
     }
     
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        
+        guard let playerID = player?.id else { return false }
         
         if text == "\n" {
             textView.resignFirstResponder()
             temp = text
-            delegate?.passData(editBiography: temp)
-            
-            let firstVC = FirstVC()
-            navigationController?.popToViewController(firstVC, animated: true)
-            
+            delegate?.passData(editBiography: temp, ID: playerID)
+            navigationController?.popToRootViewController(animated: true)
             return false
         }
         return true
     }
     
-    func passData(editBiography: String) {
+    func passData(editBiography: String, ID: Int) {
         temp.append(editBiography)
     }
 }

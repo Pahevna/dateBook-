@@ -9,6 +9,8 @@
 import UIKit
 
 class PlayerTableViewCell: UITableViewCell {
+    
+    var indexForCell: NSIndexPath!
 
     let nameLabel:UILabel = {
         let label = UILabel()
