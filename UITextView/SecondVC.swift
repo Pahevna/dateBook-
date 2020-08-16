@@ -12,11 +12,9 @@ protocol SecondViewControllerDelegate: class {
     func passData(editBiography: String, ID: Int)
 }
 
-var temp = ""
-
 class SecondVC: UIViewController, UITextViewDelegate, SecondViewControllerDelegate {
     
-    var player: BestFootballerOfTheSeason?
+    var player: Player?
     
     weak var delegate: SecondViewControllerDelegate?
     
@@ -88,20 +86,18 @@ class SecondVC: UIViewController, UITextViewDelegate, SecondViewControllerDelega
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        
         guard let playerID = player?.id else { return false }
         
         if text == "\n" {
-            textView.resignFirstResponder()
-            temp = text
+            guard let temp = textView.text else { return false }
             delegate?.passData(editBiography: temp, ID: playerID)
             navigationController?.popToRootViewController(animated: true)
+            textView.resignFirstResponder()
             return false
         }
         return true
     }
     
     func passData(editBiography: String, ID: Int) {
-        temp.append(editBiography)
     }
 }

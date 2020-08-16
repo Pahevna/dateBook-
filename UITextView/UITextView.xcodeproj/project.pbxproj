@@ -12,7 +12,7 @@
 		045E796524D6EC6F002EA7C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 045E796424D6EC6F002EA7C1 /* Assets.xcassets */; };
 		045E796824D6EC6F002EA7C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045E796624D6EC6F002EA7C1 /* LaunchScreen.storyboard */; };
 		045E797224D6EEAF002EA7C1 /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E797124D6EEAF002EA7C1 /* FirstVC.swift */; };
-		045E797424D6F116002EA7C1 /* BestFootballerOfTheSeason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E797324D6F116002EA7C1 /* BestFootballerOfTheSeason.swift */; };
+		045E797424D6F116002EA7C1 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E797324D6F116002EA7C1 /* Player.swift */; };
 		045E797624D6F40B002EA7C1 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E797524D6F40B002EA7C1 /* PlayerTableViewCell.swift */; };
 		045E797824D6F582002EA7C1 /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E797724D6F582002EA7C1 /* SecondVC.swift */; };
 		045E797A24D6F64B002EA7C1 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E797924D6F64B002EA7C1 /* StringExtension.swift */; };
@@ -26,7 +26,7 @@
 		045E796724D6EC6F002EA7C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		045E796924D6EC6F002EA7C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		045E797124D6EEAF002EA7C1 /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
-		045E797324D6F116002EA7C1 /* BestFootballerOfTheSeason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestFootballerOfTheSeason.swift; sourceTree = "<group>"; };
+		045E797324D6F116002EA7C1 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		045E797524D6F40B002EA7C1 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		045E797724D6F582002EA7C1 /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
 		045E797924D6F64B002EA7C1 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 			children = (
 				045E797124D6EEAF002EA7C1 /* FirstVC.swift */,
 				045E797724D6F582002EA7C1 /* SecondVC.swift */,
-				045E797324D6F116002EA7C1 /* BestFootballerOfTheSeason.swift */,
+				045E797324D6F116002EA7C1 /* Player.swift */,
 				045E797524D6F40B002EA7C1 /* PlayerTableViewCell.swift */,
 				045E797924D6F64B002EA7C1 /* StringExtension.swift */,
 				045E795A24D6EC6A002EA7C1 /* UITextView */,
@@ -152,7 +152,7 @@
 				045E797624D6F40B002EA7C1 /* PlayerTableViewCell.swift in Sources */,
 				045E795E24D6EC6A002EA7C1 /* SceneDelegate.swift in Sources */,
 				045E797824D6F582002EA7C1 /* SecondVC.swift in Sources */,
-				045E797424D6F116002EA7C1 /* BestFootballerOfTheSeason.swift in Sources */,
+				045E797424D6F116002EA7C1 /* Player.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

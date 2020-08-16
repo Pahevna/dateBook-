@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct BestFootballerOfTheSeason {
+struct Player {
     let fistName: String
     let lastName: String
     var biography: String
