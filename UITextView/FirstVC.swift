@@ -26,27 +26,27 @@ class FirstVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Sec
         }
         
         array[indexPlayer].biography = editBiography
-        footballerTableView.reloadData()
+        tableView.reloadData()
     }
     
-    let footballerTableView = UITableView()
+    let tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadFootballers()
-        view.addSubview(footballerTableView)
+        view.addSubview(tableView)
         
-        footballerTableView.translatesAutoresizingMaskIntoConstraints = false
-        footballerTableView.topAnchor.constraint(equalTo:view.topAnchor).isActive = true
-        footballerTableView.leftAnchor.constraint(equalTo:view.leftAnchor).isActive = true
-        footballerTableView.rightAnchor.constraint(equalTo:view.rightAnchor).isActive = true
-        footballerTableView.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = true
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.topAnchor.constraint(equalTo:view.topAnchor).isActive = true
+        tableView.leftAnchor.constraint(equalTo:view.leftAnchor).isActive = true
+        tableView.rightAnchor.constraint(equalTo:view.rightAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = true
         
-        footballerTableView.delegate = self
-        footballerTableView.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
         
-        footballerTableView.register(PlayerTableViewCell.self, forCellReuseIdentifier: "myCell")
+        tableView.register(PlayerTableViewCell.self, forCellReuseIdentifier: "myCell")
     }
     
     func loadFootballers() {
@@ -92,19 +92,5 @@ class FirstVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Sec
         secondVC.player?.id = array[indexPath.row].id
         navigationController?.pushViewController(secondVC, animated: true)
         secondVC.delegate = self
-    }
-    
-    func makeAttributedString(name: String, family: String) -> NSMutableAttributedString {
-        let nameAttributes = [NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 35),
-                              NSAttributedString.Key.foregroundColor: UIColor.purple]
-        let familyAttributes = [NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 35),
-                                NSAttributedString.Key.foregroundColor: UIColor.darkText]
-
-        let nameString = NSMutableAttributedString(string: name + " ", attributes: nameAttributes)
-        let familyString = NSMutableAttributedString(string: family, attributes: familyAttributes)
-        
-        nameString.append(familyString)
-
-        return nameString
     }
 }

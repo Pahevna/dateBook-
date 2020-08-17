@@ -12,7 +12,7 @@ protocol SecondViewControllerDelegate: class {
     func passData(editBiography: String, ID: Int)
 }
 
-class SecondVC: UIViewController, UITextViewDelegate, SecondViewControllerDelegate {
+class SecondVC: UIViewController, UITextViewDelegate {
     
     var player: Player?
     
@@ -77,11 +77,8 @@ class SecondVC: UIViewController, UITextViewDelegate, SecondViewControllerDelega
         let keyboardEndFrameScreenCordinates = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         let keyboardEndFrame = view.convert(keyboardEndFrameScreenCordinates, to: view.window)
 
-        if notification.name == UIResponder.keyboardWillHideNotification {
-            biographyTextView.contentInset = UIEdgeInsets.zero
-        } else {
-            biographyTextView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardEndFrame.height, right: 0)
-        }
+        biographyTextView.contentInset = (notification.name == UIResponder.keyboardWillHideNotification) ? UIEdgeInsets.zero : UIEdgeInsets(top: 0, left: 0, bottom: keyboardEndFrame.height, right: 0)
+       
         biographyTextView.scrollRangeToVisible(biographyTextView.selectedRange)
     }
     
@@ -96,8 +93,5 @@ class SecondVC: UIViewController, UITextViewDelegate, SecondViewControllerDelega
             return false
         }
         return true
-    }
-    
-    func passData(editBiography: String, ID: Int) {
     }
 }
