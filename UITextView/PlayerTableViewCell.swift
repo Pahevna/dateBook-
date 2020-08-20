@@ -8,19 +8,6 @@
 
 import UIKit
 
-func makeAttributedString(name: String, family: String) -> NSMutableAttributedString {
-    let nameAttributes = [NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 35),
-                          NSAttributedString.Key.foregroundColor: UIColor.purple]
-    let familyAttributes = [NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 35),
-                            NSAttributedString.Key.foregroundColor: UIColor.darkText]
-
-    let nameString = NSMutableAttributedString(string: name + " ", attributes: nameAttributes)
-    let familyString = NSMutableAttributedString(string: family, attributes: familyAttributes)
-    nameString.append(familyString)
-   
-    return nameString
-}
-
 class PlayerTableViewCell: UITableViewCell {
     
     var indexForCell: NSIndexPath!
@@ -43,4 +30,18 @@ class PlayerTableViewCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
+    func makeAttributedString(name: String, family: String) -> NSMutableAttributedString {
+        let nameAttributes = [NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 35),
+                              NSAttributedString.Key.foregroundColor: UIColor.purple]
+        let familyAttributes = [NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 35),
+                                NSAttributedString.Key.foregroundColor: UIColor.darkText]
+
+        let nameString = NSMutableAttributedString(string: name + " ", attributes: nameAttributes)
+        let familyString = NSMutableAttributedString(string: family, attributes: familyAttributes)
+        nameString.append(familyString)
+       
+        return nameString
+    }
+
 }

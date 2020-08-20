@@ -10,6 +10,8 @@ import UIKit
 
 var array = [Player]()
 
+var customCell = PlayerTableViewCell()
+
 class FirstVC: UIViewController, UITableViewDelegate, UITableViewDataSource, SecondViewControllerDelegate {
     
     func passData(editBiography: String, ID: Int) {
@@ -78,7 +80,7 @@ class FirstVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Sec
             return UITableViewCell()
         }
         let cellPlayer = array[indexPath.row]
-        cell.nameLabel.attributedText = makeAttributedString(name: cellPlayer.fistName, family: cellPlayer.lastName)
+        cell.nameLabel.attributedText = customCell.makeAttributedString(name: cellPlayer.fistName, family: cellPlayer.lastName)
         return cell
         }
    
