@@ -8,16 +8,31 @@
 
 import UIKit
 
+var cell = PlayerTableViewCell()
+
 class PlayerTableViewCell: UITableViewCell {
     
     var indexForCell: NSIndexPath!
+    
+    func set(name: String, secondName: String) {
+        let nameAttributes = [NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 35),
+                              NSAttributedString.Key.foregroundColor: UIColor.purple]
+        let familyAttributes = [NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 35),
+                                NSAttributedString.Key.foregroundColor: UIColor.darkText]
+
+        let nameString = NSMutableAttributedString(string: name + " ", attributes: nameAttributes)
+        let familyString = NSMutableAttributedString(string: secondName, attributes: familyAttributes)
+        nameString.append(familyString)
+        
+        cell.nameLabel.attributedText = nameString
+    }
     
     let nameLabel:UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
            super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -30,18 +45,4 @@ class PlayerTableViewCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
-    func makeAttributedString(name: String, family: String) -> NSMutableAttributedString {
-        let nameAttributes = [NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 35),
-                              NSAttributedString.Key.foregroundColor: UIColor.purple]
-        let familyAttributes = [NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 35),
-                                NSAttributedString.Key.foregroundColor: UIColor.darkText]
-
-        let nameString = NSMutableAttributedString(string: name + " ", attributes: nameAttributes)
-        let familyString = NSMutableAttributedString(string: family, attributes: familyAttributes)
-        nameString.append(familyString)
-       
-        return nameString
-    }
-
 }

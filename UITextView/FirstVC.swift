@@ -10,26 +10,7 @@ import UIKit
 
 var array = [Player]()
 
-var customCell = PlayerTableViewCell()
-
-class FirstVC: UIViewController, UITableViewDelegate, UITableViewDataSource, SecondViewControllerDelegate {
-    
-    func passData(editBiography: String, ID: Int) {
-        var indexOfPlayer: Int?
-        for (index, player) in array.enumerated() {
-            if player.id == ID  {
-                indexOfPlayer = index
-                break;
-            }
-        }
-        
-        guard let indexPlayer = indexOfPlayer else {
-            return
-        }
-        
-        array[indexPlayer].biography = editBiography
-        tableView.reloadData()
-    }
+class FirstVC: UIViewController, UITableViewDelegate, UITableViewDataSource { //SecondViewControllerDelegate {
     
     let tableView = UITableView()
     
@@ -80,7 +61,7 @@ class FirstVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Sec
             return UITableViewCell()
         }
         let cellPlayer = array[indexPath.row]
-        cell.nameLabel.attributedText = customCell.makeAttributedString(name: cellPlayer.fistName, family: cellPlayer.lastName)
+        cell.set (name: cellPlayer.fistName, secondName: cellPlayer.lastName)
         return cell
         }
    
@@ -93,6 +74,22 @@ class FirstVC: UIViewController, UITableViewDelegate, UITableViewDataSource, Sec
         secondVC.player = array[indexPath.row]
         secondVC.player?.id = array[indexPath.row].id
         navigationController?.pushViewController(secondVC, animated: true)
-        secondVC.delegate = self
+        secondVC.callback = { editBiography, ID in
+            
+            var indexOfPlayer: Int?
+                    for (index, player) in array.enumerated() {
+                        if player.id == ID  {
+                            indexOfPlayer = index
+                            break;
+                        }
+                    }
+    
+                    guard let indexPlayer = indexOfPlayer else {
+                        return
+                    }
+            
+                    array[indexPlayer].biography = editBiography
+                    tableView.reloadData()
+        }
     }
 }

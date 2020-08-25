@@ -8,15 +8,11 @@
 
 import UIKit
 
-protocol SecondViewControllerDelegate: class {
-    func passData(editBiography: String, ID: Int)
-}
-
 class SecondVC: UIViewController, UITextViewDelegate {
     
-    var player: Player?
+    var callback: ((String, Int) -> Void)?
     
-    weak var delegate: SecondViewControllerDelegate?
+    var player: Player?
     
     let familyLabel: UILabel = {
         let label = UILabel()
@@ -78,7 +74,6 @@ class SecondVC: UIViewController, UITextViewDelegate {
         let keyboardEndFrame = view.convert(keyboardEndFrameScreenCordinates, to: view.window)
 
         biographyTextView.contentInset = (notification.name == UIResponder.keyboardWillHideNotification) ? UIEdgeInsets.zero : UIEdgeInsets(top: 0, left: 0, bottom: keyboardEndFrame.height, right: 0)
-       
         biographyTextView.scrollRangeToVisible(biographyTextView.selectedRange)
     }
     
@@ -87,7 +82,7 @@ class SecondVC: UIViewController, UITextViewDelegate {
         
         if text == "\n" {
             guard let temp = textView.text else { return false }
-            delegate?.passData(editBiography: temp, ID: playerID)
+            callback?(temp, playerID)
             navigationController?.popToRootViewController(animated: true)
             textView.resignFirstResponder()
             return false
