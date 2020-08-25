@@ -8,8 +8,6 @@
 
 import UIKit
 
-var cell = PlayerTableViewCell()
-
 class PlayerTableViewCell: UITableViewCell {
     
     var indexForCell: NSIndexPath!
@@ -24,7 +22,7 @@ class PlayerTableViewCell: UITableViewCell {
         let familyString = NSMutableAttributedString(string: secondName, attributes: familyAttributes)
         nameString.append(familyString)
         
-        cell.nameLabel.attributedText = nameString
+        nameLabel.attributedText = nameString
     }
     
     let nameLabel:UILabel = {
