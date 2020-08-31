@@ -60,8 +60,8 @@ class FirstVC: UIViewController, UITableViewDelegate, UITableViewDataSource { //
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "myCell") as? PlayerTableViewCell else {
             return UITableViewCell()
         }
-        let cellPlayer = array[indexPath.row]
-        cell.set (name: cellPlayer.fistName, secondName: cellPlayer.lastName)
+        let player = array[indexPath.row]
+        cell.set(name: player.fistName, secondName: player.lastName)
         return cell
         }
    
