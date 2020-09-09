@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Motorcycle: DescriptionClass {
+class Motorcycle: DescriptionProtocol {
     var description: String
     
     init(description: String) {
