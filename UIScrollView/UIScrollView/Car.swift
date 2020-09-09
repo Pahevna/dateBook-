@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol DescriptionClass {
+protocol DescriptionProtocol {
     var description: String { get }
 }
 
-class Car: DescriptionClass {
+class Car: DescriptionProtocol {
     var description: String
     
     init(description: String) {

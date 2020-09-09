@@ -11,7 +11,7 @@ import UIKit
 let car = Car(description: "BMW X5 2020 black")
 let moto = Motorcycle(description: "Suzuki V-Strom 2019 red")
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController {
     
     private let myButton: UIButton = {
         let myButton = UIButton()
@@ -86,14 +86,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @objc func pressedButton(_ sender: UIButton) {
         if myTextField.text == "Машина" {
             myLabel.text = car.description
-            
-        } else {
-            if myTextField.text == "Мотоцикл" {
+        } else if myTextField.text == "Мотоцикл" {
                 myLabel.text = moto.description
-            }
         }
     }
-    
+}
+
+extension ViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn: NSRange, replacementString: String) -> Bool {
         if let text = textField.text,
             let textRange = Range(shouldChangeCharactersIn, in: text) {
@@ -101,6 +100,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                                                        with: replacementString)
             myButton.isEnabled = updatedText.isEmpty ? false : true
             myButton.alpha = updatedText.isEmpty ? 0.5 : 1
+            
         }
          return true
     }
