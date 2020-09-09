@@ -30,8 +30,8 @@ class ViewController: UIViewController {
     
     private var myImageView: UIImageView = {
         var myImageView = UIImageView()
-        myImageView = UIImageView(frame: CGRect(x: 0, y: 50, width: UIScreen.main.bounds.width,
-                                                height: UIScreen.main.bounds.height / 2))
+        myImageView = UIImageView(frame: CGRect(x: 37, y: 70, width: 300, height: 300))
+        myImageView.contentMode = .scaleAspectFill
         myImageView.layer.cornerRadius = myImageView.frame.size.width / 2
         myImageView.clipsToBounds = true
         return myImageView
