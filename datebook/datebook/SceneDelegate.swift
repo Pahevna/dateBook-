@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  datebook
+//  dateBook
 //
-//  Created by mac on 20.04.2021.
+//  Created by mac on 21.04.2021.
 //
 
 import UIKit

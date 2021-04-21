@@ -3,168 +3,178 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04789E2E262F530F00C824AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04789E2D262F530F00C824AC /* AppDelegate.swift */; };
-		04789E30262F530F00C824AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04789E2F262F530F00C824AC /* SceneDelegate.swift */; };
-		04789E32262F530F00C824AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04789E31262F530F00C824AC /* ViewController.swift */; };
-		04789E35262F530F00C824AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04789E33262F530F00C824AC /* Main.storyboard */; };
-		04789E37262F531000C824AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04789E36262F531000C824AC /* Assets.xcassets */; };
-		04789E3A262F531000C824AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04789E38262F531000C824AC /* LaunchScreen.storyboard */; };
-		04789E45262F531000C824AC /* datebookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04789E44262F531000C824AC /* datebookTests.swift */; };
-		04789E50262F531000C824AC /* datebookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04789E4F262F531000C824AC /* datebookUITests.swift */; };
-		15EF050CF1CA127B42759074 /* Pods_datebook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4548791B283328BA4802F569 /* Pods_datebook.framework */; };
-		40A44F36A86243EE9EBEB048 /* Pods_datebook_datebookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E6C2C584AE6C7BF70E5058A /* Pods_datebook_datebookUITests.framework */; };
-		C2797DCC7ED96129F4EA5F74 /* Pods_datebookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDB628ABF63F41B7EACC8F12 /* Pods_datebookTests.framework */; };
+		04789E7E26308C5A00C824AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04789E7D26308C5A00C824AC /* AppDelegate.swift */; };
+		04789E8026308C5A00C824AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04789E7F26308C5A00C824AC /* SceneDelegate.swift */; };
+		04789E8226308C5A00C824AC /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04789E8126308C5A00C824AC /* CalendarViewController.swift */; };
+		04789E8526308C5A00C824AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04789E8326308C5A00C824AC /* Main.storyboard */; };
+		04789E8726308C5C00C824AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04789E8626308C5C00C824AC /* Assets.xcassets */; };
+		04789E8A26308C5C00C824AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04789E8826308C5C00C824AC /* LaunchScreen.storyboard */; };
+		04789E9526308C5C00C824AC /* dateBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04789E9426308C5C00C824AC /* dateBookTests.swift */; };
+		04789EA026308C5C00C824AC /* dateBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04789E9F26308C5C00C824AC /* dateBookUITests.swift */; };
+		04789EC026309D9100C824AC /* TodoListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04789EBF26309D9100C824AC /* TodoListModel.swift */; };
+		45929BE137AC0A452EFE65D0 /* Pods_dateBook_dateBookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51824AE6CAD60AED7F706B34 /* Pods_dateBook_dateBookUITests.framework */; };
+		C8D089AB013AF5DF26E9DB38 /* Pods_dateBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB9968BC88BF936171568C2 /* Pods_dateBook.framework */; };
+		E4BBE16EBEC5F60029AE79C9 /* Pods_dateBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D46E3288979C384BAE43C5B /* Pods_dateBookTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		04789E41262F531000C824AC /* PBXContainerItemProxy */ = {
+		04789E9126308C5C00C824AC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 04789E22262F530F00C824AC /* Project object */;
+			containerPortal = 04789E7226308C5A00C824AC /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 04789E29262F530F00C824AC;
-			remoteInfo = datebook;
+			remoteGlobalIDString = 04789E7926308C5A00C824AC;
+			remoteInfo = dateBook;
 		};
-		04789E4C262F531000C824AC /* PBXContainerItemProxy */ = {
+		04789E9C26308C5C00C824AC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 04789E22262F530F00C824AC /* Project object */;
+			containerPortal = 04789E7226308C5A00C824AC /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 04789E29262F530F00C824AC;
-			remoteInfo = datebook;
+			remoteGlobalIDString = 04789E7926308C5A00C824AC;
+			remoteInfo = dateBook;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04789E2A262F530F00C824AC /* datebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = datebook.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		04789E2D262F530F00C824AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		04789E2F262F530F00C824AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		04789E31262F530F00C824AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		04789E34262F530F00C824AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		04789E36262F531000C824AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		04789E39262F531000C824AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		04789E3B262F531000C824AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04789E40262F531000C824AC /* datebookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = datebookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		04789E44262F531000C824AC /* datebookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = datebookTests.swift; sourceTree = "<group>"; };
-		04789E46262F531000C824AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04789E4B262F531000C824AC /* datebookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = datebookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		04789E4F262F531000C824AC /* datebookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = datebookUITests.swift; sourceTree = "<group>"; };
-		04789E51262F531000C824AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3B59D7E11159F79FCAC9D54B /* Pods-datebookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-datebookTests.debug.xcconfig"; path = "Target Support Files/Pods-datebookTests/Pods-datebookTests.debug.xcconfig"; sourceTree = "<group>"; };
-		4548791B283328BA4802F569 /* Pods_datebook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_datebook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E6C2C584AE6C7BF70E5058A /* Pods_datebook_datebookUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_datebook_datebookUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6695E8460E9102718233DE41 /* Pods-datebook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-datebook.release.xcconfig"; path = "Target Support Files/Pods-datebook/Pods-datebook.release.xcconfig"; sourceTree = "<group>"; };
-		979C322B63836ABA92F36911 /* Pods-datebook-datebookUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-datebook-datebookUITests.debug.xcconfig"; path = "Target Support Files/Pods-datebook-datebookUITests/Pods-datebook-datebookUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		A04F0AA976F43A0337B61F24 /* Pods-datebook-datebookUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-datebook-datebookUITests.release.xcconfig"; path = "Target Support Files/Pods-datebook-datebookUITests/Pods-datebook-datebookUITests.release.xcconfig"; sourceTree = "<group>"; };
-		A1A227CEAA81503C7CD93909 /* Pods-datebookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-datebookTests.release.xcconfig"; path = "Target Support Files/Pods-datebookTests/Pods-datebookTests.release.xcconfig"; sourceTree = "<group>"; };
-		B67F4DB7F5D74B46E35FF189 /* Pods-datebook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-datebook.debug.xcconfig"; path = "Target Support Files/Pods-datebook/Pods-datebook.debug.xcconfig"; sourceTree = "<group>"; };
-		FDB628ABF63F41B7EACC8F12 /* Pods_datebookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_datebookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		04789E7A26308C5A00C824AC /* dateBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dateBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04789E7D26308C5A00C824AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		04789E7F26308C5A00C824AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		04789E8126308C5A00C824AC /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		04789E8426308C5A00C824AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04789E8626308C5C00C824AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04789E8926308C5C00C824AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		04789E8B26308C5C00C824AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04789E9026308C5C00C824AC /* dateBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dateBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04789E9426308C5C00C824AC /* dateBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateBookTests.swift; sourceTree = "<group>"; };
+		04789E9626308C5C00C824AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04789E9B26308C5C00C824AC /* dateBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dateBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04789E9F26308C5C00C824AC /* dateBookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateBookUITests.swift; sourceTree = "<group>"; };
+		04789EA126308C5C00C824AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04789EBF26309D9100C824AC /* TodoListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListModel.swift; sourceTree = "<group>"; };
+		1C8B3B8C6F602055D2ACB417 /* Pods-dateBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dateBook.release.xcconfig"; path = "Target Support Files/Pods-dateBook/Pods-dateBook.release.xcconfig"; sourceTree = "<group>"; };
+		1DB9968BC88BF936171568C2 /* Pods_dateBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dateBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		30995F874FA855DBECFD2BC9 /* Pods-dateBook-dateBookUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dateBook-dateBookUITests.debug.xcconfig"; path = "Target Support Files/Pods-dateBook-dateBookUITests/Pods-dateBook-dateBookUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		49BDA08ABBBD3A95989B1ECA /* Pods-dateBookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dateBookTests.release.xcconfig"; path = "Target Support Files/Pods-dateBookTests/Pods-dateBookTests.release.xcconfig"; sourceTree = "<group>"; };
+		51824AE6CAD60AED7F706B34 /* Pods_dateBook_dateBookUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dateBook_dateBookUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6722D4F07BFDCC57C3F72A80 /* Pods-dateBook-dateBookUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dateBook-dateBookUITests.release.xcconfig"; path = "Target Support Files/Pods-dateBook-dateBookUITests/Pods-dateBook-dateBookUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7B53EB31C15360939D68A3D1 /* Pods-dateBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dateBookTests.debug.xcconfig"; path = "Target Support Files/Pods-dateBookTests/Pods-dateBookTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7D46E3288979C384BAE43C5B /* Pods_dateBookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dateBookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8115430AAC9FB07955DB0000 /* Pods-dateBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dateBook.debug.xcconfig"; path = "Target Support Files/Pods-dateBook/Pods-dateBook.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		04789E27262F530F00C824AC /* Frameworks */ = {
+		04789E7726308C5A00C824AC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15EF050CF1CA127B42759074 /* Pods_datebook.framework in Frameworks */,
+				C8D089AB013AF5DF26E9DB38 /* Pods_dateBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		04789E3D262F531000C824AC /* Frameworks */ = {
+		04789E8D26308C5C00C824AC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2797DCC7ED96129F4EA5F74 /* Pods_datebookTests.framework in Frameworks */,
+				E4BBE16EBEC5F60029AE79C9 /* Pods_dateBookTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		04789E48262F531000C824AC /* Frameworks */ = {
+		04789E9826308C5C00C824AC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40A44F36A86243EE9EBEB048 /* Pods_datebook_datebookUITests.framework in Frameworks */,
+				45929BE137AC0A452EFE65D0 /* Pods_dateBook_dateBookUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04789E21262F530F00C824AC = {
+		04789E7126308C5A00C824AC = {
 			isa = PBXGroup;
 			children = (
-				04789E2C262F530F00C824AC /* datebook */,
-				04789E43262F531000C824AC /* datebookTests */,
-				04789E4E262F531000C824AC /* datebookUITests */,
-				04789E2B262F530F00C824AC /* Products */,
-				16E40EDEB73FC36A0B5300A4 /* Pods */,
-				45A423E36454B91901D5A377 /* Frameworks */,
+				04789E7C26308C5A00C824AC /* dateBook */,
+				04789E9326308C5C00C824AC /* dateBookTests */,
+				04789E9E26308C5C00C824AC /* dateBookUITests */,
+				04789E7B26308C5A00C824AC /* Products */,
+				77554A6D4B1747ABE5A7BB9A /* Pods */,
+				93ED4B82410C288673E70ACE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		04789E2B262F530F00C824AC /* Products */ = {
+		04789E7B26308C5A00C824AC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				04789E2A262F530F00C824AC /* datebook.app */,
-				04789E40262F531000C824AC /* datebookTests.xctest */,
-				04789E4B262F531000C824AC /* datebookUITests.xctest */,
+				04789E7A26308C5A00C824AC /* dateBook.app */,
+				04789E9026308C5C00C824AC /* dateBookTests.xctest */,
+				04789E9B26308C5C00C824AC /* dateBookUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		04789E2C262F530F00C824AC /* datebook */ = {
+		04789E7C26308C5A00C824AC /* dateBook */ = {
 			isa = PBXGroup;
 			children = (
-				04789E2D262F530F00C824AC /* AppDelegate.swift */,
-				04789E2F262F530F00C824AC /* SceneDelegate.swift */,
-				04789E31262F530F00C824AC /* ViewController.swift */,
-				04789E33262F530F00C824AC /* Main.storyboard */,
-				04789E36262F531000C824AC /* Assets.xcassets */,
-				04789E38262F531000C824AC /* LaunchScreen.storyboard */,
-				04789E3B262F531000C824AC /* Info.plist */,
+				04789E7D26308C5A00C824AC /* AppDelegate.swift */,
+				04789E7F26308C5A00C824AC /* SceneDelegate.swift */,
+				04789EBB26309D6100C824AC /* CalendarModule */,
+				04789E8326308C5A00C824AC /* Main.storyboard */,
+				04789E8626308C5C00C824AC /* Assets.xcassets */,
+				04789E8826308C5C00C824AC /* LaunchScreen.storyboard */,
+				04789E8B26308C5C00C824AC /* Info.plist */,
 			);
-			path = datebook;
+			path = dateBook;
 			sourceTree = "<group>";
 		};
-		04789E43262F531000C824AC /* datebookTests */ = {
+		04789E9326308C5C00C824AC /* dateBookTests */ = {
 			isa = PBXGroup;
 			children = (
-				04789E44262F531000C824AC /* datebookTests.swift */,
-				04789E46262F531000C824AC /* Info.plist */,
+				04789E9426308C5C00C824AC /* dateBookTests.swift */,
+				04789E9626308C5C00C824AC /* Info.plist */,
 			);
-			path = datebookTests;
+			path = dateBookTests;
 			sourceTree = "<group>";
 		};
-		04789E4E262F531000C824AC /* datebookUITests */ = {
+		04789E9E26308C5C00C824AC /* dateBookUITests */ = {
 			isa = PBXGroup;
 			children = (
-				04789E4F262F531000C824AC /* datebookUITests.swift */,
-				04789E51262F531000C824AC /* Info.plist */,
+				04789E9F26308C5C00C824AC /* dateBookUITests.swift */,
+				04789EA126308C5C00C824AC /* Info.plist */,
 			);
-			path = datebookUITests;
+			path = dateBookUITests;
 			sourceTree = "<group>";
 		};
-		16E40EDEB73FC36A0B5300A4 /* Pods */ = {
+		04789EBB26309D6100C824AC /* CalendarModule */ = {
 			isa = PBXGroup;
 			children = (
-				B67F4DB7F5D74B46E35FF189 /* Pods-datebook.debug.xcconfig */,
-				6695E8460E9102718233DE41 /* Pods-datebook.release.xcconfig */,
-				979C322B63836ABA92F36911 /* Pods-datebook-datebookUITests.debug.xcconfig */,
-				A04F0AA976F43A0337B61F24 /* Pods-datebook-datebookUITests.release.xcconfig */,
-				3B59D7E11159F79FCAC9D54B /* Pods-datebookTests.debug.xcconfig */,
-				A1A227CEAA81503C7CD93909 /* Pods-datebookTests.release.xcconfig */,
+				04789E8126308C5A00C824AC /* CalendarViewController.swift */,
+				04789EBF26309D9100C824AC /* TodoListModel.swift */,
 			);
-			name = Pods;
+			path = CalendarModule;
+			sourceTree = "<group>";
+		};
+		77554A6D4B1747ABE5A7BB9A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8115430AAC9FB07955DB0000 /* Pods-dateBook.debug.xcconfig */,
+				1C8B3B8C6F602055D2ACB417 /* Pods-dateBook.release.xcconfig */,
+				30995F874FA855DBECFD2BC9 /* Pods-dateBook-dateBookUITests.debug.xcconfig */,
+				6722D4F07BFDCC57C3F72A80 /* Pods-dateBook-dateBookUITests.release.xcconfig */,
+				7B53EB31C15360939D68A3D1 /* Pods-dateBookTests.debug.xcconfig */,
+				49BDA08ABBBD3A95989B1ECA /* Pods-dateBookTests.release.xcconfig */,
+			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		45A423E36454B91901D5A377 /* Frameworks */ = {
+		93ED4B82410C288673E70ACE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4548791B283328BA4802F569 /* Pods_datebook.framework */,
-				5E6C2C584AE6C7BF70E5058A /* Pods_datebook_datebookUITests.framework */,
-				FDB628ABF63F41B7EACC8F12 /* Pods_datebookTests.framework */,
+				1DB9968BC88BF936171568C2 /* Pods_dateBook.framework */,
+				51824AE6CAD60AED7F706B34 /* Pods_dateBook_dateBookUITests.framework */,
+				7D46E3288979C384BAE43C5B /* Pods_dateBookTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -172,86 +182,87 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		04789E29262F530F00C824AC /* datebook */ = {
+		04789E7926308C5A00C824AC /* dateBook */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04789E54262F531000C824AC /* Build configuration list for PBXNativeTarget "datebook" */;
+			buildConfigurationList = 04789EA426308C5C00C824AC /* Build configuration list for PBXNativeTarget "dateBook" */;
 			buildPhases = (
-				FF7CAC76DC79C6C12038FFB0 /* [CP] Check Pods Manifest.lock */,
-				04789E26262F530F00C824AC /* Sources */,
-				04789E27262F530F00C824AC /* Frameworks */,
-				04789E28262F530F00C824AC /* Resources */,
+				49A3DF2A2546A0D7C9A3CC2C /* [CP] Check Pods Manifest.lock */,
+				04789E7626308C5A00C824AC /* Sources */,
+				04789E7726308C5A00C824AC /* Frameworks */,
+				04789E7826308C5A00C824AC /* Resources */,
+				6FE9A3D5F714A022BF77DEC3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = datebook;
-			productName = datebook;
-			productReference = 04789E2A262F530F00C824AC /* datebook.app */;
+			name = dateBook;
+			productName = dateBook;
+			productReference = 04789E7A26308C5A00C824AC /* dateBook.app */;
 			productType = "com.apple.product-type.application";
 		};
-		04789E3F262F531000C824AC /* datebookTests */ = {
+		04789E8F26308C5C00C824AC /* dateBookTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04789E57262F531000C824AC /* Build configuration list for PBXNativeTarget "datebookTests" */;
+			buildConfigurationList = 04789EA726308C5C00C824AC /* Build configuration list for PBXNativeTarget "dateBookTests" */;
 			buildPhases = (
-				95C5F07BDA846268B468DB5C /* [CP] Check Pods Manifest.lock */,
-				04789E3C262F531000C824AC /* Sources */,
-				04789E3D262F531000C824AC /* Frameworks */,
-				04789E3E262F531000C824AC /* Resources */,
+				8CD8EC348200534FE63F2022 /* [CP] Check Pods Manifest.lock */,
+				04789E8C26308C5C00C824AC /* Sources */,
+				04789E8D26308C5C00C824AC /* Frameworks */,
+				04789E8E26308C5C00C824AC /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				04789E42262F531000C824AC /* PBXTargetDependency */,
+				04789E9226308C5C00C824AC /* PBXTargetDependency */,
 			);
-			name = datebookTests;
-			productName = datebookTests;
-			productReference = 04789E40262F531000C824AC /* datebookTests.xctest */;
+			name = dateBookTests;
+			productName = dateBookTests;
+			productReference = 04789E9026308C5C00C824AC /* dateBookTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		04789E4A262F531000C824AC /* datebookUITests */ = {
+		04789E9A26308C5C00C824AC /* dateBookUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04789E5A262F531000C824AC /* Build configuration list for PBXNativeTarget "datebookUITests" */;
+			buildConfigurationList = 04789EAA26308C5C00C824AC /* Build configuration list for PBXNativeTarget "dateBookUITests" */;
 			buildPhases = (
-				10FFF8B963EAFC0EF2BAFC29 /* [CP] Check Pods Manifest.lock */,
-				04789E47262F531000C824AC /* Sources */,
-				04789E48262F531000C824AC /* Frameworks */,
-				04789E49262F531000C824AC /* Resources */,
-				41B9A72FA3350E4E56C5E6EA /* [CP] Embed Pods Frameworks */,
+				28291593E4016C6B9307FB0C /* [CP] Check Pods Manifest.lock */,
+				04789E9726308C5C00C824AC /* Sources */,
+				04789E9826308C5C00C824AC /* Frameworks */,
+				04789E9926308C5C00C824AC /* Resources */,
+				4229952EC458C58BEB27A865 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				04789E4D262F531000C824AC /* PBXTargetDependency */,
+				04789E9D26308C5C00C824AC /* PBXTargetDependency */,
 			);
-			name = datebookUITests;
-			productName = datebookUITests;
-			productReference = 04789E4B262F531000C824AC /* datebookUITests.xctest */;
+			name = dateBookUITests;
+			productName = dateBookUITests;
+			productReference = 04789E9B26308C5C00C824AC /* dateBookUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		04789E22262F530F00C824AC /* Project object */ = {
+		04789E7226308C5A00C824AC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
-					04789E29262F530F00C824AC = {
+					04789E7926308C5A00C824AC = {
 						CreatedOnToolsVersion = 12.0.1;
 					};
-					04789E3F262F531000C824AC = {
+					04789E8F26308C5C00C824AC = {
 						CreatedOnToolsVersion = 12.0.1;
-						TestTargetID = 04789E29262F530F00C824AC;
+						TestTargetID = 04789E7926308C5A00C824AC;
 					};
-					04789E4A262F531000C824AC = {
+					04789E9A26308C5C00C824AC = {
 						CreatedOnToolsVersion = 12.0.1;
-						TestTargetID = 04789E29262F530F00C824AC;
+						TestTargetID = 04789E7926308C5A00C824AC;
 					};
 				};
 			};
-			buildConfigurationList = 04789E25262F530F00C824AC /* Build configuration list for PBXProject "datebook" */;
+			buildConfigurationList = 04789E7526308C5A00C824AC /* Build configuration list for PBXProject "dateBook" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -259,37 +270,37 @@
 				en,
 				Base,
 			);
-			mainGroup = 04789E21262F530F00C824AC;
-			productRefGroup = 04789E2B262F530F00C824AC /* Products */;
+			mainGroup = 04789E7126308C5A00C824AC;
+			productRefGroup = 04789E7B26308C5A00C824AC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				04789E29262F530F00C824AC /* datebook */,
-				04789E3F262F531000C824AC /* datebookTests */,
-				04789E4A262F531000C824AC /* datebookUITests */,
+				04789E7926308C5A00C824AC /* dateBook */,
+				04789E8F26308C5C00C824AC /* dateBookTests */,
+				04789E9A26308C5C00C824AC /* dateBookUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		04789E28262F530F00C824AC /* Resources */ = {
+		04789E7826308C5A00C824AC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04789E3A262F531000C824AC /* LaunchScreen.storyboard in Resources */,
-				04789E37262F531000C824AC /* Assets.xcassets in Resources */,
-				04789E35262F530F00C824AC /* Main.storyboard in Resources */,
+				04789E8A26308C5C00C824AC /* LaunchScreen.storyboard in Resources */,
+				04789E8726308C5C00C824AC /* Assets.xcassets in Resources */,
+				04789E8526308C5A00C824AC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		04789E3E262F531000C824AC /* Resources */ = {
+		04789E8E26308C5C00C824AC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		04789E49262F531000C824AC /* Resources */ = {
+		04789E9926308C5C00C824AC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -299,7 +310,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		10FFF8B963EAFC0EF2BAFC29 /* [CP] Check Pods Manifest.lock */ = {
+		28291593E4016C6B9307FB0C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -314,31 +325,31 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-datebook-datebookUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-dateBook-dateBookUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		41B9A72FA3350E4E56C5E6EA /* [CP] Embed Pods Frameworks */ = {
+		4229952EC458C58BEB27A865 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-datebook-datebookUITests/Pods-datebook-datebookUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-dateBook-dateBookUITests/Pods-dateBook-dateBookUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-datebook-datebookUITests/Pods-datebook-datebookUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-dateBook-dateBookUITests/Pods-dateBook-dateBookUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-datebook-datebookUITests/Pods-datebook-datebookUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dateBook-dateBookUITests/Pods-dateBook-dateBookUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		95C5F07BDA846268B468DB5C /* [CP] Check Pods Manifest.lock */ = {
+		49A3DF2A2546A0D7C9A3CC2C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -353,14 +364,31 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-datebookTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-dateBook-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FF7CAC76DC79C6C12038FFB0 /* [CP] Check Pods Manifest.lock */ = {
+		6FE9A3D5F714A022BF77DEC3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dateBook/Pods-dateBook-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dateBook/Pods-dateBook-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dateBook/Pods-dateBook-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8CD8EC348200534FE63F2022 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -375,7 +403,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-datebook-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-dateBookTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -385,60 +413,61 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		04789E26262F530F00C824AC /* Sources */ = {
+		04789E7626308C5A00C824AC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04789E32262F530F00C824AC /* ViewController.swift in Sources */,
-				04789E2E262F530F00C824AC /* AppDelegate.swift in Sources */,
-				04789E30262F530F00C824AC /* SceneDelegate.swift in Sources */,
+				04789E8226308C5A00C824AC /* CalendarViewController.swift in Sources */,
+				04789E7E26308C5A00C824AC /* AppDelegate.swift in Sources */,
+				04789E8026308C5A00C824AC /* SceneDelegate.swift in Sources */,
+				04789EC026309D9100C824AC /* TodoListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		04789E3C262F531000C824AC /* Sources */ = {
+		04789E8C26308C5C00C824AC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04789E45262F531000C824AC /* datebookTests.swift in Sources */,
+				04789E9526308C5C00C824AC /* dateBookTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		04789E47262F531000C824AC /* Sources */ = {
+		04789E9726308C5C00C824AC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04789E50262F531000C824AC /* datebookUITests.swift in Sources */,
+				04789EA026308C5C00C824AC /* dateBookUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		04789E42262F531000C824AC /* PBXTargetDependency */ = {
+		04789E9226308C5C00C824AC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 04789E29262F530F00C824AC /* datebook */;
-			targetProxy = 04789E41262F531000C824AC /* PBXContainerItemProxy */;
+			target = 04789E7926308C5A00C824AC /* dateBook */;
+			targetProxy = 04789E9126308C5C00C824AC /* PBXContainerItemProxy */;
 		};
-		04789E4D262F531000C824AC /* PBXTargetDependency */ = {
+		04789E9D26308C5C00C824AC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 04789E29262F530F00C824AC /* datebook */;
-			targetProxy = 04789E4C262F531000C824AC /* PBXContainerItemProxy */;
+			target = 04789E7926308C5A00C824AC /* dateBook */;
+			targetProxy = 04789E9C26308C5C00C824AC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		04789E33262F530F00C824AC /* Main.storyboard */ = {
+		04789E8326308C5A00C824AC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				04789E34262F530F00C824AC /* Base */,
+				04789E8426308C5A00C824AC /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		04789E38262F531000C824AC /* LaunchScreen.storyboard */ = {
+		04789E8826308C5C00C824AC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				04789E39262F531000C824AC /* Base */,
+				04789E8926308C5C00C824AC /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -446,7 +475,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		04789E52262F531000C824AC /* Debug */ = {
+		04789EA226308C5C00C824AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -507,7 +536,7 @@
 			};
 			name = Debug;
 		};
-		04789E53262F531000C824AC /* Release */ = {
+		04789EA326308C5C00C824AC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -562,168 +591,168 @@
 			};
 			name = Release;
 		};
-		04789E55262F531000C824AC /* Debug */ = {
+		04789EA526308C5C00C824AC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B67F4DB7F5D74B46E35FF189 /* Pods-datebook.debug.xcconfig */;
+			baseConfigurationReference = 8115430AAC9FB07955DB0000 /* Pods-dateBook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = datebook/Info.plist;
+				INFOPLIST_FILE = dateBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pasha.datebook;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pasha.dateBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		04789E56262F531000C824AC /* Release */ = {
+		04789EA626308C5C00C824AC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6695E8460E9102718233DE41 /* Pods-datebook.release.xcconfig */;
+			baseConfigurationReference = 1C8B3B8C6F602055D2ACB417 /* Pods-dateBook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = datebook/Info.plist;
+				INFOPLIST_FILE = dateBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pasha.datebook;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pasha.dateBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		04789E58262F531000C824AC /* Debug */ = {
+		04789EA826308C5C00C824AC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B59D7E11159F79FCAC9D54B /* Pods-datebookTests.debug.xcconfig */;
+			baseConfigurationReference = 7B53EB31C15360939D68A3D1 /* Pods-dateBookTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = datebookTests/Info.plist;
+				INFOPLIST_FILE = dateBookTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pasha.datebookTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pasha.dateBookTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/datebook.app/datebook";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/dateBook.app/dateBook";
 			};
 			name = Debug;
 		};
-		04789E59262F531000C824AC /* Release */ = {
+		04789EA926308C5C00C824AC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1A227CEAA81503C7CD93909 /* Pods-datebookTests.release.xcconfig */;
+			baseConfigurationReference = 49BDA08ABBBD3A95989B1ECA /* Pods-dateBookTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = datebookTests/Info.plist;
+				INFOPLIST_FILE = dateBookTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pasha.datebookTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pasha.dateBookTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/datebook.app/datebook";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/dateBook.app/dateBook";
 			};
 			name = Release;
 		};
-		04789E5B262F531000C824AC /* Debug */ = {
+		04789EAB26308C5C00C824AC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 979C322B63836ABA92F36911 /* Pods-datebook-datebookUITests.debug.xcconfig */;
+			baseConfigurationReference = 30995F874FA855DBECFD2BC9 /* Pods-dateBook-dateBookUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = datebookUITests/Info.plist;
+				INFOPLIST_FILE = dateBookUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pasha.datebookUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pasha.dateBookUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = datebook;
+				TEST_TARGET_NAME = dateBook;
 			};
 			name = Debug;
 		};
-		04789E5C262F531000C824AC /* Release */ = {
+		04789EAC26308C5C00C824AC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A04F0AA976F43A0337B61F24 /* Pods-datebook-datebookUITests.release.xcconfig */;
+			baseConfigurationReference = 6722D4F07BFDCC57C3F72A80 /* Pods-dateBook-dateBookUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = datebookUITests/Info.plist;
+				INFOPLIST_FILE = dateBookUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.pasha.datebookUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pasha.dateBookUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = datebook;
+				TEST_TARGET_NAME = dateBook;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		04789E25262F530F00C824AC /* Build configuration list for PBXProject "datebook" */ = {
+		04789E7526308C5A00C824AC /* Build configuration list for PBXProject "dateBook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				04789E52262F531000C824AC /* Debug */,
-				04789E53262F531000C824AC /* Release */,
+				04789EA226308C5C00C824AC /* Debug */,
+				04789EA326308C5C00C824AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04789E54262F531000C824AC /* Build configuration list for PBXNativeTarget "datebook" */ = {
+		04789EA426308C5C00C824AC /* Build configuration list for PBXNativeTarget "dateBook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				04789E55262F531000C824AC /* Debug */,
-				04789E56262F531000C824AC /* Release */,
+				04789EA526308C5C00C824AC /* Debug */,
+				04789EA626308C5C00C824AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04789E57262F531000C824AC /* Build configuration list for PBXNativeTarget "datebookTests" */ = {
+		04789EA726308C5C00C824AC /* Build configuration list for PBXNativeTarget "dateBookTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				04789E58262F531000C824AC /* Debug */,
-				04789E59262F531000C824AC /* Release */,
+				04789EA826308C5C00C824AC /* Debug */,
+				04789EA926308C5C00C824AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04789E5A262F531000C824AC /* Build configuration list for PBXNativeTarget "datebookUITests" */ = {
+		04789EAA26308C5C00C824AC /* Build configuration list for PBXNativeTarget "dateBookUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				04789E5B262F531000C824AC /* Debug */,
-				04789E5C262F531000C824AC /* Release */,
+				04789EAB26308C5C00C824AC /* Debug */,
+				04789EAC26308C5C00C824AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 04789E22262F530F00C824AC /* Project object */;
+	rootObject = 04789E7226308C5A00C824AC /* Project object */;
 }

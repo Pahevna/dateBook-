@@ -1,13 +1,13 @@
 //
-//  datebookUITests.swift
-//  datebookUITests
+//  dateBookUITests.swift
+//  dateBookUITests
 //
-//  Created by mac on 20.04.2021.
+//  Created by mac on 21.04.2021.
 //
 
 import XCTest
 
-class datebookUITests: XCTestCase {
+class dateBookUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
