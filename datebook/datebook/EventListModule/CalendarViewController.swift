@@ -5,10 +5,12 @@
 //  Created by mac on 21.04.2021.
 //
 
-import UIKit
+import UIKit    
 import FSCalendar
 
 class CalendarViewController: UIViewController {
+    
+    @IBOutlet private weak var tableView: UITableView!
     
     private var calendar: FSCalendar!
 

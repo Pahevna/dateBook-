@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0465B3F126340B4F00C72A03 /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = 0465B3F026340B4F00C72A03 /* events.json */; };
+		0465B41C26340F1900C72A03 /* JsonEventsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465B41B26340F1900C72A03 /* JsonEventsService.swift */; };
+		0465B43426345E3600C72A03 /* EventListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465B43326345E3600C72A03 /* EventListPresenter.swift */; };
 		04789E7E26308C5A00C824AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04789E7D26308C5A00C824AC /* AppDelegate.swift */; };
 		04789E8026308C5A00C824AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04789E7F26308C5A00C824AC /* SceneDelegate.swift */; };
 		04789E8226308C5A00C824AC /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04789E8126308C5A00C824AC /* CalendarViewController.swift */; };
@@ -15,7 +18,7 @@
 		04789E8A26308C5C00C824AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04789E8826308C5C00C824AC /* LaunchScreen.storyboard */; };
 		04789E9526308C5C00C824AC /* dateBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04789E9426308C5C00C824AC /* dateBookTests.swift */; };
 		04789EA026308C5C00C824AC /* dateBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04789E9F26308C5C00C824AC /* dateBookUITests.swift */; };
-		04789EC026309D9100C824AC /* TodoListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04789EBF26309D9100C824AC /* TodoListModel.swift */; };
+		04789EC026309D9100C824AC /* EventListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04789EBF26309D9100C824AC /* EventListModel.swift */; };
 		45929BE137AC0A452EFE65D0 /* Pods_dateBook_dateBookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51824AE6CAD60AED7F706B34 /* Pods_dateBook_dateBookUITests.framework */; };
 		C8D089AB013AF5DF26E9DB38 /* Pods_dateBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB9968BC88BF936171568C2 /* Pods_dateBook.framework */; };
 		E4BBE16EBEC5F60029AE79C9 /* Pods_dateBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D46E3288979C384BAE43C5B /* Pods_dateBookTests.framework */; };
@@ -39,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0465B3F026340B4F00C72A03 /* events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = events.json; sourceTree = SOURCE_ROOT; };
+		0465B41B26340F1900C72A03 /* JsonEventsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JsonEventsService.swift; path = datebook/EventListModule/JsonEventsService.swift; sourceTree = SOURCE_ROOT; };
+		0465B43326345E3600C72A03 /* EventListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventListPresenter.swift; path = datebook/EventListModule/EventListPresenter.swift; sourceTree = SOURCE_ROOT; };
 		04789E7A26308C5A00C824AC /* dateBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dateBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04789E7D26308C5A00C824AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04789E7F26308C5A00C824AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,7 +59,7 @@
 		04789E9B26308C5C00C824AC /* dateBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dateBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04789E9F26308C5C00C824AC /* dateBookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateBookUITests.swift; sourceTree = "<group>"; };
 		04789EA126308C5C00C824AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04789EBF26309D9100C824AC /* TodoListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListModel.swift; sourceTree = "<group>"; };
+		04789EBF26309D9100C824AC /* EventListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListModel.swift; sourceTree = "<group>"; };
 		1C8B3B8C6F602055D2ACB417 /* Pods-dateBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dateBook.release.xcconfig"; path = "Target Support Files/Pods-dateBook/Pods-dateBook.release.xcconfig"; sourceTree = "<group>"; };
 		1DB9968BC88BF936171568C2 /* Pods_dateBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dateBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30995F874FA855DBECFD2BC9 /* Pods-dateBook-dateBookUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dateBook-dateBookUITests.debug.xcconfig"; path = "Target Support Files/Pods-dateBook-dateBookUITests/Pods-dateBook-dateBookUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -120,7 +126,7 @@
 			children = (
 				04789E7D26308C5A00C824AC /* AppDelegate.swift */,
 				04789E7F26308C5A00C824AC /* SceneDelegate.swift */,
-				04789EBB26309D6100C824AC /* CalendarModule */,
+				04789EBB26309D6100C824AC /* EventListModule */,
 				04789E8326308C5A00C824AC /* Main.storyboard */,
 				04789E8626308C5C00C824AC /* Assets.xcassets */,
 				04789E8826308C5C00C824AC /* LaunchScreen.storyboard */,
@@ -147,13 +153,16 @@
 			path = dateBookUITests;
 			sourceTree = "<group>";
 		};
-		04789EBB26309D6100C824AC /* CalendarModule */ = {
+		04789EBB26309D6100C824AC /* EventListModule */ = {
 			isa = PBXGroup;
 			children = (
 				04789E8126308C5A00C824AC /* CalendarViewController.swift */,
-				04789EBF26309D9100C824AC /* TodoListModel.swift */,
+				04789EBF26309D9100C824AC /* EventListModel.swift */,
+				0465B43326345E3600C72A03 /* EventListPresenter.swift */,
+				0465B41B26340F1900C72A03 /* JsonEventsService.swift */,
+				0465B3F026340B4F00C72A03 /* events.json */,
 			);
-			path = CalendarModule;
+			path = EventListModule;
 			sourceTree = "<group>";
 		};
 		77554A6D4B1747ABE5A7BB9A /* Pods */ = {
@@ -287,6 +296,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0465B3F126340B4F00C72A03 /* events.json in Resources */,
 				04789E8A26308C5C00C824AC /* LaunchScreen.storyboard in Resources */,
 				04789E8726308C5C00C824AC /* Assets.xcassets in Resources */,
 				04789E8526308C5A00C824AC /* Main.storyboard in Resources */,
@@ -418,9 +428,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				04789E8226308C5A00C824AC /* CalendarViewController.swift in Sources */,
+				0465B41C26340F1900C72A03 /* JsonEventsService.swift in Sources */,
 				04789E7E26308C5A00C824AC /* AppDelegate.swift in Sources */,
 				04789E8026308C5A00C824AC /* SceneDelegate.swift in Sources */,
-				04789EC026309D9100C824AC /* TodoListModel.swift in Sources */,
+				04789EC026309D9100C824AC /* EventListModel.swift in Sources */,
+				0465B43426345E3600C72A03 /* EventListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
