@@ -20,6 +20,8 @@ class CalendarViewController: UIViewController {
         super.viewDidLoad()
         
         setupAndAddCalendar()
+        setupTableView()
+        eventListPresenter?.getEvents()
     }
     
     private func setupAndAddCalendar() {
@@ -46,15 +48,36 @@ class CalendarViewController: UIViewController {
         view.addSubview(calendar)
     }
     
+    private func setupTableView() {
+        tableView.dataSource = self
+        tableView.register(EventListTableViewCell.self, forCellReuseIdentifier:
+                            EventListTableViewCell.identifier)
+    }
 }
 
 extension CalendarViewController: FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        eventListPresenter?.getEvents()
     }
 }
 
 extension CalendarViewController: FSCalendarDataSource {
     func minimumDate(for calendar: FSCalendar) -> Date {
         return Date()
+    }
+}
+
+extension CalendarViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return eventListPresenter?.events?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: EventListTableViewCell.identifier,
+                                                 for: indexPath) as! EventListTableViewCell
+        let cellData = eventListPresenter?.events?[indexPath.row]
+
+        return cell
+
     }
 }
