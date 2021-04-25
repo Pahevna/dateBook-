@@ -81,3 +81,11 @@ extension CalendarViewController: UITableViewDataSource {
 
     }
 }
+
+extension CalendarViewController: EventListViewProtocol {
+    func succes() {
+    }
+    
+    func failure(error: Error) {
+    }
+}
