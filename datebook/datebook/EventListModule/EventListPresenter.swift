@@ -13,24 +13,23 @@ protocol EventListViewProtocol: class {
 }
 
 protocol EventListPresenterProtocol: class {
-    init(view: EventListViewProtocol, jsonEventsSetvice: EventServiceProtocol)
     func getEvents()
-    var events: [EventListModel]? { get set }
+    var events: [EventListModel]? { get }
 }
 
 class EventListPresenter: EventListPresenterProtocol {
     weak var view: EventListViewProtocol?
-    let jsonEventsSetvice: EventServiceProtocol!
+    private let jsonEventsService: EventService
     var events: [EventListModel]?
     
-    required init(view: EventListViewProtocol, jsonEventsSetvice: EventServiceProtocol) {
+    required init(view: EventListViewProtocol, jsonEventsService: EventService) {
         self.view = view
-        self.jsonEventsSetvice = jsonEventsSetvice
+        self.jsonEventsService = jsonEventsService
         getEvents()
     }
     
     func getEvents() {
-        jsonEventsSetvice.getEvents { [weak self] result in
+        jsonEventsService.getEvents { [weak self] result in
             guard let self = self else { return }
             
             switch result {

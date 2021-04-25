@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol EventServiceProtocol {
+protocol EventService {
     func getEvents(completion: @escaping (Result<[EventListModel]?, Error>) -> Void)
 }
 
-class JsonEventsService: EventServiceProtocol {
+class JsonEventsService: EventService {
     func getEvents(completion: @escaping (Result<[EventListModel]?, Error>) -> Void) {
         guard let path = Bundle.main.path(forResource: "events", ofType: "json") else { return }
         let url = URL(fileURLWithPath: path)

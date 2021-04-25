@@ -43,7 +43,7 @@
 
 /* Begin PBXFileReference section */
 		0465B3F026340B4F00C72A03 /* events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = events.json; sourceTree = SOURCE_ROOT; };
-		0465B41B26340F1900C72A03 /* JsonEventsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JsonEventsService.swift; path = datebook/EventListModule/JsonEventsService.swift; sourceTree = SOURCE_ROOT; };
+		0465B41B26340F1900C72A03 /* JsonEventsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JsonEventsService.swift; path = datebook/ServiceLayer/JsonEventsService.swift; sourceTree = SOURCE_ROOT; };
 		0465B43326345E3600C72A03 /* EventListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventListPresenter.swift; path = datebook/EventListModule/EventListPresenter.swift; sourceTree = SOURCE_ROOT; };
 		04789E7A26308C5A00C824AC /* dateBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dateBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04789E7D26308C5A00C824AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +127,7 @@
 				04789E7D26308C5A00C824AC /* AppDelegate.swift */,
 				04789E7F26308C5A00C824AC /* SceneDelegate.swift */,
 				04789EBB26309D6100C824AC /* EventListModule */,
+				04B6E894263577F6005BAE8A /* ServiceLayer */,
 				04789E8326308C5A00C824AC /* Main.storyboard */,
 				04789E8626308C5C00C824AC /* Assets.xcassets */,
 				04789E8826308C5C00C824AC /* LaunchScreen.storyboard */,
@@ -159,10 +160,17 @@
 				04789E8126308C5A00C824AC /* CalendarViewController.swift */,
 				04789EBF26309D9100C824AC /* EventListModel.swift */,
 				0465B43326345E3600C72A03 /* EventListPresenter.swift */,
-				0465B41B26340F1900C72A03 /* JsonEventsService.swift */,
 				0465B3F026340B4F00C72A03 /* events.json */,
 			);
 			path = EventListModule;
+			sourceTree = "<group>";
+		};
+		04B6E894263577F6005BAE8A /* ServiceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				0465B41B26340F1900C72A03 /* JsonEventsService.swift */,
+			);
+			path = ServiceLayer;
 			sourceTree = "<group>";
 		};
 		77554A6D4B1747ABE5A7BB9A /* Pods */ = {
@@ -271,7 +279,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 04789E7526308C5A00C824AC /* Build configuration list for PBXProject "dateBook" */;
+			buildConfigurationList = 04789E7526308C5A00C824AC /* Build configuration list for PBXProject "datebook" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -728,7 +736,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		04789E7526308C5A00C824AC /* Build configuration list for PBXProject "dateBook" */ = {
+		04789E7526308C5A00C824AC /* Build configuration list for PBXProject "datebook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				04789EA226308C5C00C824AC /* Debug */,

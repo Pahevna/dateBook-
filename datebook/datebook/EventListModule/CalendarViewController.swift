@@ -10,6 +10,8 @@ import FSCalendar
 
 class CalendarViewController: UIViewController {
     
+    var eventListPresenter: EventListPresenterProtocol? 
+    
     @IBOutlet private weak var tableView: UITableView!
     
     private var calendar: FSCalendar!
