@@ -22,6 +22,7 @@ class JsonEventsService: EventService {
             completion(.success(event))
         } catch {
             completion(.failure(error))
+            print(error.localizedDescription)
         }
     }
 }

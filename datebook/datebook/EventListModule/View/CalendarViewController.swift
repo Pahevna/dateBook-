@@ -10,7 +10,7 @@ import FSCalendar
 
 class CalendarViewController: UIViewController {
     
-    var eventListPresenter: EventListPresenterProtocol? 
+    var presenter: EventListPresenterProtocol?
     
     @IBOutlet private weak var tableView: UITableView!
     
@@ -21,13 +21,11 @@ class CalendarViewController: UIViewController {
         
         setupAndAddCalendar()
         setupTableView()
-        eventListPresenter?.getEvents()
     }
     
     private func setupAndAddCalendar() {
         calendar = FSCalendar(frame: CGRect(x: 0.0, y: 40.0, width: view.frame.size.width,
                                             height: 300.0))
-        
         view.addSubview(calendar)
         calendar.scrollDirection = .vertical
         
@@ -57,7 +55,7 @@ class CalendarViewController: UIViewController {
 
 extension CalendarViewController: FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        eventListPresenter?.getEvents()
+        presenter?.getEvents()
     }
 }
 
@@ -69,13 +67,13 @@ extension CalendarViewController: FSCalendarDataSource {
 
 extension CalendarViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return eventListPresenter?.events?.count ?? 0
+        return presenter?.events?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: EventListTableViewCell.identifier,
                                                  for: indexPath) as! EventListTableViewCell
-        let cellData = eventListPresenter?.events?[indexPath.row]
+        let cellData = presenter?.events?[indexPath.row]
 
         return cell
 

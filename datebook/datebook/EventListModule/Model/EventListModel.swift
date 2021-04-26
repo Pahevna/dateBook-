@@ -9,8 +9,8 @@ import Foundation
 
 struct EventListModel: Decodable {
     let id: Int
-    let dataStart: Date
-    let dataEnd: Date
+    let dataStart: Int
+    let dataEnd: Int
     let name: String
     let description: String
 }
