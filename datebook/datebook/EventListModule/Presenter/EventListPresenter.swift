@@ -35,7 +35,6 @@ class EventListPresenter: EventListPresenterProtocol {
             switch result {
             case.success(let events):
                 self.events = events
-                print(events)
             case.failure(let error):
                 print(error)
             }

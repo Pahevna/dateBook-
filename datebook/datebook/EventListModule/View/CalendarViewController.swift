@@ -24,7 +24,7 @@ class CalendarViewController: UIViewController {
     }
     
     private func setupAndAddCalendar() {
-        calendar = FSCalendar(frame: CGRect(x: 0.0, y: 40.0, width: view.frame.size.width,
+        calendar = FSCalendar(frame: CGRect(x: 0.0, y: 60.0, width: view.frame.size.width,
                                             height: 300.0))
         view.addSubview(calendar)
         calendar.scrollDirection = .vertical
@@ -82,6 +82,7 @@ extension CalendarViewController: UITableViewDataSource {
 
 extension CalendarViewController: EventListViewProtocol {
     func succes() {
+        tableView.reloadData() 
     }
     
     func failure(error: Error) {

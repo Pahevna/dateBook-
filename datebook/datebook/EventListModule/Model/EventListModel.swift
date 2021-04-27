@@ -13,5 +13,13 @@ struct EventListModel: Decodable {
     let dataEnd: Int
     let name: String
     let description: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case id
+        case dataStart = "data_start"
+        case dataEnd = "data_end"
+        case name
+        case description 
+    }
 }
 
