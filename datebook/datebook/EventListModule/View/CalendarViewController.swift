@@ -74,6 +74,9 @@ extension CalendarViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: EventListTableViewCell.identifier,
                                                  for: indexPath) as! EventListTableViewCell
         let cellData = presenter?.events?[indexPath.row]
+        let dataStartString = cellData?.dataStart.convertFromTimeStampToString(date: cellData?.dataStart ?? 0)
+        let dataEndString = cellData?.dataEnd.convertFromTimeStampToString(date: cellData?.dataEnd ?? 0)
+        cell.setDataToCell(data: dataStartString ?? "data", event: cellData?.name ?? "event", controller: self)
 
         return cell
 
