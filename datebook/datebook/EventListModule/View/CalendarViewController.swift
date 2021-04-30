@@ -48,8 +48,9 @@ class CalendarViewController: UIViewController {
     
     private func setupTableView() {
         tableView.dataSource = self
-        tableView.register(EventListTableViewCell.self, forCellReuseIdentifier:
-                            EventListTableViewCell.identifier)
+        
+        let nib = UINib(nibName: "ListOfEventsTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: ListOfEventsTableViewCell.identifier)
     }
 }
 
@@ -71,8 +72,7 @@ extension CalendarViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: EventListTableViewCell.identifier,
-                                                 for: indexPath) as! EventListTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ListOfEventsTableViewCell.identifier, for: indexPath) as! ListOfEventsTableViewCell
         let cellData = presenter?.events?[indexPath.row]
         let dataStartString = cellData?.dataStart.convertFromTimeStampToString(date: cellData?.dataStart ?? 0)
         let dataEndString = cellData?.dataEnd.convertFromTimeStampToString(date: cellData?.dataEnd ?? 0)

@@ -1,19 +1,19 @@
 //
-//  EventListTableViewCell.swift
+//  ListOfEventsTableViewCell.swift
 //  dateBook
 //
-//  Created by mac on 25.04.2021.
+//  Created by mac on 30.04.2021.
 //
 
 import UIKit
 
-class EventListTableViewCell: UITableViewCell {
-    
+class ListOfEventsTableViewCell: UITableViewCell {
+
     static let identifier = "cell"
     var controller: CalendarViewController?
     
-    @IBOutlet var dataLabel: UILabel!
-    @IBOutlet var eventLabel: UILabel!
+    @IBOutlet weak var eventLabel: UILabel?
+    @IBOutlet weak var dateLabel: UILabel?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,7 +24,7 @@ class EventListTableViewCell: UITableViewCell {
     }
     
     public func setDataToCell(data: String, event: String, controller: CalendarViewController) {
-        self.dataLabel?.text = data
+        self.dateLabel?.text = data
         self.eventLabel?.text = event
         self.controller = controller
     }
