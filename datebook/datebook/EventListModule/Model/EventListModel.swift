@@ -9,15 +9,15 @@ import Foundation
 
 struct EventListModel: Decodable {
     let id: Int
-    let dataStart: Double
-    let dataEnd: Double
+    let dateStart: Double
+    let dateEnd: Double
     let name: String
     let description: String
     
     private enum CodingKeys: String, CodingKey {
         case id
-        case dataStart = "data_start"
-        case dataEnd = "data_end"
+        case dateStart = "date_start"
+        case dateEnd = "date_end"
         case name
         case description 
     }

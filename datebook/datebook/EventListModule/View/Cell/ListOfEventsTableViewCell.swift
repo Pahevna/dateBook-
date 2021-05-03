@@ -10,10 +10,10 @@ import UIKit
 class ListOfEventsTableViewCell: UITableViewCell {
 
     static let identifier = "cell"
-    var controller: CalendarViewController?
     
     @IBOutlet weak var eventLabel: UILabel?
-    @IBOutlet weak var dateLabel: UILabel?
+    @IBOutlet weak var dateStartLabel: UILabel?
+    @IBOutlet weak var dateEndLabel: UILabel?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,9 +23,12 @@ class ListOfEventsTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    public func setDataToCell(data: String, event: String, controller: CalendarViewController) {
-        self.dateLabel?.text = data
+    public func setDataToCell(dateStart: Double, dateEnd: Double, event: String) {
+        let dateStartString = dateStart.convertFromTimeStampToString(date: dateStart)
+        let dateEndString = dateEnd.convertFromTimeStampToString(date: dateEnd)
+        
+        self.dateStartLabel?.text = dateStartString
+        self.dateEndLabel?.text = dateEndString
         self.eventLabel?.text = event
-        self.controller = controller
     }
 }

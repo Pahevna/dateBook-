@@ -10,7 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListOfEventsTableViewCell" customModule="dateBook" customModuleProvider="target">
             <connections>
-                <outlet property="dateLabel" destination="ufg-dH-eQY" id="2xL-9U-K8g"/>
+                <outlet property="dateEndLabel" destination="UUs-Oh-ae3" id="R5I-op-STg"/>
+                <outlet property="dateStartLabel" destination="ufg-dH-eQY" id="2xL-9U-K8g"/>
                 <outlet property="eventLabel" destination="8V4-MA-LMV" id="s3A-ir-O1O"/>
             </connections>
         </placeholder>
@@ -25,14 +26,26 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fnQ-H9-K5C">
                         <rect key="frame" x="5" y="5" width="310" height="34"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufg-dH-eQY">
-                                <rect key="frame" x="5" y="5" width="155" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DateStart" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufg-dH-eQY">
+                                <rect key="frame" x="5" y="5" width="80" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="vfs-NX-0fR"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8V4-MA-LMV">
-                                <rect key="frame" x="165" y="8" width="140" height="21"/>
+                                <rect key="frame" x="190" y="5" width="115" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DateEnd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUs-Oh-ae3">
+                                <rect key="frame" x="90" y="5" width="80" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="qTQ-3J-7Ot"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -40,12 +53,15 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="UUs-Oh-ae3" firstAttribute="leading" secondItem="ufg-dH-eQY" secondAttribute="trailing" constant="5" id="2uk-8G-u5L"/>
                             <constraint firstAttribute="trailing" secondItem="8V4-MA-LMV" secondAttribute="trailing" constant="5" id="8c5-oo-BtJ"/>
+                            <constraint firstItem="8V4-MA-LMV" firstAttribute="leading" secondItem="UUs-Oh-ae3" secondAttribute="trailing" constant="20" id="Al8-yj-V2r"/>
                             <constraint firstItem="ufg-dH-eQY" firstAttribute="top" secondItem="fnQ-H9-K5C" secondAttribute="top" constant="5" id="C8v-9g-HSe"/>
                             <constraint firstAttribute="bottom" secondItem="8V4-MA-LMV" secondAttribute="bottom" constant="5" id="GIk-7Y-0WO"/>
+                            <constraint firstAttribute="bottom" secondItem="UUs-Oh-ae3" secondAttribute="bottom" constant="5" id="I8l-Sy-mow"/>
                             <constraint firstAttribute="bottom" secondItem="ufg-dH-eQY" secondAttribute="bottom" constant="5" id="N9G-NM-CZz"/>
-                            <constraint firstItem="8V4-MA-LMV" firstAttribute="leading" secondItem="ufg-dH-eQY" secondAttribute="trailing" constant="5" id="bNQ-dH-O9P"/>
-                            <constraint firstAttribute="trailing" secondItem="ufg-dH-eQY" secondAttribute="trailing" constant="150" id="eEC-0A-fnt"/>
+                            <constraint firstItem="UUs-Oh-ae3" firstAttribute="top" secondItem="fnQ-H9-K5C" secondAttribute="top" constant="5" id="On2-tI-Anl"/>
+                            <constraint firstItem="8V4-MA-LMV" firstAttribute="top" secondItem="fnQ-H9-K5C" secondAttribute="top" constant="5" id="fWo-Dg-S2B"/>
                             <constraint firstItem="ufg-dH-eQY" firstAttribute="leading" secondItem="fnQ-H9-K5C" secondAttribute="leading" constant="5" id="x1i-yR-Nsw"/>
                         </constraints>
                     </view>
