@@ -23,12 +23,9 @@ class ListOfEventsTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    public func setDataToCell(dateStart: Double, dateEnd: Double, event: String) {
-        let dateStartString = dateStart.convertFromTimeStampToString(date: dateStart)
-        let dateEndString = dateEnd.convertFromTimeStampToString(date: dateEnd)
-        
-        self.dateStartLabel?.text = dateStartString
-        self.dateEndLabel?.text = dateEndString
-        self.eventLabel?.text = event
+    func configureCell(event: EventListModel) {
+        eventLabel?.text = event.name
+        dateStartLabel?.text = event.dateStart.convertFromTimeStampToString(date: event.dateStart)
+        dateEndLabel?.text = event.dateEnd.convertFromTimeStampToString(date: event.dateEnd)
     }
 }

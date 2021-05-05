@@ -8,8 +8,7 @@
 import Foundation
 
 protocol EventListViewProtocol: class {
-    func succes()
-    func failure(error: Error)
+    func set(events: [EventListModel]?)
 }
 
 protocol EventListPresenterProtocol: class {
@@ -35,9 +34,18 @@ class EventListPresenter: EventListPresenterProtocol {
             switch result {
             case.success(let events):
                 self.events = events
+                self.view?.set(events: events)
             case.failure(let error):
                 print(error)
             }
+        }
+    }
+    
+    func filterEvents() {
+        let currentDate = Data()
+        
+        if let filteredEvents = events?.filter({$0.dateEnd == currentDate }) {
+            
         }
     }
 }

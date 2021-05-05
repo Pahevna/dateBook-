@@ -19,13 +19,12 @@ class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupAndAddCalendar()
+        configureCalendar()
         setupTableView()
     }
     
-    private func setupAndAddCalendar() {
-        calendar = FSCalendar(frame: CGRect(x: 0.0, y: 60.0, width: view.frame.size.width,
-                                            height: 300.0))
+    private func configureCalendar() {
+        calendar = FSCalendar(frame: CGRect(x: 0.0, y: 60.0, width: view.frame.size.width, height: 300.0))
         view.addSubview(calendar)
         calendar.scrollDirection = .vertical
         
@@ -72,19 +71,14 @@ extension CalendarViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ListOfEventsTableViewCell.identifier, for: indexPath) as! ListOfEventsTableViewCell
-        let cellData = presenter?.events?[indexPath.row]
-        cell.setDataToCell(dateStart: cellData?.dateStart ?? 0, dateEnd: cellData?.dateEnd ?? 0, event: cellData?.name ?? "")
-
+        guard let cellData = presenter?.events?[indexPath.row] else { fatalError() }
+        cell.configureCell(event: cellData)
+    
         return cell
-
     }
 }
 
 extension CalendarViewController: EventListViewProtocol {
-    func succes() {
-        tableView.reloadData() 
-    }
-    
-    func failure(error: Error) {
+    func set(events: [EventListModel]?) {
     }
 }
