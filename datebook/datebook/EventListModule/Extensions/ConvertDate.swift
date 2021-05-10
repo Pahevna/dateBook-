@@ -20,3 +20,15 @@ extension Double {
         return dateString
     }
 }
+
+extension Date {
+    func convertFromDateToString(date: Date) -> String {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh-mm a"
+        let today = Date()
+        let dateString = dateFormatter.string(from: today)
+        
+        return dateString
+    }
+}

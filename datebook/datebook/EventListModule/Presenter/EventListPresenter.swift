@@ -20,7 +20,8 @@ class EventListPresenter: EventListPresenterProtocol {
     weak var view: EventListViewProtocol?
     private let jsonEventsService: EventService
     var events: [EventListModel]?
-    
+    let selectedDate = Date()
+  
     required init(view: EventListViewProtocol, jsonEventsService: EventService) {
         self.view = view
         self.jsonEventsService = jsonEventsService
@@ -28,7 +29,7 @@ class EventListPresenter: EventListPresenterProtocol {
     }
     
     func getEvents() {
-        jsonEventsService.getEvents { [weak self] result in
+        jsonEventsService.getEvents(for: selectedDate) { [weak self] result in
             guard let self = self else { return }
             
             switch result {
@@ -42,10 +43,9 @@ class EventListPresenter: EventListPresenterProtocol {
     }
     
     func filterEvents() {
-        let currentDate = Data()
         
-        if let filteredEvents = events?.filter({$0.dateEnd == currentDate }) {
-            
+        if let filteredEvents = events?.filter({$0.dateEnd.convertFromTimeStampToString(date: $0.dateEnd) == selectedDate.convertFromDateToString(date: selectedDate) }) {
+            events = filteredEvents
         }
     }
 }
