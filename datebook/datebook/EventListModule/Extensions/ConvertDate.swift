@@ -9,9 +9,8 @@ import Foundation
 
 extension Double {
     func convertFromTimeStampToString(date: Double) -> String {
-        
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "hh-mm a"
+        dateFormatter.dateFormat = "hh:mm"
         let timeStamp = Date().timeIntervalSince1970
         let myTimeInterval = TimeInterval(timeStamp)
         let time = Date(timeIntervalSince1970: TimeInterval(myTimeInterval))
@@ -23,9 +22,8 @@ extension Double {
 
 extension Date {
     func convertFromDateToString(date: Date) -> String {
-        
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "hh-mm a"
+        dateFormatter.dateFormat = "hh:mm"
         let today = Date()
         let dateString = dateFormatter.string(from: today)
         

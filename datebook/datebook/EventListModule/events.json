@@ -2,7 +2,7 @@
 [
     {
         "id" : 1,
-        "date_start" : 147680000,
+        "date_start" : 14768234553,
         "date_end" : 147610000,
         "name" : "Sport",
         "description" : "playing football on the street"
@@ -25,7 +25,7 @@
         "id" : 4,
         "date_start" : 107700000,
         "date_end" : 107600000,
-        "name" : "Self-developmen",
+        "name" : "Self-development",
         "description" : "book reading"
     }
 ]

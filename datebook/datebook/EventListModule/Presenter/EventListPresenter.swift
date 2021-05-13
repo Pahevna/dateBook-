@@ -25,7 +25,7 @@ class EventListPresenter: EventListPresenterProtocol {
     required init(view: EventListViewProtocol, jsonEventsService: EventService) {
         self.view = view
         self.jsonEventsService = jsonEventsService
-        getEvents()
+        //getEvents()
     }
     
     func getEvents() {
@@ -35,7 +35,7 @@ class EventListPresenter: EventListPresenterProtocol {
             switch result {
             case.success(let events):
                 self.events = events
-                self.view?.set(events: events)
+                //self.view?.set(events: events)
             case.failure(let error):
                 print(error)
             }

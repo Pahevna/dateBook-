@@ -41,14 +41,12 @@ class CalendarViewController: UIViewController {
         calendar.dataSource = self
         
         calendar.allowsMultipleSelection = true
-        
-        view.addSubview(calendar)
     }
     
     private func setupTableView() {
         tableView.dataSource = self
-        
-        tableView.register(ListOfEventsTableViewCell.self, forCellReuseIdentifier: ListOfEventsTableViewCell.identifier)
+        let nib = UINib(nibName: "ListOfEventsTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "cell")
     }
 }
 
@@ -70,7 +68,7 @@ extension CalendarViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ListOfEventsTableViewCell.identifier, for: indexPath) as! ListOfEventsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ListOfEventsTableViewCell
         guard let cellData = presenter?.events?[indexPath.row] else { fatalError() }
         cell.configureCell(event: cellData)
     
