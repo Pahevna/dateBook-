@@ -77,6 +77,7 @@ extension CalendarViewController: UITableViewDataSource {
 }
 
 extension CalendarViewController: EventListViewProtocol {
-    func set(events: [EventListModel]?) {
+    func succes() {
+        tableView.reloadData()
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol EventListViewProtocol: class {
-    func set(events: [EventListModel]?)
+    func succes()
 }
 
 protocol EventListPresenterProtocol: class {
@@ -20,22 +20,22 @@ class EventListPresenter: EventListPresenterProtocol {
     weak var view: EventListViewProtocol?
     private let jsonEventsService: EventService
     var events: [EventListModel]?
+    var arrayEventsForSelectedDate: [EventListModel]?
     let selectedDate = Date()
   
     required init(view: EventListViewProtocol, jsonEventsService: EventService) {
         self.view = view
         self.jsonEventsService = jsonEventsService
-        //getEvents()
     }
     
     func getEvents() {
-        jsonEventsService.getEvents(for: selectedDate) { [weak self] result in
+        jsonEventsService.getEvents() { [weak self] result in
             guard let self = self else { return }
             
             switch result {
             case.success(let events):
                 self.events = events
-                //self.view?.set(events: events)
+                self.view?.succes()
             case.failure(let error):
                 print(error)
             }
@@ -45,7 +45,7 @@ class EventListPresenter: EventListPresenterProtocol {
     func filterEvents() {
         
         if let filteredEvents = events?.filter({$0.dateEnd.convertFromTimeStampToString(date: $0.dateEnd) == selectedDate.convertFromDateToString(date: selectedDate) }) {
-            events = filteredEvents
+            arrayEventsForSelectedDate = filteredEvents
         }
     }
 }

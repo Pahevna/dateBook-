@@ -8,11 +8,11 @@
 import Foundation
 
 protocol EventService {
-    func getEvents(for date: Date, completion: @escaping (Result<[EventListModel]?, Error>) -> Void)
+    func getEvents(completion: @escaping (Result<[EventListModel]?, Error>) -> Void)
 }
 
 class JsonEventsService: EventService {
-    func getEvents(for date: Date, completion: @escaping (Result<[EventListModel]?, Error>) -> Void) {
+    func getEvents(completion: @escaping (Result<[EventListModel]?, Error>) -> Void) {
         guard let path = Bundle.main.path(forResource: "events", ofType: "json") else { return }
         let url = URL(fileURLWithPath: path)
         
