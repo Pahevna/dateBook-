@@ -13,7 +13,9 @@ protocol EventListViewProtocol: class {
 
 protocol EventListPresenterProtocol: class {
     func getEvents()
+    func filterEvents() 
     var events: [EventListModel]? { get }
+    var arrayEventsForSelectedDate: [EventListModel]? { get }
 }
 
 class EventListPresenter: EventListPresenterProtocol {
@@ -21,7 +23,7 @@ class EventListPresenter: EventListPresenterProtocol {
     private let jsonEventsService: EventService
     var events: [EventListModel]?
     var arrayEventsForSelectedDate: [EventListModel]?
-    let selectedDate = Date()
+    let currentDate = Date()
   
     required init(view: EventListViewProtocol, jsonEventsService: EventService) {
         self.view = view
@@ -31,7 +33,6 @@ class EventListPresenter: EventListPresenterProtocol {
     func getEvents() {
         jsonEventsService.getEvents() { [weak self] result in
             guard let self = self else { return }
-            
             switch result {
             case.success(let events):
                 self.events = events
@@ -43,8 +44,9 @@ class EventListPresenter: EventListPresenterProtocol {
     }
     
     func filterEvents() {
+        let currentDateString = currentDate.convertFromDateToString(date: currentDate)
         
-        if let filteredEvents = events?.filter({$0.dateEnd.convertFromTimeStampToString(date: $0.dateEnd) == selectedDate.convertFromDateToString(date: selectedDate) }) {
+        if let filteredEvents = events?.filter({$0.dateEnd.convertFromTimeStampToString(date: $0.dateEnd) == currentDateString }) {
             arrayEventsForSelectedDate = filteredEvents
         }
     }

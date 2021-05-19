@@ -53,6 +53,7 @@ class CalendarViewController: UIViewController {
 extension CalendarViewController: FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         presenter?.getEvents()
+        presenter?.filterEvents()
     }
 }
 
@@ -64,7 +65,7 @@ extension CalendarViewController: FSCalendarDataSource {
 
 extension CalendarViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter?.events?.count ?? 0
+        return presenter?.arrayEventsForSelectedDate?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
