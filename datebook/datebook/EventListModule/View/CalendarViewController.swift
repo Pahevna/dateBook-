@@ -15,15 +15,19 @@ class CalendarViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     
     private var calendar: FSCalendar!
+    private var eventsForSelectedDate: [EventModel]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureCalendar()
         setupTableView()
+        
+        presenter?.viewDidLoad()
     }
     
     private func configureCalendar() {
+        
         calendar = FSCalendar(frame: CGRect(x: 0.0, y: 60.0, width: view.frame.size.width, height: 300.0))
         view.addSubview(calendar)
         calendar.scrollDirection = .vertical
@@ -44,6 +48,7 @@ class CalendarViewController: UIViewController {
     }
     
     private func setupTableView() {
+       
         tableView.dataSource = self
         let nib = UINib(nibName: "ListOfEventsTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "cell")
@@ -51,26 +56,31 @@ class CalendarViewController: UIViewController {
 }
 
 extension CalendarViewController: FSCalendarDelegate {
+    
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        presenter?.getEvents()
-        presenter?.filterEvents()
+       
+        presenter?.didSelectDate(date)
     }
 }
 
 extension CalendarViewController: FSCalendarDataSource {
+    
     func minimumDate(for calendar: FSCalendar) -> Date {
+        
         return Date()
     }
 }
 
 extension CalendarViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter?.arrayEventsForSelectedDate?.count ?? 0
+        
+        return eventsForSelectedDate?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ListOfEventsTableViewCell
-        guard let cellData = presenter?.events?[indexPath.row] else { fatalError() }
+        guard let cellData = eventsForSelectedDate?[indexPath.row] else { fatalError() }
         cell.configureCell(event: cellData)
     
         return cell
@@ -78,7 +88,17 @@ extension CalendarViewController: UITableViewDataSource {
 }
 
 extension CalendarViewController: EventListViewProtocol {
-    func succes() {
+ 
+    func setEvents(_ events: [EventModel]) {
+        eventsForSelectedDate = events
         tableView.reloadData()
     }
+    
+    func showAlert() {
+        let alert = UIAlertController(title: "Error", message: "No events for selected date", preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okButton)
+        present(alert, animated: true, completion: nil)
+    }
 }
+

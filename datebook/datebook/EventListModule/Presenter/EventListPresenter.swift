@@ -8,46 +8,47 @@
 import Foundation
 
 protocol EventListViewProtocol: class {
-    func succes()
+    func setEvents(_ events: [EventModel])
+    func showAlert() 
 }
 
 protocol EventListPresenterProtocol: class {
-    func getEvents()
-    func filterEvents() 
-    var events: [EventListModel]? { get }
-    var arrayEventsForSelectedDate: [EventListModel]? { get }
+    func didSelectDate(_ date: Date)
+    func viewDidLoad()
+    var events: [EventModel]? { get }
 }
 
 class EventListPresenter: EventListPresenterProtocol {
     weak var view: EventListViewProtocol?
     private let jsonEventsService: EventService
-    var events: [EventListModel]?
-    var arrayEventsForSelectedDate: [EventListModel]?
-    let currentDate = Date()
+    var events: [EventModel]?
   
     required init(view: EventListViewProtocol, jsonEventsService: EventService) {
         self.view = view
         self.jsonEventsService = jsonEventsService
     }
     
-    func getEvents() {
+    func viewDidLoad() {
+        
         jsonEventsService.getEvents() { [weak self] result in
             guard let self = self else { return }
             switch result {
             case.success(let events):
                 self.events = events
-                self.view?.succes()
             case.failure(let error):
-                print(error)
+                print(error.localizedDescription)
             }
         }
     }
     
-    func filterEvents() {
-        let currentDateString = currentDate.convertFromDateToString(date: currentDate)
+    func didSelectDate(_ date: Date) {
         
-        if let filteredEvents = events?.filter({$0.dateEnd.convertFromTimeStampToString(date: $0.dateEnd) == currentDateString }) {
-            arrayEventsForSelectedDate = filteredEvents
+        let currentDateString = date.convertFromDateToString()
+        
+        if let filteredEvents = events?.filter({$0.dateStart.convertFromTimeStampToString(timeStamp: $0.dateStart) == currentDateString }) {
+            view?.setEvents(filteredEvents)
+        } else {
+            view?.showAlert()
         }
     }
 }

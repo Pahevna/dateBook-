@@ -2,30 +2,30 @@
 [
     {
         "id" : 1,
-        "date_start" : 14768234553,
-        "date_end" : 147610000,
+        "date_start" : 1621800000,  
+        "date_end" : 1621803600,
         "name" : "Sport",
         "description" : "playing football on the street"
     },
     {
         "id" : 2,
-        "date_start" : 187680000,
-        "date_end" : 187610000,
+        "date_start" : 1621886400,
+        "date_end" : 1621890000,
         "name" : "Self-development",
         "description" : "Online English lesson"
     },
     {
         "id" : 3,
-        "date_start" : 127680000,
-        "date_end" : 127610000,
+        "date_start" : 1621972800,
+        "date_end" : 1621977600,
         "name" : "Relaxation",
         "description" : "walk in the woods"
     },
     {
         "id" : 4,
-        "date_start" : 107700000,
-        "date_end" : 107600000,
+        "date_start" : 1622059200,
+        "date_end" : 1622062800,
         "name" : "Self-development",
-        "description" : "book reading"
+        "description" : "reading book"
     }
 ]

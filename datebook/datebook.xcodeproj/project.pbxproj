@@ -18,7 +18,7 @@
 		04789E8A26308C5C00C824AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04789E8826308C5C00C824AC /* LaunchScreen.storyboard */; };
 		04789E9526308C5C00C824AC /* dateBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04789E9426308C5C00C824AC /* dateBookTests.swift */; };
 		04789EA026308C5C00C824AC /* dateBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04789E9F26308C5C00C824AC /* dateBookUITests.swift */; };
-		04789EC026309D9100C824AC /* EventListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04789EBF26309D9100C824AC /* EventListModel.swift */; };
+		04789EC026309D9100C824AC /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04789EBF26309D9100C824AC /* EventModel.swift */; };
 		04B6E8B92635DCE7005BAE8A /* EventListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6E8B82635DCE7005BAE8A /* EventListBuilder.swift */; };
 		04D8EC8C2638807E000DB051 /* ConvertDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8EC8B2638807E000DB051 /* ConvertDate.swift */; };
 		04D8EC9F263C54D3000DB051 /* ListOfEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8EC9D263C54D3000DB051 /* ListOfEventsTableViewCell.swift */; };
@@ -63,7 +63,7 @@
 		04789E9B26308C5C00C824AC /* dateBookUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dateBookUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04789E9F26308C5C00C824AC /* dateBookUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateBookUITests.swift; sourceTree = "<group>"; };
 		04789EA126308C5C00C824AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04789EBF26309D9100C824AC /* EventListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListModel.swift; sourceTree = "<group>"; };
+		04789EBF26309D9100C824AC /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		04B6E8B82635DCE7005BAE8A /* EventListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventListBuilder.swift; path = datebook/EventListModule/Builder/EventListBuilder.swift; sourceTree = SOURCE_ROOT; };
 		04D8EC8B2638807E000DB051 /* ConvertDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConvertDate.swift; path = datebook/EventListModule/Extensions/ConvertDate.swift; sourceTree = SOURCE_ROOT; };
 		04D8EC9D263C54D3000DB051 /* ListOfEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListOfEventsTableViewCell.swift; path = datebook/EventListModule/View/Cell/ListOfEventsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -204,7 +204,7 @@
 		04B6E8B02635DC05005BAE8A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				04789EBF26309D9100C824AC /* EventListModel.swift */,
+				04789EBF26309D9100C824AC /* EventModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -502,7 +502,7 @@
 				04789E7E26308C5A00C824AC /* AppDelegate.swift in Sources */,
 				04D8EC9F263C54D3000DB051 /* ListOfEventsTableViewCell.swift in Sources */,
 				04789E8026308C5A00C824AC /* SceneDelegate.swift in Sources */,
-				04789EC026309D9100C824AC /* EventListModel.swift in Sources */,
+				04789EC026309D9100C824AC /* EventModel.swift in Sources */,
 				04B6E8B92635DCE7005BAE8A /* EventListBuilder.swift in Sources */,
 				0465B43426345E3600C72A03 /* EventListPresenter.swift in Sources */,
 			);

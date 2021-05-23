@@ -8,17 +8,17 @@
 import Foundation
 
 protocol EventService {
-    func getEvents(completion: @escaping (Result<[EventListModel]?, Error>) -> Void)
+    func getEvents(completion: @escaping (Result<[EventModel]?, Error>) -> Void)
 }
 
 class JsonEventsService: EventService {
-    func getEvents(completion: @escaping (Result<[EventListModel]?, Error>) -> Void) {
+    func getEvents(completion: @escaping (Result<[EventModel]?, Error>) -> Void) {
         guard let path = Bundle.main.path(forResource: "events", ofType: "json") else { return }
         let url = URL(fileURLWithPath: path)
         
         do {
             let jsonData = try Data(contentsOf: url)
-            let event = try JSONDecoder().decode([EventListModel].self, from: jsonData)
+            let event = try JSONDecoder().decode([EventModel].self, from: jsonData)
             completion(.success(event))
         } catch {
             completion(.failure(error))

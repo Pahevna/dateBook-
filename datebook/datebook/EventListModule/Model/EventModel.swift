@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct EventListModel: Decodable {
+struct EventModel: Decodable {
     let id: Int
     let dateStart: Double
     let dateEnd: Double
