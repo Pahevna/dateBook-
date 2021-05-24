@@ -9,16 +9,13 @@ import Foundation
 
 extension Double {
     
-    func convertFromTimeStampToString(timeStamp: Double) -> String {
+    func convertFromTimeStampToDate() -> Date {
         
-        let date = Date(timeIntervalSince1970: timeStamp)
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM d, h:mm a"
-        let dateString = dateFormatter.string(from: date)
+        let date = Date(timeIntervalSince1970: self)
         
-        return dateString
+        return date 
     }
-    
+
     func convertFromDoubleToString(timeStamp: Double) -> String {
         
         let date = Date(timeIntervalSince1970: timeStamp)
@@ -30,14 +27,3 @@ extension Double {
     }
 }
 
-extension Date {
-    
-    func convertFromDateToString() -> String {
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM d, h:mm a" 
-        let dateString = dateFormatter.string(from: self)
-        
-        return dateString
-    }
-}

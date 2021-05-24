@@ -79,6 +79,7 @@ extension CalendarViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ListOfEventsTableViewCell
         guard let cellData = eventsForSelectedDate?[indexPath.row] else { fatalError() }
         cell.configureCell(event: cellData)
@@ -90,11 +91,13 @@ extension CalendarViewController: UITableViewDataSource {
 extension CalendarViewController: EventListViewProtocol {
  
     func setEvents(_ events: [EventModel]) {
+        
         eventsForSelectedDate = events
         tableView.reloadData()
     }
     
     func showAlert() {
+        
         let alert = UIAlertController(title: "Error", message: "No events for selected date", preferredStyle: .alert)
         let okButton = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(okButton)

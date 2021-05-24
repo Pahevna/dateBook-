@@ -12,8 +12,11 @@ protocol EventService {
 }
 
 class JsonEventsService: EventService {
+    
     func getEvents(completion: @escaping (Result<[EventModel]?, Error>) -> Void) {
+        
         guard let path = Bundle.main.path(forResource: "events", ofType: "json") else { return }
+        
         let url = URL(fileURLWithPath: path)
         
         do {
