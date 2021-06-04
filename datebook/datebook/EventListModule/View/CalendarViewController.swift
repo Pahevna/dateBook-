@@ -44,7 +44,6 @@ class CalendarViewController: UIViewController {
         calendar.delegate = self
         calendar.dataSource = self
         
-        calendar.allowsMultipleSelection = true
     }
     
     private func setupTableView() {
@@ -82,6 +81,7 @@ extension CalendarViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ListOfEventsTableViewCell
         guard let cellData = eventsForSelectedDate?[indexPath.row] else { fatalError() }
+        
         cell.configureCell(event: cellData)
     
         return cell

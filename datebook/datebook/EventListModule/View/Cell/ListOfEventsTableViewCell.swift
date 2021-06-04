@@ -24,7 +24,7 @@ class ListOfEventsTableViewCell: UITableViewCell {
     func configureCell(event: EventModel) {
         
         eventLabel?.text = event.name
-        dataStartLabel?.text = event.dateStart.convertFromDoubleToString(timeStamp: event.dateStart)
-        dataEndLabel?.text = event.dateEnd.convertFromDoubleToString(timeStamp: event.dateEnd)
+        dataStartLabel?.text = event.dateStart.convertFromDoubleToString()
+        dataEndLabel?.text = event.dateEnd.convertFromDoubleToString()
     }
 }
