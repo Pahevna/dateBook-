@@ -18,20 +18,20 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fnQ-H9-K5C">
-                        <rect key="frame" x="5" y="5" width="310" height="34"/>
+                        <rect key="frame" x="5" y="5" width="315" height="34"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DateStart" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufg-dH-eQY">
                                 <rect key="frame" x="5" y="5" width="80" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="vfs-NX-0fR"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8V4-MA-LMV">
-                                <rect key="frame" x="190" y="5" width="115" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <rect key="frame" x="180" y="5" width="130" height="24"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -40,7 +40,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="qTQ-3J-7Ot"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -49,22 +49,22 @@
                         <constraints>
                             <constraint firstItem="UUs-Oh-ae3" firstAttribute="leading" secondItem="ufg-dH-eQY" secondAttribute="trailing" constant="5" id="2uk-8G-u5L"/>
                             <constraint firstAttribute="trailing" secondItem="8V4-MA-LMV" secondAttribute="trailing" constant="5" id="8c5-oo-BtJ"/>
-                            <constraint firstItem="8V4-MA-LMV" firstAttribute="leading" secondItem="UUs-Oh-ae3" secondAttribute="trailing" constant="20" id="Al8-yj-V2r"/>
                             <constraint firstItem="ufg-dH-eQY" firstAttribute="top" secondItem="fnQ-H9-K5C" secondAttribute="top" constant="5" id="C8v-9g-HSe"/>
                             <constraint firstAttribute="bottom" secondItem="8V4-MA-LMV" secondAttribute="bottom" constant="5" id="GIk-7Y-0WO"/>
                             <constraint firstAttribute="bottom" secondItem="UUs-Oh-ae3" secondAttribute="bottom" constant="5" id="I8l-Sy-mow"/>
                             <constraint firstAttribute="bottom" secondItem="ufg-dH-eQY" secondAttribute="bottom" constant="5" id="N9G-NM-CZz"/>
                             <constraint firstItem="UUs-Oh-ae3" firstAttribute="top" secondItem="fnQ-H9-K5C" secondAttribute="top" constant="5" id="On2-tI-Anl"/>
+                            <constraint firstItem="8V4-MA-LMV" firstAttribute="leading" secondItem="UUs-Oh-ae3" secondAttribute="trailing" constant="10" id="cAp-WT-WYA"/>
                             <constraint firstItem="8V4-MA-LMV" firstAttribute="top" secondItem="fnQ-H9-K5C" secondAttribute="top" constant="5" id="fWo-Dg-S2B"/>
                             <constraint firstItem="ufg-dH-eQY" firstAttribute="leading" secondItem="fnQ-H9-K5C" secondAttribute="leading" constant="5" id="x1i-yR-Nsw"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="fnQ-H9-K5C" secondAttribute="trailing" constant="5" id="5Cc-Vb-lS5"/>
                     <constraint firstItem="fnQ-H9-K5C" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="9yJ-XU-EBx"/>
                     <constraint firstItem="fnQ-H9-K5C" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="TUU-Bm-IBU"/>
                     <constraint firstAttribute="bottom" secondItem="fnQ-H9-K5C" secondAttribute="bottom" constant="5" id="uFw-QE-4HP"/>
+                    <constraint firstAttribute="trailing" secondItem="fnQ-H9-K5C" secondAttribute="trailing" id="znD-g5-IZ9"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

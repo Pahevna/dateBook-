@@ -49,6 +49,7 @@ class CalendarViewController: UIViewController {
     private func setupTableView() {
        
         tableView.dataSource = self
+        tableView.delegate = self
         let nib = UINib(nibName: "ListOfEventsTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "cell")
     }
@@ -74,17 +75,49 @@ extension CalendarViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        if eventsForSelectedDate?.count == 0 {
+            tableView.setEmptyMessage()
+        
+        } else {
+        
+            tableView.restore()
+        }
+        
         return eventsForSelectedDate?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ListOfEventsTableViewCell
-        guard let cellData = eventsForSelectedDate?[indexPath.row] else { fatalError() }
+        guard let event = eventsForSelectedDate?[indexPath.row] else { fatalError() }
         
-        cell.configureCell(event: cellData)
+        cell.configureCell(event: event)
     
         return cell
+    }
+}
+
+extension CalendarViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
+        
+        let label = UILabel()
+        label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
+        label.text = "Events list"
+        label.textAlignment = .center
+        label.font = UIFont(name: "TrebuchetMS", size: 17)
+        
+        headerView.addSubview(label)
+        
+        return headerView
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        return 50
     }
 }
 
@@ -95,13 +128,27 @@ extension CalendarViewController: EventListViewProtocol {
         eventsForSelectedDate = events
         tableView.reloadData()
     }
-    
-    func showAlert() {
-        
-        let alert = UIAlertController(title: "Error", message: "No events for selected date", preferredStyle: .alert)
-        let okButton = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alert.addAction(okButton)
-        present(alert, animated: true, completion: nil)
-    }
 }
 
+extension UITableView {
+    
+    func setEmptyMessage() {
+        
+        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: bounds.size.width, height: bounds.size.height))
+        messageLabel.text = "No events on the selected day"
+        messageLabel.textColor = .black
+        messageLabel.numberOfLines = 0
+        messageLabel.textAlignment = .center
+        messageLabel.font = UIFont(name: "TrebuchetMS", size: 17)
+        messageLabel.sizeToFit()
+        
+        backgroundView = messageLabel
+        separatorStyle = .none
+    }
+    
+    func restore() {
+       
+        backgroundView = nil
+        separatorStyle = .singleLine
+    }
+}

@@ -9,7 +9,6 @@ import Foundation
 
 protocol EventListViewProtocol: class {
     func setEvents(_ events: [EventModel])
-    func showAlert() 
 }
 
 protocol EventListPresenterProtocol: class {
@@ -44,9 +43,9 @@ class EventListPresenter: EventListPresenterProtocol {
     func didSelectDate(_ date: Date) {
             
         if let filteredEvents = events?.filter({$0.dateStart.convertFromTimeStampToString() == date.convertFromDateToString() }) {
+            
             view?.setEvents(filteredEvents)
-        } else {
-            view?.showAlert()
+            
         }
     }
 }
