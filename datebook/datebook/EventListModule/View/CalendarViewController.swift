@@ -22,7 +22,6 @@ class CalendarViewController: UIViewController {
         
         configureCalendar()
         setupTableView()
-        
         presenter?.viewDidLoad()
     }
     
@@ -35,11 +34,11 @@ class CalendarViewController: UIViewController {
         calendar.appearance.titleFont = UIFont.systemFont(ofSize: 17.0)
         calendar.appearance.headerTitleFont = UIFont.boldSystemFont(ofSize: 19.0)
         calendar.appearance.weekdayFont = UIFont.boldSystemFont(ofSize: 16.0)
-        calendar.appearance.todayColor = .systemRed
+        calendar.appearance.todayColor = .systemOrange
         calendar.appearance.titleTodayColor = .white
         calendar.appearance.titleDefaultColor = .black
-        calendar.appearance.headerTitleColor = .systemRed
-        calendar.appearance.weekdayTextColor = .systemRed
+        calendar.appearance.headerTitleColor = .systemOrange
+        calendar.appearance.weekdayTextColor = .systemOrange
         
         calendar.delegate = self
         calendar.dataSource = self
