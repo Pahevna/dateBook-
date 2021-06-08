@@ -9,6 +9,8 @@ import Foundation
 
 protocol EventListViewProtocol: class {
     func setEvents(_ events: [EventModel])
+    func showInitialEmptyView(text: String)
+    func hideInitialEmptyView()
 }
 
 protocol EventListPresenterProtocol: class {
@@ -38,14 +40,19 @@ class EventListPresenter: EventListPresenterProtocol {
                 print(error.localizedDescription)
             }
         }
+        view?.showInitialEmptyView(text: "Choose a date")
     }
     
     func didSelectDate(_ date: Date) {
+        
+        let filteredEvents = events?.filter({$0.dateStart.convertFromTimeStampToString() == date.convertFromDateToString() })
+        
+        if filteredEvents?.count == 0 {
+            view?.showInitialEmptyView(text: "No events for selected date")
             
-        if let filteredEvents = events?.filter({$0.dateStart.convertFromTimeStampToString() == date.convertFromDateToString() }) {
-            
-            view?.setEvents(filteredEvents)
-            
+        } else {
+            view?.setEvents(filteredEvents ?? [])
+            view?.hideInitialEmptyView()
         }
     }
 }

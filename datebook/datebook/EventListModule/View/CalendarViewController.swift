@@ -15,22 +15,35 @@ class CalendarViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     
     private var calendar: FSCalendar!
+    private var emptyLabel: UILabel!
     private var eventsForSelectedDate: [EventModel]?
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureLabel()
         configureCalendar()
         setupTableView()
         presenter?.viewDidLoad()
+        
     }
+    
+    private func configureLabel() {
+        
+        emptyLabel = UILabel(frame: CGRect(x: 0, y: view.center.y + 60, width: view.frame.size.width, height: 200))
+        emptyLabel.textColor = .black
+        emptyLabel.numberOfLines = 0
+        emptyLabel.textAlignment = .center
+        emptyLabel.font = UIFont(name: "TrebuchetMS", size: 17)
+        
+        view.addSubview(emptyLabel)
+}
     
     private func configureCalendar() {
         
         calendar = FSCalendar(frame: CGRect(x: 0.0, y: 60.0, width: view.frame.size.width, height: 300.0))
-        view.addSubview(calendar)
         calendar.scrollDirection = .vertical
-        
         calendar.appearance.titleFont = UIFont.systemFont(ofSize: 17.0)
         calendar.appearance.headerTitleFont = UIFont.boldSystemFont(ofSize: 19.0)
         calendar.appearance.weekdayFont = UIFont.boldSystemFont(ofSize: 16.0)
@@ -40,6 +53,7 @@ class CalendarViewController: UIViewController {
         calendar.appearance.headerTitleColor = .systemOrange
         calendar.appearance.weekdayTextColor = .systemOrange
         
+        view.addSubview(calendar)
         calendar.delegate = self
         calendar.dataSource = self
         
@@ -57,8 +71,9 @@ class CalendarViewController: UIViewController {
 extension CalendarViewController: FSCalendarDelegate {
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-       
+        
         presenter?.didSelectDate(date)
+
     }
 }
 
@@ -73,14 +88,6 @@ extension CalendarViewController: FSCalendarDataSource {
 extension CalendarViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if eventsForSelectedDate?.count == 0 {
-            tableView.setEmptyMessage()
-        
-        } else {
-        
-            tableView.restore()
-        }
         
         return eventsForSelectedDate?.count ?? 0
     }
@@ -121,33 +128,23 @@ extension CalendarViewController: UITableViewDelegate {
 }
 
 extension CalendarViewController: EventListViewProtocol {
- 
+   
     func setEvents(_ events: [EventModel]) {
         
         eventsForSelectedDate = events
         tableView.reloadData()
     }
-}
-
-extension UITableView {
     
-    func setEmptyMessage() {
-        
-        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: bounds.size.width, height: bounds.size.height))
-        messageLabel.text = "No events on the selected day"
-        messageLabel.textColor = .black
-        messageLabel.numberOfLines = 0
-        messageLabel.textAlignment = .center
-        messageLabel.font = UIFont(name: "TrebuchetMS", size: 17)
-        messageLabel.sizeToFit()
-        
-        backgroundView = messageLabel
-        separatorStyle = .none
+    func showInitialEmptyView(text: String) {
+       
+        emptyLabel.text = text
+        emptyLabel.isHidden = false
+        tableView.isHidden = true
     }
     
-    func restore() {
-       
-        backgroundView = nil
-        separatorStyle = .singleLine
+    func hideInitialEmptyView() {
+        
+        tableView.isHidden = false
+        emptyLabel.isHidden = true
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04501124266E4C7F00E8147D /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04501123266E4C7F00E8147D /* CreateEventViewController.swift */; };
 		0465B3F126340B4F00C72A03 /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = 0465B3F026340B4F00C72A03 /* events.json */; };
 		0465B41C26340F1900C72A03 /* JsonEventsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465B41B26340F1900C72A03 /* JsonEventsService.swift */; };
 		0465B43426345E3600C72A03 /* EventListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465B43326345E3600C72A03 /* EventListPresenter.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04501123266E4C7F00E8147D /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateEventViewController.swift; path = datebook/CreateEventModule/CreateEventViewController.swift; sourceTree = SOURCE_ROOT; };
 		0465B3F026340B4F00C72A03 /* events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = events.json; path = dateBook/EventListModule/events.json; sourceTree = SOURCE_ROOT; };
 		0465B41B26340F1900C72A03 /* JsonEventsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JsonEventsService.swift; path = datebook/ServiceLayer/JsonEventsService.swift; sourceTree = SOURCE_ROOT; };
 		0465B43326345E3600C72A03 /* EventListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventListPresenter.swift; path = datebook/EventListModule/Presenter/EventListPresenter.swift; sourceTree = SOURCE_ROOT; };
@@ -107,6 +109,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04501128266E4C8700E8147D /* CreateEventModule */ = {
+			isa = PBXGroup;
+			children = (
+				04501123266E4C7F00E8147D /* CreateEventViewController.swift */,
+			);
+			path = CreateEventModule;
+			sourceTree = "<group>";
+		};
 		04789E7126308C5A00C824AC = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +145,7 @@
 				04789E7D26308C5A00C824AC /* AppDelegate.swift */,
 				04789E7F26308C5A00C824AC /* SceneDelegate.swift */,
 				04789EBB26309D6100C824AC /* EventListModule */,
+				04501128266E4C8700E8147D /* CreateEventModule */,
 				04B6E894263577F6005BAE8A /* ServiceLayer */,
 				04789E8326308C5A00C824AC /* Main.storyboard */,
 				04789E8626308C5C00C824AC /* Assets.xcassets */,
@@ -503,6 +514,7 @@
 				04D8EC9F263C54D3000DB051 /* ListOfEventsTableViewCell.swift in Sources */,
 				04789E8026308C5A00C824AC /* SceneDelegate.swift in Sources */,
 				04789EC026309D9100C824AC /* EventModel.swift in Sources */,
+				04501124266E4C7F00E8147D /* CreateEventViewController.swift in Sources */,
 				04B6E8B92635DCE7005BAE8A /* EventListBuilder.swift in Sources */,
 				0465B43426345E3600C72A03 /* EventListPresenter.swift in Sources */,
 			);
