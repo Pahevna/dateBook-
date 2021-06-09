@@ -15,16 +15,20 @@ protocol EventListViewProtocol: class {
 protocol EventListPresenterProtocol: class {
     func didSelectDate(_ date: Date)
     func viewDidLoad()
+    func showEventCreationModule()
 }
 
 class EventListPresenter: EventListPresenterProtocol {
+   
     weak var view: EventListViewProtocol?
+    var router: EventListRouterProtocol?
     private let jsonEventsService: EventService
     private var events: [EventModel]?
   
-    required init(view: EventListViewProtocol, jsonEventsService: EventService) {
+    required init(view: EventListViewProtocol, jsonEventsService: EventService, router: EventListRouterProtocol) {
         self.view = view
         self.jsonEventsService = jsonEventsService
+        self.router = router
     }
     
     func viewDidLoad() {
@@ -51,5 +55,9 @@ class EventListPresenter: EventListPresenterProtocol {
         } else {
             view?.setEvents(filteredEvents ?? [])
         }
+    }
+    
+    func showEventCreationModule() {
+        router?.showEventCreationModule()
     }
 }

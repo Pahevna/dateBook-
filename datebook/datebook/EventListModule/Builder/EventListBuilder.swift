@@ -9,18 +9,20 @@ import Foundation
 import UIKit 
 
 protocol EventListBuilderProtocol {
-    static func createEventListModule() -> UIViewController
+    func createEventListModule(navigationController: UINavigationController) -> UIViewController
 }
 
 class EventListBuilder: EventListBuilderProtocol {
-   
-    static func createEventListModule() -> UIViewController {
+    
+    func createEventListModule(navigationController: UINavigationController) -> UIViewController {
         
         let view = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CalendarViewController") as! CalendarViewController
         let jsonEventService = JsonEventsService()
-        let presenter = EventListPresenter(view: view, jsonEventsService: jsonEventService)
+        let router = EventListRouter(navigationController: navigationController)
+        let presenter = EventListPresenter(view: view, jsonEventsService: jsonEventService, router: router)
         view.presenter = presenter
-        
+        navigationController.setViewControllers([view], animated: false)
+
         return view
     }
 }

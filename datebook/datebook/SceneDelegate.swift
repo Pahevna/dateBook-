@@ -18,8 +18,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let calendarViewController = EventListBuilder.createEventListModule()
-        let navigationController = UINavigationController(rootViewController: calendarViewController)
+        
+        let navigationController = UINavigationController()
+        let eventListBuilder = EventListBuilder()
+        
+        _ = eventListBuilder.createEventListModule(navigationController: navigationController)
+        
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }

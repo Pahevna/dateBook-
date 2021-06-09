@@ -10,9 +10,17 @@ import Foundation
 extension Date {
     
     static let dateFormatter = DateFormatter()
+    
+    func convertFromDateToString() -> String {
+        
+        Date.dateFormatter.dateFormat = "MM/dd/yyyy"
+        let dateString = Date.dateFormatter.string(from: self)
+        
+        return dateString
+    }
 }
 
-extension TimeInterval {
+    extension TimeInterval {
     
     func convertFromTimeStampToString() -> String {
         
@@ -33,15 +41,5 @@ extension TimeInterval {
     }
 }
 
-extension Date {
-    
-    func convertFromDateToString() -> String {
-        
-        Date.dateFormatter.dateFormat = "MM/dd/yyyy"
-        let dateString = Date.dateFormatter.string(from: self)
-        
-        return dateString
-    }
-}
     
 
