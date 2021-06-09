@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		04501124266E4C7F00E8147D /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04501123266E4C7F00E8147D /* CreateEventViewController.swift */; };
+		045011432670D35100E8147D /* CreateEventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045011422670D35100E8147D /* CreateEventPresenter.swift */; };
+		0450114C2670D4FB00E8147D /* CreateEventModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450114B2670D4FB00E8147D /* CreateEventModuleBuilder.swift */; };
+		0450116C2670DA3200E8147D /* EventListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450116B2670DA3200E8147D /* EventListRouter.swift */; };
 		0465B3F126340B4F00C72A03 /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = 0465B3F026340B4F00C72A03 /* events.json */; };
 		0465B41C26340F1900C72A03 /* JsonEventsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465B41B26340F1900C72A03 /* JsonEventsService.swift */; };
 		0465B43426345E3600C72A03 /* EventListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465B43326345E3600C72A03 /* EventListPresenter.swift */; };
@@ -47,7 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04501123266E4C7F00E8147D /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateEventViewController.swift; path = datebook/CreateEventModule/CreateEventViewController.swift; sourceTree = SOURCE_ROOT; };
+		04501123266E4C7F00E8147D /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateEventViewController.swift; path = datebook/CreateNewEventModule/View/CreateEventViewController.swift; sourceTree = SOURCE_ROOT; };
+		045011422670D35100E8147D /* CreateEventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateEventPresenter.swift; path = datebook/CreateNewEventModule/Presenter/CreateEventPresenter.swift; sourceTree = SOURCE_ROOT; };
+		0450114B2670D4FB00E8147D /* CreateEventModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateEventModuleBuilder.swift; path = datebook/CreateNewEventModule/Builder/CreateEventModuleBuilder.swift; sourceTree = SOURCE_ROOT; };
+		0450116B2670DA3200E8147D /* EventListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventListRouter.swift; path = datebook/EventListModule/Router/EventListRouter.swift; sourceTree = SOURCE_ROOT; };
 		0465B3F026340B4F00C72A03 /* events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = events.json; path = dateBook/EventListModule/events.json; sourceTree = SOURCE_ROOT; };
 		0465B41B26340F1900C72A03 /* JsonEventsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JsonEventsService.swift; path = datebook/ServiceLayer/JsonEventsService.swift; sourceTree = SOURCE_ROOT; };
 		0465B43326345E3600C72A03 /* EventListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventListPresenter.swift; path = datebook/EventListModule/Presenter/EventListPresenter.swift; sourceTree = SOURCE_ROOT; };
@@ -109,12 +115,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04501128266E4C8700E8147D /* CreateEventModule */ = {
+		04501128266E4C8700E8147D /* CreateNewEventModule */ = {
+			isa = PBXGroup;
+			children = (
+				0450113B2670CFC600E8147D /* View */,
+				045011472670D35800E8147D /* Presenter */,
+				045011502670D50800E8147D /* Builder */,
+			);
+			path = CreateNewEventModule;
+			sourceTree = "<group>";
+		};
+		0450113B2670CFC600E8147D /* View */ = {
 			isa = PBXGroup;
 			children = (
 				04501123266E4C7F00E8147D /* CreateEventViewController.swift */,
 			);
-			path = CreateEventModule;
+			path = View;
+			sourceTree = "<group>";
+		};
+		045011472670D35800E8147D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				045011422670D35100E8147D /* CreateEventPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		045011502670D50800E8147D /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				0450114B2670D4FB00E8147D /* CreateEventModuleBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		045011702670DA3600E8147D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				0450116B2670DA3200E8147D /* EventListRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		04789E7126308C5A00C824AC = {
@@ -145,7 +185,7 @@
 				04789E7D26308C5A00C824AC /* AppDelegate.swift */,
 				04789E7F26308C5A00C824AC /* SceneDelegate.swift */,
 				04789EBB26309D6100C824AC /* EventListModule */,
-				04501128266E4C8700E8147D /* CreateEventModule */,
+				04501128266E4C8700E8147D /* CreateNewEventModule */,
 				04B6E894263577F6005BAE8A /* ServiceLayer */,
 				04789E8326308C5A00C824AC /* Main.storyboard */,
 				04789E8626308C5C00C824AC /* Assets.xcassets */,
@@ -182,6 +222,7 @@
 				04B6E8B12635DC0E005BAE8A /* Presenter */,
 				04B6E8BD2635DCEF005BAE8A /* Builder */,
 				04D8EC9026388084000DB051 /* Extensions */,
+				045011702670DA3600E8147D /* Router */,
 			);
 			path = EventListModule;
 			sourceTree = "<group>";
@@ -511,7 +552,10 @@
 				04D8EC8C2638807E000DB051 /* ConvertDate.swift in Sources */,
 				0465B41C26340F1900C72A03 /* JsonEventsService.swift in Sources */,
 				04789E7E26308C5A00C824AC /* AppDelegate.swift in Sources */,
+				0450114C2670D4FB00E8147D /* CreateEventModuleBuilder.swift in Sources */,
+				0450116C2670DA3200E8147D /* EventListRouter.swift in Sources */,
 				04D8EC9F263C54D3000DB051 /* ListOfEventsTableViewCell.swift in Sources */,
+				045011432670D35100E8147D /* CreateEventPresenter.swift in Sources */,
 				04789E8026308C5A00C824AC /* SceneDelegate.swift in Sources */,
 				04789EC026309D9100C824AC /* EventModel.swift in Sources */,
 				04501124266E4C7F00E8147D /* CreateEventViewController.swift in Sources */,

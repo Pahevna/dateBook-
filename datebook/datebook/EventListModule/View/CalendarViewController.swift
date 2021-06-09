@@ -29,6 +29,10 @@ class CalendarViewController: UIViewController {
         
     }
     
+    @IBAction func addEvent (_ sender: UIBarButtonItem) {
+        print("add еvent")
+    }
+    
     private func configureLabel() {
         
         emptyLabel = UILabel(frame: CGRect(x: 0, y: view.center.y + 60, width: view.frame.size.width, height: 200))
@@ -132,19 +136,15 @@ extension CalendarViewController: EventListViewProtocol {
     func setEvents(_ events: [EventModel]) {
         
         eventsForSelectedDate = events
+        tableView.isHidden = false
+        emptyLabel.isHidden = true
         tableView.reloadData()
     }
     
-    func showInitialEmptyView(text: String) {
+    func showEmptyView(text: String) {
        
         emptyLabel.text = text
         emptyLabel.isHidden = false
         tableView.isHidden = true
-    }
-    
-    func hideInitialEmptyView() {
-        
-        tableView.isHidden = false
-        emptyLabel.isHidden = true
     }
 }

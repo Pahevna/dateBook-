@@ -9,20 +9,18 @@ import Foundation
 
 protocol EventListViewProtocol: class {
     func setEvents(_ events: [EventModel])
-    func showInitialEmptyView(text: String)
-    func hideInitialEmptyView()
+    func showEmptyView(text: String)
 }
 
 protocol EventListPresenterProtocol: class {
     func didSelectDate(_ date: Date)
     func viewDidLoad()
-    var events: [EventModel]? { get }
 }
 
 class EventListPresenter: EventListPresenterProtocol {
     weak var view: EventListViewProtocol?
     private let jsonEventsService: EventService
-    var events: [EventModel]?
+    private var events: [EventModel]?
   
     required init(view: EventListViewProtocol, jsonEventsService: EventService) {
         self.view = view
@@ -40,7 +38,7 @@ class EventListPresenter: EventListPresenterProtocol {
                 print(error.localizedDescription)
             }
         }
-        view?.showInitialEmptyView(text: "Choose a date")
+        view?.showEmptyView(text: "Choose a date")
     }
     
     func didSelectDate(_ date: Date) {
@@ -48,11 +46,10 @@ class EventListPresenter: EventListPresenterProtocol {
         let filteredEvents = events?.filter({$0.dateStart.convertFromTimeStampToString() == date.convertFromDateToString() })
         
         if filteredEvents?.count == 0 {
-            view?.showInitialEmptyView(text: "No events for selected date")
+            view?.showEmptyView(text: "No events for selected date")
             
         } else {
             view?.setEvents(filteredEvents ?? [])
-            view?.hideInitialEmptyView()
         }
     }
 }

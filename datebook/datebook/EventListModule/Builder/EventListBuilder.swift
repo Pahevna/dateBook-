@@ -24,3 +24,4 @@ class EventListBuilder: EventListBuilderProtocol {
         return view
     }
 }
+

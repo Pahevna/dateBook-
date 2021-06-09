@@ -7,15 +7,18 @@
 
 import Foundation
 
-let dateFormatter = DateFormatter()
+extension Date {
+    
+    static let dateFormatter = DateFormatter()
+}
 
 extension TimeInterval {
     
     func convertFromTimeStampToString() -> String {
         
         let date = Date(timeIntervalSince1970: self)
-        dateFormatter.dateFormat = "MM/dd/yyyy"
-        let dateString = dateFormatter.string(from: date)
+        Date.dateFormatter.dateFormat = "MM/dd/yyyy"
+        let dateString = Date.dateFormatter.string(from: date)
         
         return dateString
     }
@@ -23,8 +26,8 @@ extension TimeInterval {
     func convertFromDoubleToString() -> String {
         
         let date = Date(timeIntervalSince1970: self)
-        dateFormatter.dateFormat = "HH:mm"
-        let dateString = dateFormatter.string(from: date)
+        Date.dateFormatter.dateFormat = "HH:mm"
+        let dateString = Date.dateFormatter.string(from: date)
         
         return dateString
     }
@@ -34,8 +37,8 @@ extension Date {
     
     func convertFromDateToString() -> String {
         
-        dateFormatter.dateFormat = "MM/dd/yyyy"
-        let dateString = dateFormatter.string(from: self)
+        Date.dateFormatter.dateFormat = "MM/dd/yyyy"
+        let dateString = Date.dateFormatter.string(from: self)
         
         return dateString
     }
