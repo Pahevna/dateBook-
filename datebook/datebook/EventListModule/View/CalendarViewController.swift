@@ -60,7 +60,6 @@ class CalendarViewController: UIViewController {
         view.addSubview(calendar)
         calendar.delegate = self
         calendar.dataSource = self
-        
     }
     
     private func setupTableView() {
