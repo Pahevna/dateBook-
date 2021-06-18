@@ -77,6 +77,17 @@ class EventCreationViewController: UIViewController {
         return dateStartTextField
     }()
     
+    private let dateEndTextField: UITextField = {
+        let dateEndTextField = UITextField()
+        dateEndTextField.font = UIFont(name: "TrebuchetMS", size: 17)
+        dateEndTextField.placeholder = "Ends"
+        dateEndTextField.textAlignment = .left
+        dateEndTextField.borderStyle = .roundedRect
+        dateEndTextField.translatesAutoresizingMaskIntoConstraints = false
+        
+        return dateEndTextField
+    }()
+    
     private let datePicker = UIDatePicker()
     
     
@@ -84,8 +95,12 @@ class EventCreationViewController: UIViewController {
         super.viewDidLoad()
         
         setConstraints()
-        createDatePicker()
         configureTextField()
+        
+        createDatePicker(forField: dateStartTextField)
+        createDatePicker(forField: dateEndTextField)
+       
+        navigationController?.navigationBar.tintColor = .orange
         view.backgroundColor = .systemBackground
 
     }
@@ -139,6 +154,14 @@ class EventCreationViewController: UIViewController {
             dateStartTextField.topAnchor.constraint(equalTo: descriptionTextField.bottomAnchor),
             dateStartTextField.heightAnchor.constraint(equalToConstant: 50)
         ])
+        
+        view.addSubview(dateEndTextField)
+        NSLayoutConstraint.activate([
+            dateEndTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            dateEndTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            dateEndTextField.topAnchor.constraint(equalTo: dateStartTextField.bottomAnchor),
+            dateEndTextField.heightAnchor.constraint(equalToConstant: 50)
+        ])
     }
     
     private func createToolBar() -> UIToolbar {
@@ -153,21 +176,34 @@ class EventCreationViewController: UIViewController {
         return toolBar
     }
     
-    private func createDatePicker() {
+    private func createDatePicker(forField textField: UITextField) {
+        
         datePicker.datePickerMode = .dateAndTime
         datePicker.preferredDatePickerStyle = .wheels
-        dateStartTextField.inputView = datePicker
-        dateStartTextField.inputAccessoryView = createToolBar()
+        textField.inputView = datePicker
+        textField.inputAccessoryView = createToolBar()
     }
     
     private func configureTextField() {
+        
         nameTextField.delegate = self
     }
     
     @objc private func donePressed() {
-        dateStartTextField.text = "\(datePicker.date)"
-        dateStartTextField.text = datePicker.date.convertFromDateFromPicker()
-        view.endEditing(true)
+        
+        if dateStartTextField.isFirstResponder {
+            
+            dateStartTextField.text = "\(datePicker.date)"
+            dateStartTextField.text = datePicker.date.convertFromDateFromPicker()
+            view.endEditing(true)
+        }
+        
+        if dateEndTextField.isFirstResponder {
+            
+            dateEndTextField.text = "\(datePicker.date)"
+            dateEndTextField.text = datePicker.date.convertFromDateFromPicker()
+            view.endEditing(true)
+        }
     }
 }
 
