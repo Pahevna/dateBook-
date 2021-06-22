@@ -5,21 +5,14 @@
 //  Created by mac on 21.04.2021.
 //
 
-import Foundation
+import RealmSwift
 
-struct EventModel: Decodable {
-    let id: Int
-    let dateStart: Double
-    let dateEnd: Double
-    let name: String
-    let description: String
+class EventModel: Object {
     
-    private enum CodingKeys: String, CodingKey {
-        case id
-        case dateStart = "date_start"
-        case dateEnd = "date_end"
-        case name
-        case description 
-    }
+    @objc dynamic var name = ""
+    @objc dynamic var desc = ""
+    @objc dynamic var dateStart = NSDate()
+    @objc dynamic var dateEnd = NSDate()
+
 }
 

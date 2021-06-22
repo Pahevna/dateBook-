@@ -17,7 +17,7 @@ class EventListBuilder: EventListBuilderProtocol {
     func createEventListModule(navigationController: UINavigationController) -> UIViewController {
         
         let view = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CalendarViewController") as! CalendarViewController
-        let jsonEventService = JsonEventsService()
+        let jsonEventService = RealmService()
         let router = EventListRouter(navigationController: navigationController)
         let presenter = EventListPresenter(view: view, jsonEventsService: jsonEventService, router: router)
         view.presenter = presenter

@@ -22,10 +22,10 @@ class EventListPresenter: EventListPresenterProtocol {
    
     weak var view: EventListViewProtocol?
     var router: EventListRouterProtocol?
-    private let jsonEventsService: EventService
+    private let jsonEventsService: RealmServiceProtocol
     private var events: [EventModel]?
   
-    required init(view: EventListViewProtocol, jsonEventsService: EventService, router: EventListRouterProtocol) {
+    required init(view: EventListViewProtocol, jsonEventsService: RealmServiceProtocol, router: EventListRouterProtocol) {
         self.view = view
         self.jsonEventsService = jsonEventsService
         self.router = router

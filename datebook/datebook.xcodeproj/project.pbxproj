@@ -13,7 +13,7 @@
 		0450116C2670DA3200E8147D /* EventListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450116B2670DA3200E8147D /* EventListRouter.swift */; };
 		04501184267BA26A00E8147D /* ConvertDateFromPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04501183267BA26900E8147D /* ConvertDateFromPicker.swift */; };
 		0465B3F126340B4F00C72A03 /* events.json in Resources */ = {isa = PBXBuildFile; fileRef = 0465B3F026340B4F00C72A03 /* events.json */; };
-		0465B41C26340F1900C72A03 /* JsonEventsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465B41B26340F1900C72A03 /* JsonEventsService.swift */; };
+		0465B41C26340F1900C72A03 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465B41B26340F1900C72A03 /* RealmService.swift */; };
 		0465B43426345E3600C72A03 /* EventListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0465B43326345E3600C72A03 /* EventListPresenter.swift */; };
 		04789E7E26308C5A00C824AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04789E7D26308C5A00C824AC /* AppDelegate.swift */; };
 		04789E8026308C5A00C824AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04789E7F26308C5A00C824AC /* SceneDelegate.swift */; };
@@ -57,7 +57,7 @@
 		0450116B2670DA3200E8147D /* EventListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventListRouter.swift; path = datebook/EventListModule/Router/EventListRouter.swift; sourceTree = SOURCE_ROOT; };
 		04501183267BA26900E8147D /* ConvertDateFromPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConvertDateFromPicker.swift; path = datebook/EventCreationModule/Extensions/ConvertDateFromPicker.swift; sourceTree = SOURCE_ROOT; };
 		0465B3F026340B4F00C72A03 /* events.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = events.json; path = dateBook/EventListModule/events.json; sourceTree = SOURCE_ROOT; };
-		0465B41B26340F1900C72A03 /* JsonEventsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JsonEventsService.swift; path = datebook/ServiceLayer/JsonEventsService.swift; sourceTree = SOURCE_ROOT; };
+		0465B41B26340F1900C72A03 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RealmService.swift; path = datebook/ServiceLayer/RealmService.swift; sourceTree = SOURCE_ROOT; };
 		0465B43326345E3600C72A03 /* EventListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventListPresenter.swift; path = datebook/EventListModule/Presenter/EventListPresenter.swift; sourceTree = SOURCE_ROOT; };
 		04789E7A26308C5A00C824AC /* dateBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dateBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04789E7D26308C5A00C824AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -241,7 +241,7 @@
 		04B6E894263577F6005BAE8A /* ServiceLayer */ = {
 			isa = PBXGroup;
 			children = (
-				0465B41B26340F1900C72A03 /* JsonEventsService.swift */,
+				0465B41B26340F1900C72A03 /* RealmService.swift */,
 			);
 			path = ServiceLayer;
 			sourceTree = "<group>";
@@ -562,7 +562,7 @@
 				04789E8226308C5A00C824AC /* CalendarViewController.swift in Sources */,
 				04501184267BA26A00E8147D /* ConvertDateFromPicker.swift in Sources */,
 				04D8EC8C2638807E000DB051 /* ConvertDate.swift in Sources */,
-				0465B41C26340F1900C72A03 /* JsonEventsService.swift in Sources */,
+				0465B41C26340F1900C72A03 /* RealmService.swift in Sources */,
 				04789E7E26308C5A00C824AC /* AppDelegate.swift in Sources */,
 				0450114C2670D4FB00E8147D /* EventCreationModuleBuilder.swift in Sources */,
 				0450116C2670DA3200E8147D /* EventListRouter.swift in Sources */,

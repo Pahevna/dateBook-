@@ -30,6 +30,7 @@ class CalendarViewController: UIViewController {
     }
     
     @IBAction func addEvent (_ sender: UIBarButtonItem) {
+        
         presenter?.showEventCreationModule()
     }
     

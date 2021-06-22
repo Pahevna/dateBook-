@@ -28,6 +28,7 @@ class EventCreationViewController: UIViewController {
         addButton.setTitleColor(.gray, for: .normal)
         addButton.titleLabel?.font = UIFont(name: "TrebuchetMS", size: 17)
         addButton.titleLabel?.textAlignment = .center
+        addButton.addTarget(self, action: #selector(didTapAdd), for: .touchUpInside)
         addButton.translatesAutoresizingMaskIntoConstraints = false
         
         return addButton
@@ -204,6 +205,11 @@ class EventCreationViewController: UIViewController {
             dateEndTextField.text = datePicker.date.convertFromDateFromPicker()
             view.endEditing(true)
         }
+    }
+    
+    @objc private func didTapAdd() {
+        
+        print("button clicked")
     }
 }
 
