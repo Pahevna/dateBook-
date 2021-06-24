@@ -17,7 +17,8 @@ class EventCreationModuleBuilder: EventCreationModuleBuilderProtocol {
     func buildEventCreationModule(navigationController: UINavigationController) -> UIViewController {
         
         let view = EventCreationViewController()
-        let presenter = EventCreationPresenter(view: view)
+        let realmService = RealmService()
+        let presenter = EventCreationPresenter(view: view, realmService: realmService)
         view.presenter = presenter
         
         return view

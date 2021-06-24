@@ -22,32 +22,33 @@ class EventListPresenter: EventListPresenterProtocol {
    
     weak var view: EventListViewProtocol?
     var router: EventListRouterProtocol?
-    private let jsonEventsService: RealmServiceProtocol
+    private let realmService: RealmServiceProtocol
     private var events: [EventModel]?
   
-    required init(view: EventListViewProtocol, jsonEventsService: RealmServiceProtocol, router: EventListRouterProtocol) {
+    required init(view: EventListViewProtocol, realmService: RealmServiceProtocol, router: EventListRouterProtocol) {
         self.view = view
-        self.jsonEventsService = jsonEventsService
+        self.realmService = realmService
         self.router = router
     }
     
     func viewDidLoad() {
         
-        jsonEventsService.getEvents() { [weak self] result in
+        realmService.getEvents { [weak self] result in
             guard let self = self else { return }
             switch result {
             case.success(let events):
-                self.events = events
+                self.events = events.map{ $0 }
             case.failure(let error):
                 print(error.localizedDescription)
             }
         }
+
         view?.showEmptyView(text: "Choose a date")
     }
     
     func didSelectDate(_ date: Date) {
         
-        let filteredEvents = events?.filter({$0.dateStart.convertFromTimeStampToString() == date.convertFromDateToString() })
+        let filteredEvents = events?.filter({ $0.dateStart == date })
         
         if filteredEvents?.count == 0 {
             view?.showEmptyView(text: "No events for selected date")

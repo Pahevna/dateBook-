@@ -12,14 +12,22 @@ protocol EventCreationViewProtocol: class {
 }
 
 protocol EventCreationPresenterProtocol: class {
-    
+    func didTapAddButton()
 }
 
 class EventCreationPresenter: EventCreationPresenterProtocol {
-    weak var view: EventCreationViewProtocol?
     
-    required init(view: EventCreationViewProtocol) {
+    weak var view: EventCreationViewProtocol?
+    private let realmService: RealmServiceProtocol
+    
+    required init(view: EventCreationViewProtocol, realmService: RealmServiceProtocol) {
         self.view = view
+        self.realmService = realmService
     }
+    
+    func didTapAddButton() {
+        realmService.saveEventToRealm(name: <#T##String#>, dateStart: <#T##NSDate#>, dataEnd: <#T##NSDate#>, description: <#T##String#>)
+    }
+    
     
 }

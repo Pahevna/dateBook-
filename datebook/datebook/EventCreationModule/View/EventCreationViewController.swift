@@ -209,7 +209,7 @@ class EventCreationViewController: UIViewController {
     
     @objc private func didTapAdd() {
         
-        print("button clicked")
+        presenter?.didTapAddButton()
     }
 }
 
