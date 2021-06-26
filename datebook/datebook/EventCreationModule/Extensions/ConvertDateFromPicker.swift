@@ -9,7 +9,7 @@ import Foundation
 
 extension Date {
     
-    func convertFromDateFromPicker() -> String {
+    func convertFromDatePickerToString() -> String {
         
         Date.dateFormatter.dateFormat = "d MMM yyyy HH:mm"
         let dateString = Date.dateFormatter.string(from: self)

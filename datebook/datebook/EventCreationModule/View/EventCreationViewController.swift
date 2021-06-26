@@ -195,14 +195,14 @@ class EventCreationViewController: UIViewController {
         if dateStartTextField.isFirstResponder {
             
             dateStartTextField.text = "\(datePicker.date)"
-            dateStartTextField.text = datePicker.date.convertFromDateFromPicker()
+            dateStartTextField.text = datePicker.date.convertFromDateToString()
             view.endEditing(true)
         }
         
         if dateEndTextField.isFirstResponder {
             
             dateEndTextField.text = "\(datePicker.date)"
-            dateEndTextField.text = datePicker.date.convertFromDateFromPicker()
+            dateEndTextField.text = datePicker.date.convertFromDateToString()
             view.endEditing(true)
         }
     }
@@ -213,10 +213,6 @@ class EventCreationViewController: UIViewController {
     }
 }
 
-extension EventCreationViewController: EventCreationViewProtocol {
-    
-}
-
 extension EventCreationViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -225,5 +221,16 @@ extension EventCreationViewController: UITextFieldDelegate {
         
         return true
     }
+}
+
+extension EventCreationViewController: EventCreationViewProtocol {
     
+    func set(name: String, dateStart: Date, dateEnd: Date, description: String) {
+     
+        nameTextField.text = name
+        descriptionTextField.text = description
+        dateStartTextField.text = dateStart.convertFromDateToString()
+        dateEndTextField.text = dateEnd.convertFromDateToString()
+        
+    }
 }

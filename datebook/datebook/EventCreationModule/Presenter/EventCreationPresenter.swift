@@ -8,7 +8,7 @@
 import Foundation
 
 protocol EventCreationViewProtocol: class {
-    
+    func set(name: String, dateStart: Date, dateEnd: Date, description: String)
 }
 
 protocol EventCreationPresenterProtocol: class {
@@ -26,7 +26,7 @@ class EventCreationPresenter: EventCreationPresenterProtocol {
     }
     
     func didTapAddButton() {
-        realmService.saveEventToRealm(name: <#T##String#>, dateStart: <#T##NSDate#>, dataEnd: <#T##NSDate#>, description: <#T##String#>)
+        realmService.saveEventToRealm(name: <#T##String#>, dateStart: <#T##Date#>, dataEnd: <#T##Date#>, description: <#T##String#>)
     }
     
     

@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 protocol RealmServiceProtocol {
-    func saveEventToRealm(name: String, dateStart: NSDate, dataEnd: NSDate, description: String)
+    func saveEventToRealm(name: String, dateStart: Date, dataEnd: Date, description: String)
     func getEvents(completion: @escaping (Result<Results<EventModel>, Error>) -> Void)
 }
 
@@ -17,7 +17,7 @@ class RealmService: RealmServiceProtocol {
     
     private var realm = try! Realm()
     
-    func saveEventToRealm(name: String, dateStart: NSDate, dataEnd: NSDate, description: String) {
+    func saveEventToRealm(name: String, dateStart: Date, dataEnd: Date, description: String) {
         
         do {
             try realm.write {
