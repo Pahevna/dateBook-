@@ -210,6 +210,7 @@ class EventCreationViewController: UIViewController {
     @objc private func didTapAdd() {
         
         presenter?.didTapAddButton()
+        
     }
 }
 
@@ -217,20 +218,22 @@ extension EventCreationViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        addButton.setTitleColor(.red, for: .normal)
+        let currentText = textField.text ?? ""
         
-        return true
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        
+        textField.text = updatedText
+        
+        presenter?.didEditName(updatedText)
+        
+        return false
+        
     }
 }
 
 extension EventCreationViewController: EventCreationViewProtocol {
+   
     
-    func set(name: String, dateStart: Date, dateEnd: Date, description: String) {
-     
-        nameTextField.text = name
-        descriptionTextField.text = description
-        dateStartTextField.text = dateStart.convertFromDateToString()
-        dateEndTextField.text = dateEnd.convertFromDateToString()
-        
-    }
 }

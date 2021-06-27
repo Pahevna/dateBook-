@@ -59,6 +59,7 @@ class EventListPresenter: EventListPresenterProtocol {
     }
     
     func showEventCreationModule() {
+        
         router?.showEventCreationModule()
     }
 }

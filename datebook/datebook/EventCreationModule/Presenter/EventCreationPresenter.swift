@@ -8,25 +8,57 @@
 import Foundation
 
 protocol EventCreationViewProtocol: class {
-    func set(name: String, dateStart: Date, dateEnd: Date, description: String)
+
+  
 }
 
 protocol EventCreationPresenterProtocol: class {
+    func didEditName(_ name: String)
+    func didEditDescription(_ description: String)
+    func didEditDateStart(_ dateStart: Date)
+    func didEditDateEnd(_ dateEnd: Date)
     func didTapAddButton()
 }
 
 class EventCreationPresenter: EventCreationPresenterProtocol {
     
+    
+    
     weak var view: EventCreationViewProtocol?
     private let realmService: RealmServiceProtocol
+    private var name: String?
+    private var description: String?
+    private var dateStart: Date?
+    private var dateEnd: Date?
     
     required init(view: EventCreationViewProtocol, realmService: RealmServiceProtocol) {
         self.view = view
         self.realmService = realmService
     }
     
+    func didEditName(_ name: String) {
+        
+        self.name = name
+    }
+    
+    func didEditDescription(_ description: String) {
+        
+        self.description = description
+    }
+    
+    func didEditDateStart(_ dateStart: Date) {
+        
+        self.dateStart = dateStart
+    }
+    
+    func didEditDateEnd(_ dateEnd: Date) {
+        
+        self.dateEnd = dateEnd
+    }
+    
     func didTapAddButton() {
-        realmService.saveEventToRealm(name: <#T##String#>, dateStart: <#T##Date#>, dataEnd: <#T##Date#>, description: <#T##String#>)
+        
+        realmService.saveEventToRealm(name: name ?? "", dateStart: dateStart ?? Date(), dataEnd: dateEnd ?? Date(), description: description ?? "")
     }
     
     
