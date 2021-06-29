@@ -42,7 +42,6 @@ class EventListPresenter: EventListPresenterProtocol {
                 print(error.localizedDescription)
             }
         }
-
         view?.showEmptyView(text: "Choose a date")
     }
     

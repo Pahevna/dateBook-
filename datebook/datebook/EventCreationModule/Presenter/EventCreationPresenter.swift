@@ -22,8 +22,6 @@ protocol EventCreationPresenterProtocol: class {
 
 class EventCreationPresenter: EventCreationPresenterProtocol {
     
-    
-    
     weak var view: EventCreationViewProtocol?
     private let realmService: RealmServiceProtocol
     private var name: String?

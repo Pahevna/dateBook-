@@ -17,3 +17,17 @@ extension Date {
         return dateString
     }
 }
+extension String {
+
+    func convertToDate()-> Date {
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.locale = Locale.current
+        dateFormatter.dateFormat = "d MMM yyyy HH:mm"
+        guard let date = dateFormatter.date(from: self) else { return Date() }
+
+        return date
+
+    }
+}

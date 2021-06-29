@@ -226,8 +226,16 @@ extension EventCreationViewController: UITextFieldDelegate {
         
         textField.text = updatedText
         
-        presenter?.didEditName(updatedText)
-        
+        if textField === nameTextField {
+            presenter?.didEditName(updatedText)
+        } else if textField === descriptionTextField {
+            presenter?.didEditDescription(updatedText)
+        } else if textField === dateStartTextField {
+            presenter?.didEditDateStart(updatedText.convertToDate())
+        } else if textField === dateEndTextField {
+            presenter?.didEditDateEnd(updatedText.convertToDate())
+        }
+       
         return false
         
     }
