@@ -188,6 +188,9 @@ class EventCreationViewController: UIViewController {
     private func configureTextField() {
         
         nameTextField.delegate = self
+        descriptionTextField.delegate = self
+        dateStartTextField.delegate = self
+        dateEndTextField.delegate = self
     }
     
     @objc private func donePressed() {
@@ -209,6 +212,7 @@ class EventCreationViewController: UIViewController {
     
     @objc private func didTapAdd() {
         
+        print("button clicked")
         presenter?.didTapAddButton()
         
     }
@@ -227,11 +231,15 @@ extension EventCreationViewController: UITextFieldDelegate {
         textField.text = updatedText
         
         if textField === nameTextField {
+            addButton.setTitleColor(.red, for: .normal)
             presenter?.didEditName(updatedText)
+            
         } else if textField === descriptionTextField {
             presenter?.didEditDescription(updatedText)
+            
         } else if textField === dateStartTextField {
             presenter?.didEditDateStart(updatedText.convertToDate())
+            
         } else if textField === dateEndTextField {
             presenter?.didEditDateEnd(updatedText.convertToDate())
         }

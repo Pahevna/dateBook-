@@ -35,8 +35,6 @@ class RealmService: RealmServiceProtocol {
         let events: Results<EventModel> = realm.objects(EventModel.self)
         completion(.success(events))
         
-        let error = NSError()
-        completion(.failure(error))
     }
 }
     
