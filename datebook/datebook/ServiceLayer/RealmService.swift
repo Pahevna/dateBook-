@@ -10,31 +10,36 @@ import RealmSwift
 
 protocol RealmServiceProtocol {
     func saveEventToRealm(name: String, dateStart: Date, dataEnd: Date, description: String)
-    func getEvents(completion: @escaping (Result<Results<EventModel>, Error>) -> Void)
+    func getEvents(selectedDate: Date, completion: @escaping (Result<[EventModel]?, Error>) -> Void)
 }
 
 class RealmService: RealmServiceProtocol {
     
-    private var realm = try! Realm()
-    
     func saveEventToRealm(name: String, dateStart: Date, dataEnd: Date, description: String) {
         
         do {
+            let realm = try Realm()
             try realm.write {
                 let event = EventModel(value: ["name": name, "desc": description, "dateStart": dateStart, "dateEnd": dataEnd])
                 realm.add(event)
             }
-            
         } catch let error as NSError {
             fatalError(error.localizedDescription)
         }
     }
     
-    func getEvents(completion: @escaping (Result<Results<EventModel>, Error>) -> Void) {
+    func getEvents(selectedDate: Date, completion: @escaping (Result<[EventModel]?, Error>) -> Void) {
         
-        let events: Results<EventModel> = realm.objects(EventModel.self)
-        completion(.success(events))
-        
+        do {
+            let realm = try Realm()
+            let events = realm.objects(EventModel.self)
+            
+            let filteredEvents = Array(events.filter { $0.dateStart.convertFromDateToString() == selectedDate.convertFromDateToString() })
+            completion(.success(filteredEvents))
+            
+        } catch let error as NSError {
+            completion(.failure(error))
+        }
     }
 }
     
