@@ -198,14 +198,14 @@ class EventCreationViewController: UIViewController {
         if dateStartTextField.isFirstResponder {
             
             dateStartTextField.text = "\(datePicker.date)"
-            dateStartTextField.text = datePicker.date.convertFromDateToString()
+            dateStartTextField.text = datePicker.date.convertFromDateToString(dateFormat: "d MMM yyyy HH:mm")
             view.endEditing(true)
         }
         
         if dateEndTextField.isFirstResponder {
             
             dateEndTextField.text = "\(datePicker.date)"
-            dateEndTextField.text = datePicker.date.convertFromDateToString()
+            dateEndTextField.text = datePicker.date.convertFromDateToString(dateFormat: "d MMM yyyy HH:mm")
             view.endEditing(true)
         }
     }
@@ -250,6 +250,14 @@ extension EventCreationViewController: UITextFieldDelegate {
 }
 
 extension EventCreationViewController: EventCreationViewProtocol {
-   
     
+    func showAlert(text: String) {
+        
+        let alert = UIAlertController(title: "Error", message: text,
+                                      preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okButton)
+        
+        present(alert, animated: true, completion: nil)
+    }
 }

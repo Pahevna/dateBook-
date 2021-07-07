@@ -18,7 +18,6 @@ class CalendarViewController: UIViewController {
     private var emptyLabel: UILabel!
     private var eventsForSelectedDate: [EventModel]?
    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,7 +25,6 @@ class CalendarViewController: UIViewController {
         configureCalendar()
         setupTableView()
         presenter?.viewDidLoad()
-        
     }
     
     @IBAction func addEvent (_ sender: UIBarButtonItem) {

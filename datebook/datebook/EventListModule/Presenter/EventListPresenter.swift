@@ -33,27 +33,24 @@ class EventListPresenter: EventListPresenterProtocol {
     
     func viewDidLoad() {
         
-        realmService.getEvents { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case.success(let events):
-                self.events = events.map{ $0 }
-            case.failure(let error):
-                print(error.localizedDescription)
-            }
-        }
         view?.showEmptyView(text: "Choose a date")
     }
     
     func didSelectDate(_ date: Date) {
         
-        let filteredEvents = events?.filter({ $0.dateStart == date })
-        
-        if filteredEvents?.count == 0 {
+        realmService.getEvents(selectedDate: date) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case.success(let events):
+                self.events = events
+                self.view?.setEvents(events ?? [])
+            case.failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+
+        if events?.count == 0 {
             view?.showEmptyView(text: "No events for selected date")
-            
-        } else {
-            view?.setEvents(filteredEvents ?? [])
         }
     }
     

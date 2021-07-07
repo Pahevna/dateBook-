@@ -6,37 +6,14 @@
 //
 
 import Foundation
-import RealmSwift
 
 extension Date {
     
-    static let dateFormatter = DateFormatter()
-    
-    func convertFromDateToString() -> String {
+    func convertFromDateToString(dateFormat: String) -> String {
         
-        Date.dateFormatter.dateFormat = "MM/dd/yyyy"
-        let dateString = Date.dateFormatter.string(from: self)
-        
-        return dateString
-    }
-}
-
-    extension TimeInterval {
-    
-    func convertFromTimeStampToString() -> String {
-        
-        let date = Date(timeIntervalSince1970: self)
-        Date.dateFormatter.dateFormat = "MM/dd/yyyy"
-        let dateString = Date.dateFormatter.string(from: date)
-        
-        return dateString
-    }
-
-    func convertFromDoubleToString() -> String {
-        
-        let date = Date(timeIntervalSince1970: self)
-        Date.dateFormatter.dateFormat = "HH:mm"
-        let dateString = Date.dateFormatter.string(from: date)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = dateFormat
+        let dateString = dateFormatter.string(from: self)
         
         return dateString
     }

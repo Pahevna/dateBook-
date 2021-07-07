@@ -8,8 +8,7 @@
 import Foundation
 
 protocol EventCreationViewProtocol: class {
-
-  
+    func showAlert(text: String)
 }
 
 protocol EventCreationPresenterProtocol: class {
@@ -23,15 +22,18 @@ protocol EventCreationPresenterProtocol: class {
 class EventCreationPresenter: EventCreationPresenterProtocol {
     
     weak var view: EventCreationViewProtocol?
+    var router: EventCreationRouterProtocol?
     private let realmService: RealmServiceProtocol
+    private let currentDate = Date() 
     private var name: String?
     private var description: String?
     private var dateStart: Date?
     private var dateEnd: Date?
     
-    required init(view: EventCreationViewProtocol, realmService: RealmServiceProtocol) {
+    required init(view: EventCreationViewProtocol, realmService: RealmServiceProtocol, router: EventCreationRouterProtocol) {
         self.view = view
         self.realmService = realmService
+        self.router = router 
     }
     
     func didEditName(_ name: String) {
@@ -56,8 +58,18 @@ class EventCreationPresenter: EventCreationPresenterProtocol {
     
     func didTapAddButton() {
         
-        realmService.saveEventToRealm(name: name ?? "", dateStart: dateStart ?? Date(), dataEnd: dateEnd ?? Date(), description: description ?? "")
+        guard let dataStartString = dateStart?.convertFromDateToString(dateFormat: "MM-dd-yyyy HH:mm") else { return }
+        
+        let currentDateString = currentDate.convertFromDateToString(dateFormat: "MM-dd-yyyy HH:mm")
+        
+        if dataStartString >= currentDateString {
+            
+            realmService.saveEventToRealm(name: name ?? "", dateStart: dateStart ?? Date(), dataEnd: dateEnd ?? Date(), description: description ?? "")
+            
+        } else {
+            
+            view?.showAlert(text: "Please, enter correct date")
+        }
+        router?.popToRoot()
     }
-    
-    
 }

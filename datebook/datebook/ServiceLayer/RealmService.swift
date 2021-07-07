@@ -34,7 +34,7 @@ class RealmService: RealmServiceProtocol {
             let realm = try Realm()
             let events = realm.objects(EventModel.self)
             
-            let filteredEvents = Array(events.filter { $0.dateStart.convertFromDateToString() == selectedDate.convertFromDateToString() })
+            let filteredEvents = Array(events.filter { $0.dateStart.convertFromDateToString(dateFormat: "MM/dd/yyyy") == selectedDate.convertFromDateToString(dateFormat: "MM/dd/yyyy") })
             completion(.success(filteredEvents))
             
         } catch let error as NSError {

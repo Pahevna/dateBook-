@@ -18,7 +18,8 @@ class EventCreationModuleBuilder: EventCreationModuleBuilderProtocol {
         
         let view = EventCreationViewController()
         let realmService = RealmService()
-        let presenter = EventCreationPresenter(view: view, realmService: realmService)
+        let router = EventCreationRouter(navigationController: navigationController)
+        let presenter = EventCreationPresenter(view: view, realmService: realmService, router: router)
         view.presenter = presenter
         
         return view
