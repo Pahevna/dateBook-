@@ -58,11 +58,9 @@ class EventCreationPresenter: EventCreationPresenterProtocol {
     
     func didTapAddButton() {
         
-        guard let dataStartString = dateStart?.convertFromDateToString(dateFormat: "MM-dd-yyyy HH:mm") else { return }
+        guard let dataStart = dateStart else { return }
         
-        let currentDateString = currentDate.convertFromDateToString(dateFormat: "MM-dd-yyyy HH:mm")
-        
-        if dataStartString >= currentDateString {
+        if dataStart > currentDate {
             
             realmService.saveEventToRealm(name: name ?? "", dateStart: dateStart ?? Date(), dataEnd: dateEnd ?? Date(), description: description ?? "")
             
@@ -70,6 +68,5 @@ class EventCreationPresenter: EventCreationPresenterProtocol {
             
             view?.showAlert(text: "Please, enter correct date")
         }
-        router?.popToRoot()
     }
 }

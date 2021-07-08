@@ -67,26 +67,26 @@ class EventCreationViewController: UIViewController {
         return descriptionTextField
     }()
     
-    private let dateStartTextField: UITextField = {
-        let dateStartTextField = UITextField()
-        dateStartTextField.font = UIFont(name: "TrebuchetMS", size: 17)
-        dateStartTextField.placeholder = "Starts"
-        dateStartTextField.textAlignment = .left
-        dateStartTextField.borderStyle = .roundedRect
-        dateStartTextField.translatesAutoresizingMaskIntoConstraints = false
+    private let dateStartLabel: UILabel = {
+        let dateStartLabel = UILabel()
+        dateStartLabel.font = UIFont(name: "TrebuchetMS", size: 17)
+        dateStartLabel.textAlignment = .left
+        dateStartLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        return dateStartTextField
+        return dateStartLabel
     }()
     
-    private let dateEndTextField: UITextField = {
-        let dateEndTextField = UITextField()
-        dateEndTextField.font = UIFont(name: "TrebuchetMS", size: 17)
-        dateEndTextField.placeholder = "Ends"
-        dateEndTextField.textAlignment = .left
-        dateEndTextField.borderStyle = .roundedRect
-        dateEndTextField.translatesAutoresizingMaskIntoConstraints = false
+    private let dateEndLabel: UILabel = {
+        let dateEndLabel = UILabel()
+        dateEndLabel.font = UIFont(name: "TrebuchetMS", size: 17)
+        dateEndLabel.text = "Ends"
+        dateEndLabel.textAlignment = .left
+        dateEndLabel.textColor = .gray
+        dateEndLabel.layer.borderWidth = 0.5
+        dateEndLabel.layer.borderColor = UIColor.gray.cgColor
+        dateEndLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        return dateEndTextField
+        return dateEndLabel
     }()
     
     private let datePicker = UIDatePicker()
@@ -98,8 +98,8 @@ class EventCreationViewController: UIViewController {
         setConstraints()
         configureTextField()
         
-        createDatePicker(forField: dateStartTextField)
-        createDatePicker(forField: dateEndTextField)
+        createDatePicker(forLabel: dateStartLabel)
+        createDatePicker(forLabel: dateEndLabel)
        
         navigationController?.navigationBar.tintColor = .orange
         view.backgroundColor = .systemBackground
@@ -148,20 +148,20 @@ class EventCreationViewController: UIViewController {
             descriptionTextField.heightAnchor.constraint(equalToConstant: 50)
         ])
         
-        view.addSubview(dateStartTextField)
+        view.addSubview(dateStartLabel)
         NSLayoutConstraint.activate([
-            dateStartTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            dateStartTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            dateStartTextField.topAnchor.constraint(equalTo: descriptionTextField.bottomAnchor),
-            dateStartTextField.heightAnchor.constraint(equalToConstant: 50)
+            dateStartLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            dateStartLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            dateStartLabel.topAnchor.constraint(equalTo: descriptionTextField.bottomAnchor),
+            dateStartLabel.heightAnchor.constraint(equalToConstant: 50)
         ])
         
-        view.addSubview(dateEndTextField)
+        view.addSubview(dateEndLabel)
         NSLayoutConstraint.activate([
-            dateEndTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            dateEndTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            dateEndTextField.topAnchor.constraint(equalTo: dateStartTextField.bottomAnchor),
-            dateEndTextField.heightAnchor.constraint(equalToConstant: 50)
+            dateEndLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            dateEndLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            dateEndLabel.topAnchor.constraint(equalTo: dateStartLabel.bottomAnchor),
+            dateEndLabel.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
@@ -177,35 +177,33 @@ class EventCreationViewController: UIViewController {
         return toolBar
     }
     
-    private func createDatePicker(forField textField: UITextField) {
+    private func createDatePicker(forLabel label: UILabel) {
         
         datePicker.datePickerMode = .dateAndTime
         datePicker.preferredDatePickerStyle = .wheels
-        textField.inputView = datePicker
-        textField.inputAccessoryView = createToolBar()
+        //label.text = datePicker
+        //createToolBar()
     }
     
     private func configureTextField() {
         
         nameTextField.delegate = self
         descriptionTextField.delegate = self
-        dateStartTextField.delegate = self
-        dateEndTextField.delegate = self
     }
     
     @objc private func donePressed() {
         
-        if dateStartTextField.isFirstResponder {
+        if dateStartLabel.isFirstResponder {
             
-            dateStartTextField.text = "\(datePicker.date)"
-            dateStartTextField.text = datePicker.date.convertFromDateToString(dateFormat: "d MMM yyyy HH:mm")
+            dateStartLabel.text = "\(datePicker.date)"
+            dateStartLabel.text = datePicker.date.convertFromDateToString(dateFormat: "d MMM yyyy HH:mm")
             view.endEditing(true)
         }
         
-        if dateEndTextField.isFirstResponder {
+        if dateEndLabel.isFirstResponder {
             
-            dateEndTextField.text = "\(datePicker.date)"
-            dateEndTextField.text = datePicker.date.convertFromDateToString(dateFormat: "d MMM yyyy HH:mm")
+            dateEndLabel.text = "\(datePicker.date)"
+            dateEndLabel.text = datePicker.date.convertFromDateToString(dateFormat: "d MMM yyyy HH:mm")
             view.endEditing(true)
         }
     }
@@ -214,7 +212,6 @@ class EventCreationViewController: UIViewController {
         
         print("button clicked")
         presenter?.didTapAddButton()
-        
     }
 }
 
@@ -237,15 +234,14 @@ extension EventCreationViewController: UITextFieldDelegate {
         } else if textField === descriptionTextField {
             presenter?.didEditDescription(updatedText)
             
-        } else if textField === dateStartTextField {
+        } else if textField === dateStartLabel {
             presenter?.didEditDateStart(updatedText.convertToDate())
             
-        } else if textField === dateEndTextField {
+        } else if textField === dateEndLabel {
             presenter?.didEditDateEnd(updatedText.convertToDate())
         }
        
         return false
-        
     }
 }
 
