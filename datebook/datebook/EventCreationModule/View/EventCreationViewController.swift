@@ -69,8 +69,12 @@ class EventCreationViewController: UIViewController {
     
     private let dateStartLabel: UILabel = {
         let dateStartLabel = UILabel()
+        dateStartLabel.text = "Starts"
         dateStartLabel.font = UIFont(name: "TrebuchetMS", size: 17)
         dateStartLabel.textAlignment = .left
+        dateStartLabel.textColor = .gray
+        dateStartLabel.layer.borderWidth = 0.5
+        dateStartLabel.layer.borderColor = UIColor.gray.cgColor
         dateStartLabel.translatesAutoresizingMaskIntoConstraints = false
         
         return dateStartLabel
@@ -89,21 +93,25 @@ class EventCreationViewController: UIViewController {
         return dateEndLabel
     }()
     
-    private let datePicker = UIDatePicker()
-    
+    private let datePicker: UIDatePicker = {
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .dateAndTime
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.addTarget(self, action: #selector(donePressed), for: .valueChanged)
+        datePicker.translatesAutoresizingMaskIntoConstraints = false
+        
+        return datePicker
+    }()
+        
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setConstraints()
         configureTextField()
-        
-        createDatePicker(forLabel: dateStartLabel)
-        createDatePicker(forLabel: dateEndLabel)
-       
+    
         navigationController?.navigationBar.tintColor = .orange
         view.backgroundColor = .systemBackground
-
     }
     
     private func setConstraints() {
@@ -163,26 +171,14 @@ class EventCreationViewController: UIViewController {
             dateEndLabel.topAnchor.constraint(equalTo: dateStartLabel.bottomAnchor),
             dateEndLabel.heightAnchor.constraint(equalToConstant: 50)
         ])
-    }
-    
-    private func createToolBar() -> UIToolbar {
-    
-        let toolBar = UIToolbar()
-        toolBar.sizeToFit()
         
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
-        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        toolBar.setItems([flexSpace, doneButton], animated: true)
-        
-        return toolBar
-    }
-    
-    private func createDatePicker(forLabel label: UILabel) {
-        
-        datePicker.datePickerMode = .dateAndTime
-        datePicker.preferredDatePickerStyle = .wheels
-        //label.text = datePicker
-        //createToolBar()
+        view.addSubview(datePicker)
+        NSLayoutConstraint.activate([
+            datePicker.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            datePicker.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            datePicker.topAnchor.constraint(equalTo: dateEndLabel.bottomAnchor),
+            dateEndLabel.heightAnchor.constraint(equalToConstant: 50)
+        ])
     }
     
     private func configureTextField() {
@@ -194,14 +190,14 @@ class EventCreationViewController: UIViewController {
     @objc private func donePressed() {
         
         if dateStartLabel.isFirstResponder {
-            
+
             dateStartLabel.text = "\(datePicker.date)"
             dateStartLabel.text = datePicker.date.convertFromDateToString(dateFormat: "d MMM yyyy HH:mm")
             view.endEditing(true)
         }
-        
+
         if dateEndLabel.isFirstResponder {
-            
+
             dateEndLabel.text = "\(datePicker.date)"
             dateEndLabel.text = datePicker.date.convertFromDateToString(dateFormat: "d MMM yyyy HH:mm")
             view.endEditing(true)

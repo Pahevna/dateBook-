@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		04400D102695ADDC00342FF5 /* ConvertString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04400D0F2695ADDC00342FF5 /* ConvertString.swift */; };
 		04400D1826961E5600342FF5 /* EventCreationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04400D1726961E5500342FF5 /* EventCreationRouter.swift */; };
+		04400D2726A05AC300342FF5 /* DatePickerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04400D2626A05AC300342FF5 /* DatePickerLabel.swift */; };
 		04501124266E4C7F00E8147D /* EventCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04501123266E4C7F00E8147D /* EventCreationViewController.swift */; };
 		045011432670D35100E8147D /* EventCreationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045011422670D35100E8147D /* EventCreationPresenter.swift */; };
 		0450114C2670D4FB00E8147D /* EventCreationModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450114B2670D4FB00E8147D /* EventCreationModuleBuilder.swift */; };
@@ -54,6 +55,7 @@
 /* Begin PBXFileReference section */
 		04400D0F2695ADDC00342FF5 /* ConvertString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConvertString.swift; path = datebook/EventListModule/Extensions/ConvertString.swift; sourceTree = SOURCE_ROOT; };
 		04400D1726961E5500342FF5 /* EventCreationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventCreationRouter.swift; path = datebook/EventCreationModule/Router/EventCreationRouter.swift; sourceTree = SOURCE_ROOT; };
+		04400D2626A05AC300342FF5 /* DatePickerLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DatePickerLabel.swift; path = datebook/EventCreationModule/DatePickerLabel.swift; sourceTree = SOURCE_ROOT; };
 		04501123266E4C7F00E8147D /* EventCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventCreationViewController.swift; path = datebook/EventCreationModule/View/EventCreationViewController.swift; sourceTree = SOURCE_ROOT; };
 		045011422670D35100E8147D /* EventCreationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventCreationPresenter.swift; path = datebook/EventCreationModule/Presenter/EventCreationPresenter.swift; sourceTree = SOURCE_ROOT; };
 		0450114B2670D4FB00E8147D /* EventCreationModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventCreationModuleBuilder.swift; path = datebook/EventCreationModule/Builder/EventCreationModuleBuilder.swift; sourceTree = SOURCE_ROOT; };
@@ -134,6 +136,7 @@
 				045011472670D35800E8147D /* Presenter */,
 				045011502670D50800E8147D /* Builder */,
 				04400D1C26961E5B00342FF5 /* Router */,
+				04400D2626A05AC300342FF5 /* DatePickerLabel.swift */,
 			);
 			path = EventCreationModule;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				04400D1826961E5600342FF5 /* EventCreationRouter.swift in Sources */,
 				04400D102695ADDC00342FF5 /* ConvertString.swift in Sources */,
 				04789EC026309D9100C824AC /* EventModel.swift in Sources */,
+				04400D2726A05AC300342FF5 /* DatePickerLabel.swift in Sources */,
 				04501124266E4C7F00E8147D /* EventCreationViewController.swift in Sources */,
 				04B6E8B92635DCE7005BAE8A /* EventListBuilder.swift in Sources */,
 				0465B43426345E3600C72A03 /* EventListPresenter.swift in Sources */,

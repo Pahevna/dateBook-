@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="startIcon" translatesAutoresizingMaskIntoConstraints="NO" id="BBw-wC-nip">
-                                <rect key="frame" x="164" y="194" width="200" height="260"/>
+                                <rect key="frame" x="159" y="194" width="200" height="260"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="eef-Ja-bzZ"/>
                                     <constraint firstAttribute="height" constant="260" id="gda-xx-W6f"/>
@@ -28,7 +28,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="BBw-wC-nip" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="bI1-Ta-mlX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BBw-wC-nip" secondAttribute="trailing" constant="50" id="m4f-hC-fNm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BBw-wC-nip" secondAttribute="trailing" constant="55" id="gxn-3v-etw"/>
                         </constraints>
                     </view>
                 </viewController>

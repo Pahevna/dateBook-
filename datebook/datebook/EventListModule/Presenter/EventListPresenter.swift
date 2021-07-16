@@ -24,6 +24,7 @@ class EventListPresenter: EventListPresenterProtocol {
     var router: EventListRouterProtocol?
     private let realmService: RealmServiceProtocol
     private var events: [EventModel]?
+    private var currentDate = Date()
   
     required init(view: EventListViewProtocol, realmService: RealmServiceProtocol, router: EventListRouterProtocol) {
         self.view = view
@@ -33,6 +34,9 @@ class EventListPresenter: EventListPresenterProtocol {
     
     func viewDidLoad() {
         
+        realmService.getEvents(selectedDate: currentDate) { [weak self] result in
+            
+        }
         view?.showEmptyView(text: "Choose a date")
     }
     
@@ -48,7 +52,7 @@ class EventListPresenter: EventListPresenterProtocol {
                 print(error.localizedDescription)
             }
         }
-
+        
         if events?.count == 0 {
             view?.showEmptyView(text: "No events for selected date")
         }
