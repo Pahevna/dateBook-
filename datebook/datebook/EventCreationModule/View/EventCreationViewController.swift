@@ -45,70 +45,28 @@ class EventCreationViewController: UIViewController {
         return eventLabel
     }()
     
-    private let nameTextField: UITextField = {
-        let nameTextField = UITextField()
-        nameTextField.font = UIFont(name: "TrebuchetMS", size: 17)
-        nameTextField.placeholder = "Title"
-        nameTextField.textAlignment = .left
-        nameTextField.borderStyle = .roundedRect
-        nameTextField.translatesAutoresizingMaskIntoConstraints = false
-        
-        return nameTextField
+    private let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
     }()
     
-    private let descriptionTextField: UITextField = {
-        let descriptionTextField = UITextField()
-        descriptionTextField.font = UIFont(name: "TrebuchetMS", size: 17)
-        descriptionTextField.placeholder = "Description"
-        descriptionTextField.textAlignment = .left
-        descriptionTextField.borderStyle = .roundedRect
-        descriptionTextField.translatesAutoresizingMaskIntoConstraints = false
+
+//    private let datePicker: UIDatePicker = {
+//        let datePicker = UIDatePicker()
+//        datePicker.datePickerMode = .dateAndTime
+//        datePicker.preferredDatePickerStyle = .wheels
+//        datePicker.addTarget(self, action: #selector(donePressed), for: .valueChanged)
+//        datePicker.translatesAutoresizingMaskIntoConstraints = false
+//
+//        return datePicker
+//    }()
         
-        return descriptionTextField
-    }()
-    
-    private let dateStartLabel: UILabel = {
-        let dateStartLabel = UILabel()
-        dateStartLabel.text = "Starts"
-        dateStartLabel.font = UIFont(name: "TrebuchetMS", size: 17)
-        dateStartLabel.textAlignment = .left
-        dateStartLabel.textColor = .gray
-        dateStartLabel.layer.borderWidth = 0.5
-        dateStartLabel.layer.borderColor = UIColor.gray.cgColor
-        dateStartLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        return dateStartLabel
-    }()
-    
-    private let dateEndLabel: UILabel = {
-        let dateEndLabel = UILabel()
-        dateEndLabel.font = UIFont(name: "TrebuchetMS", size: 17)
-        dateEndLabel.text = "Ends"
-        dateEndLabel.textAlignment = .left
-        dateEndLabel.textColor = .gray
-        dateEndLabel.layer.borderWidth = 0.5
-        dateEndLabel.layer.borderColor = UIColor.gray.cgColor
-        dateEndLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        return dateEndLabel
-    }()
-    
-    private let datePicker: UIDatePicker = {
-        let datePicker = UIDatePicker()
-        datePicker.datePickerMode = .dateAndTime
-        datePicker.preferredDatePickerStyle = .wheels
-        datePicker.addTarget(self, action: #selector(donePressed), for: .valueChanged)
-        datePicker.translatesAutoresizingMaskIntoConstraints = false
-        
-        return datePicker
-    }()
-        
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setConstraints()
-        configureTextField()
+        configureTableView()
     
         navigationController?.navigationBar.tintColor = .orange
         view.backgroundColor = .systemBackground
@@ -140,68 +98,27 @@ class EventCreationViewController: UIViewController {
             eventLabel.heightAnchor.constraint(equalToConstant: 50)
         ])
         
-        view.addSubview(nameTextField)
+        view.addSubview(tableView)
         NSLayoutConstraint.activate([
-            nameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            nameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            nameTextField.topAnchor.constraint(equalTo: cancelButton.bottomAnchor, constant: 20),
-            nameTextField.heightAnchor.constraint(equalToConstant: 50)
-        ])
-        
-        view.addSubview(descriptionTextField)
-        NSLayoutConstraint.activate([
-            descriptionTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            descriptionTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            descriptionTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor),
-            descriptionTextField.heightAnchor.constraint(equalToConstant: 50)
-        ])
-        
-        view.addSubview(dateStartLabel)
-        NSLayoutConstraint.activate([
-            dateStartLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            dateStartLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            dateStartLabel.topAnchor.constraint(equalTo: descriptionTextField.bottomAnchor),
-            dateStartLabel.heightAnchor.constraint(equalToConstant: 50)
-        ])
-        
-        view.addSubview(dateEndLabel)
-        NSLayoutConstraint.activate([
-            dateEndLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            dateEndLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            dateEndLabel.topAnchor.constraint(equalTo: dateStartLabel.bottomAnchor),
-            dateEndLabel.heightAnchor.constraint(equalToConstant: 50)
-        ])
-        
-        view.addSubview(datePicker)
-        NSLayoutConstraint.activate([
-            datePicker.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            datePicker.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            datePicker.topAnchor.constraint(equalTo: dateEndLabel.bottomAnchor),
-            dateEndLabel.heightAnchor.constraint(equalToConstant: 50)
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            tableView.topAnchor.constraint(equalTo: cancelButton.bottomAnchor, constant: 10),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         ])
     }
     
-    private func configureTextField() {
-        
-        nameTextField.delegate = self
-        descriptionTextField.delegate = self
-    }
+//    @objc private func donePressed() {
+//
+//        dateStartLabel.text = "\(datePicker.date)"
+//        dateStartLabel.text = datePicker.date.convertFromDateToString(dateFormat: "d MMM yyyy HH:mm")
+//    }
     
-    @objc private func donePressed() {
+    private func configureTableView() {
         
-        if dateStartLabel.isFirstResponder {
-
-            dateStartLabel.text = "\(datePicker.date)"
-            dateStartLabel.text = datePicker.date.convertFromDateToString(dateFormat: "d MMM yyyy HH:mm")
-            view.endEditing(true)
-        }
-
-        if dateEndLabel.isFirstResponder {
-
-            dateEndLabel.text = "\(datePicker.date)"
-            dateEndLabel.text = datePicker.date.convertFromDateToString(dateFormat: "d MMM yyyy HH:mm")
-            view.endEditing(true)
-        }
+        tableView.delegate = self
+        tableView.dataSource = self
+        let nib = UINib(nibName: "EventCreationTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "cellEvent")
     }
     
     @objc private func didTapAdd() {
@@ -223,22 +140,58 @@ extension EventCreationViewController: UITextFieldDelegate {
         
         textField.text = updatedText
         
-        if textField === nameTextField {
-            addButton.setTitleColor(.red, for: .normal)
-            presenter?.didEditName(updatedText)
-            
-        } else if textField === descriptionTextField {
-            presenter?.didEditDescription(updatedText)
-            
-        } else if textField === dateStartLabel {
-            presenter?.didEditDateStart(updatedText.convertToDate())
-            
-        } else if textField === dateEndLabel {
-            presenter?.didEditDateEnd(updatedText.convertToDate())
-        }
+//        if textField === nameTextField {
+//            addButton.setTitleColor(.red, for: .normal)
+//            presenter?.didEditName(updatedText)
+//
+//        } else if textField === descriptionTextField {
+//            presenter?.didEditDescription(updatedText)
+//
+//        } else if textField === dateStartLabel {
+//            presenter?.didEditDateStart(updatedText.convertToDate())
+//
+//        } else if textField === dateEndLabel {
+//            presenter?.didEditDateEnd(updatedText.convertToDate())
+//        }
        
         return false
     }
+}
+
+extension EventCreationViewController: UITableViewDataSource {
+   
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 40))
+        view.backgroundColor = .systemGray6
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellEvent", for: indexPath) as! EventCreationTableViewCell
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 80
+    }
+}
+
+extension EventCreationViewController: UITableViewDelegate {
+    
 }
 
 extension EventCreationViewController: EventCreationViewProtocol {
