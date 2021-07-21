@@ -34,16 +34,8 @@ class EventCreationViewController: UIViewController {
         return addButton
     }()
     
-    private let eventLabel: UILabel = {
-        let eventLabel = UILabel()
-        eventLabel.font = UIFont(name: "TrebuchetMS", size: 17)
-        eventLabel.textColor = .black
-        eventLabel.text = "New Event"
-        eventLabel.textAlignment = .center
-        eventLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        return eventLabel
-    }()
+    private let eventLabel = UILabel(text: "New Event", font: UIFont(name: "TrebuchetMS", size: 17), aligment: .center)
+      
     
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -52,57 +44,37 @@ class EventCreationViewController: UIViewController {
     }()
     
 
-//    private let datePicker: UIDatePicker = {
-//        let datePicker = UIDatePicker()
-//        datePicker.datePickerMode = .dateAndTime
-//        datePicker.preferredDatePickerStyle = .wheels
+
 //        datePicker.addTarget(self, action: #selector(donePressed), for: .valueChanged)
-//        datePicker.translatesAutoresizingMaskIntoConstraints = false
-//
-//        return datePicker
-//    }()
+
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setConstraints()
-        configureTableView()
-    
         navigationController?.navigationBar.tintColor = .orange
         view.backgroundColor = .systemBackground
+        
+        setConstraints()
+        setupTableView()
     }
     
     private func setConstraints() {
         
-        view.addSubview(cancelButton)
-        NSLayoutConstraint.activate([
-            cancelButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            cancelButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 70),
-            cancelButton.heightAnchor.constraint(equalToConstant: 50),
-            cancelButton.widthAnchor.constraint(equalToConstant: 80)
-        ])
+        let stackView = UIStackView(arrangedSubviews: [cancelButton,eventLabel,addButton], axis: .horizontal, spacing: 30, distribution: .fillEqually)
         
-        view.addSubview(addButton)
+        view.addSubview(stackView)
         NSLayoutConstraint.activate([
-            addButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            addButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 70),
-            addButton.heightAnchor.constraint(equalToConstant: 50),
-            addButton.widthAnchor.constraint(equalToConstant: 80)
-        ])
-        
-        view.addSubview(eventLabel)
-        NSLayoutConstraint.activate([
-            eventLabel.trailingAnchor.constraint(equalTo: addButton.leadingAnchor, constant: 10),
-            eventLabel.leadingAnchor.constraint(equalTo: cancelButton.trailingAnchor, constant: -10),
-            eventLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 70),
-            eventLabel.heightAnchor.constraint(equalToConstant: 50)
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5),
+            stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 75),
+            stackView.heightAnchor.constraint(equalToConstant: 30)
         ])
         
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            tableView.topAnchor.constraint(equalTo: cancelButton.bottomAnchor, constant: 10),
+            tableView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 10),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         ])
     }
@@ -113,12 +85,18 @@ class EventCreationViewController: UIViewController {
 //        dateStartLabel.text = datePicker.date.convertFromDateToString(dateFormat: "d MMM yyyy HH:mm")
 //    }
     
-    private func configureTableView() {
+    private func setupTableView() {
         
         tableView.delegate = self
         tableView.dataSource = self
-        let nib = UINib(nibName: "EventCreationTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "cellEvent")
+        tableView.tableFooterView = UIView()
+        
+        let nibEvent = UINib(nibName: "EventCreationTableViewCell", bundle: nil)
+        tableView.register(nibEvent, forCellReuseIdentifier: "cellEvent")
+        let nibDate = UINib(nibName: "DateTableViewCell", bundle: nil)
+        tableView.register(nibDate, forCellReuseIdentifier: "cellDate")
+        let nibDatePicker = UINib(nibName: "DatePickerTableViewCell", bundle: nil)
+        tableView.register(nibDatePicker, forCellReuseIdentifier: "cellDatePicker")
     }
     
     @objc private func didTapAdd() {
@@ -179,14 +157,18 @@ extension EventCreationViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellEvent", for: indexPath) as! EventCreationTableViewCell
-        
-        return cell
+        if indexPath.section == 0  {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cellEvent", for: indexPath) as! EventCreationTableViewCell
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cellDate", for: indexPath) as! DateTableViewCell
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 80
+        return 60
     }
 }
 

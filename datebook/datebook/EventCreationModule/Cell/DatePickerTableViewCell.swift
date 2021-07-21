@@ -1,15 +1,15 @@
 //
-//  EventCreationTableViewCell.swift
+//  DatePickerTableViewCell.swift
 //  dateBook
 //
-//  Created by mac on 20.07.2021.
+//  Created by mac on 21.07.2021.
 //
 
 import UIKit
 
-class EventCreationTableViewCell: UITableViewCell {
+class DatePickerTableViewCell: UITableViewCell {
 
-    @IBOutlet private weak var textField: UITextField!
+    @IBOutlet private weak var datePicker: UIDatePicker!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,5 +18,5 @@ class EventCreationTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-    }    
+    }
 }
