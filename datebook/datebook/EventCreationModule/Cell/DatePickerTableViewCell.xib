@@ -18,6 +18,7 @@
                 <subviews>
                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="C1o-RG-FFY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="162"/>
+                        <locale key="locale" localeIdentifier="ru_RU"/>
                     </datePicker>
                 </subviews>
                 <constraints>
