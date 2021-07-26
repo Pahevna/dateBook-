@@ -13,10 +13,6 @@
 		04400D3126A6E4A100342FF5 /* EventCreationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04400D2F26A6E4A100342FF5 /* EventCreationTableViewCell.xib */; };
 		04400D3B26A8320900342FF5 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04400D3A26A8320800342FF5 /* UIStackView.swift */; };
 		04400D4026A8359900342FF5 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04400D3F26A8359900342FF5 /* UILabel.swift */; };
-		04400D4E26A83E4B00342FF5 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04400D4C26A83E4B00342FF5 /* DateTableViewCell.swift */; };
-		04400D4F26A83E4B00342FF5 /* DateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04400D4D26A83E4B00342FF5 /* DateTableViewCell.xib */; };
-		04400D5826A83F1700342FF5 /* DatePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04400D5626A83F1700342FF5 /* DatePickerTableViewCell.swift */; };
-		04400D5926A83F1700342FF5 /* DatePickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04400D5726A83F1700342FF5 /* DatePickerTableViewCell.xib */; };
 		04501124266E4C7F00E8147D /* EventCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04501123266E4C7F00E8147D /* EventCreationViewController.swift */; };
 		045011432670D35100E8147D /* EventCreationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045011422670D35100E8147D /* EventCreationPresenter.swift */; };
 		0450114C2670D4FB00E8147D /* EventCreationModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450114B2670D4FB00E8147D /* EventCreationModuleBuilder.swift */; };
@@ -66,10 +62,6 @@
 		04400D2F26A6E4A100342FF5 /* EventCreationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EventCreationTableViewCell.xib; path = datebook/EventCreationModule/Cell/EventCreationTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		04400D3A26A8320800342FF5 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIStackView.swift; path = datebook/EventListModule/Extensions/UIKit/UIStackView.swift; sourceTree = SOURCE_ROOT; };
 		04400D3F26A8359900342FF5 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UILabel.swift; path = datebook/EventListModule/Extensions/UIKit/UILabel.swift; sourceTree = SOURCE_ROOT; };
-		04400D4C26A83E4B00342FF5 /* DateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateTableViewCell.swift; path = datebook/EventCreationModule/Cell/DateTableViewCell.swift; sourceTree = SOURCE_ROOT; };
-		04400D4D26A83E4B00342FF5 /* DateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DateTableViewCell.xib; path = datebook/EventCreationModule/Cell/DateTableViewCell.xib; sourceTree = SOURCE_ROOT; };
-		04400D5626A83F1700342FF5 /* DatePickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DatePickerTableViewCell.swift; path = datebook/EventCreationModule/Cell/DatePickerTableViewCell.swift; sourceTree = SOURCE_ROOT; };
-		04400D5726A83F1700342FF5 /* DatePickerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DatePickerTableViewCell.xib; path = datebook/EventCreationModule/Cell/DatePickerTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		04501123266E4C7F00E8147D /* EventCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventCreationViewController.swift; path = datebook/EventCreationModule/View/EventCreationViewController.swift; sourceTree = SOURCE_ROOT; };
 		045011422670D35100E8147D /* EventCreationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventCreationPresenter.swift; path = datebook/EventCreationModule/Presenter/EventCreationPresenter.swift; sourceTree = SOURCE_ROOT; };
 		0450114B2670D4FB00E8147D /* EventCreationModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventCreationModuleBuilder.swift; path = datebook/EventCreationModule/Builder/EventCreationModuleBuilder.swift; sourceTree = SOURCE_ROOT; };
@@ -148,10 +140,6 @@
 			children = (
 				04400D2E26A6E4A100342FF5 /* EventCreationTableViewCell.swift */,
 				04400D2F26A6E4A100342FF5 /* EventCreationTableViewCell.xib */,
-				04400D4C26A83E4B00342FF5 /* DateTableViewCell.swift */,
-				04400D4D26A83E4B00342FF5 /* DateTableViewCell.xib */,
-				04400D5626A83F1700342FF5 /* DatePickerTableViewCell.swift */,
-				04400D5726A83F1700342FF5 /* DatePickerTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -471,9 +459,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04D8ECA0263C54D3000DB051 /* ListOfEventsTableViewCell.xib in Resources */,
-				04400D4F26A83E4B00342FF5 /* DateTableViewCell.xib in Resources */,
 				0465B3F126340B4F00C72A03 /* events.json in Resources */,
-				04400D5926A83F1700342FF5 /* DatePickerTableViewCell.xib in Resources */,
 				04789E8A26308C5C00C824AC /* LaunchScreen.storyboard in Resources */,
 				04789E8726308C5C00C824AC /* Assets.xcassets in Resources */,
 				04789E8526308C5A00C824AC /* Main.storyboard in Resources */,
@@ -613,7 +599,6 @@
 				04789E7E26308C5A00C824AC /* AppDelegate.swift in Sources */,
 				0450114C2670D4FB00E8147D /* EventCreationModuleBuilder.swift in Sources */,
 				0450116C2670DA3200E8147D /* EventListRouter.swift in Sources */,
-				04400D4E26A83E4B00342FF5 /* DateTableViewCell.swift in Sources */,
 				04D8EC9F263C54D3000DB051 /* ListOfEventsTableViewCell.swift in Sources */,
 				045011432670D35100E8147D /* EventCreationPresenter.swift in Sources */,
 				04789E8026308C5A00C824AC /* SceneDelegate.swift in Sources */,
@@ -624,7 +609,6 @@
 				04501124266E4C7F00E8147D /* EventCreationViewController.swift in Sources */,
 				04B6E8B92635DCE7005BAE8A /* EventListBuilder.swift in Sources */,
 				0465B43426345E3600C72A03 /* EventListPresenter.swift in Sources */,
-				04400D5826A83F1700342FF5 /* DatePickerTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
