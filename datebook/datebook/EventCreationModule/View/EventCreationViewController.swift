@@ -65,7 +65,7 @@ class EventCreationViewController: UIViewController {
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5),
             stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 75),
-            stackView.heightAnchor.constraint(equalToConstant: 30)
+            stackView.heightAnchor.constraint(equalToConstant: 20)
         ])
         
         view.addSubview(tableView)
@@ -83,7 +83,6 @@ class EventCreationViewController: UIViewController {
         tableView.dataSource = self
         tableView.backgroundColor = .systemBackground
         tableView.separatorStyle = .none
-        tableView.tableFooterView = UIView()
         
         let nibEvent = UINib(nibName: "EventCreationTableViewCell", bundle: nil)
         tableView.register(nibEvent, forCellReuseIdentifier: idEventCreationCell)
@@ -121,11 +120,12 @@ extension EventCreationViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: idEventCreationCell, for: indexPath) as! EventCreationTableViewCell
         cell.cellConfigure(indexPath: indexPath)
     
         return cell
-}
+    }
             
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
@@ -137,6 +137,15 @@ extension EventCreationViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let cell = tableView.cellForRow(at: indexPath) as! EventCreationTableViewCell
+        
+        switch indexPath {
+        case [0,0]: alertForCellName(label: cell.label, name: "Event name", placeholder: "Enter event name")
+        case [0,1]: alertForCellName(label: cell.label, name: "Event description", placeholder: "Enter event description")
+        case [1,0]: alertDate(label: cell.label)
+        default:
+            alertDate(label: cell.label)
+        }
     }
 }
 
