@@ -30,7 +30,7 @@ class EventCreationViewController: UIViewController {
         addButton.setTitleColor(.gray, for: .normal)
         addButton.titleLabel?.font = UIFont(name: "TrebuchetMS", size: 17)
         addButton.titleLabel?.textAlignment = .center
-        addButton.addTarget(self, action: #selector(didTapAdd(indexPath:text:)), for: .touchUpInside)
+        addButton.addTarget(self, action: #selector(didTapAdd), for: .touchUpInside)
         addButton.translatesAutoresizingMaskIntoConstraints = false
         
         return addButton
@@ -89,19 +89,8 @@ class EventCreationViewController: UIViewController {
         tableView.register(nibEvent, forCellReuseIdentifier: idEventCreationCell)
     }
     
-    @objc private func didTapAdd(indexPath: IndexPath, text: String?) {
+    @objc private func didTapAdd() {
         
-        let cell = tableView.cellForRow(at: indexPath) as? EventCreationTableViewCell
-        
-        cell?.label.text = text
-        
-        switch indexPath {
-        case [0,0]: presenter?.didEditName(text ?? "")
-        case [0,1]: presenter?.didEditDescription(text ?? "")
-        case [1,0]: presenter?.didEditDateStart(text?.convertToDate() ?? Date())
-        default:
-            presenter?.didEditDateEnd(text?.convertToDate() ?? Date())
-        }
         print("button clicked")
     }
 }
