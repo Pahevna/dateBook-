@@ -37,6 +37,7 @@ class EventListPresenter: EventListPresenterProtocol {
         realmService.getEvents(selectedDate: currentDate) { [weak self] result in
             
         }
+        
         view?.showEmptyView(text: "Choose a date")
     }
     

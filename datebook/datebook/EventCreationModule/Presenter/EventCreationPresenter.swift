@@ -20,15 +20,15 @@ protocol EventCreationPresenterProtocol: class {
 }
 
 class EventCreationPresenter: EventCreationPresenterProtocol {
-    
+   
     weak var view: EventCreationViewProtocol?
     var router: EventCreationRouterProtocol?
-    private let realmService: RealmServiceProtocol
-    private let currentDate = Date() 
     private var name: String?
     private var description: String?
     private var dateStart: Date?
     private var dateEnd: Date?
+    private let realmService: RealmServiceProtocol
+    private let currentDate = Date()
     
     required init(view: EventCreationViewProtocol, realmService: RealmServiceProtocol, router: EventCreationRouterProtocol) {
         self.view = view
@@ -58,11 +58,11 @@ class EventCreationPresenter: EventCreationPresenterProtocol {
     
     func didTapAddButton() {
         
-        guard let dataStart = dateStart else { return }
+        guard  let dateStart = dateStart else { return }
         
-        if dataStart > currentDate {
+        if dateStart > currentDate {
             
-            realmService.saveEventToRealm(name: name ?? "", dateStart: dateStart ?? Date(), dataEnd: dateEnd ?? Date(), description: description ?? "")
+            realmService.saveEventToRealm(name: name ?? "", dateStart: dateStart, dataEnd: dateEnd ?? Date(), description: description ?? "")
             
         } else {
             

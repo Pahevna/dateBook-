@@ -11,7 +11,7 @@ import UIKit
 
 extension UIViewController {
     
-    func alertForCellName(label: UILabel, name: String, placeholder: String) -> Void {
+    func alertForCellName(label: UILabel, name: String, placeholder: String, button: UIButton) -> Void {
         
         let alert = UIAlertController(title: name, message: nil, preferredStyle: .alert)
         
@@ -20,6 +20,7 @@ extension UIViewController {
             let tfAlert = alert.textFields?.first
             guard let text = tfAlert?.text else { return }
             label.text = text
+            button.setTitleColor(.red, for: .normal)
         }
         
         alert.addTextField { (tfAlert) in

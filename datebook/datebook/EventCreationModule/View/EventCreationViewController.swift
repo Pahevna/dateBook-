@@ -30,7 +30,7 @@ class EventCreationViewController: UIViewController {
         addButton.setTitleColor(.gray, for: .normal)
         addButton.titleLabel?.font = UIFont(name: "TrebuchetMS", size: 17)
         addButton.titleLabel?.textAlignment = .center
-        addButton.addTarget(self, action: #selector(didTapAdd), for: .touchUpInside)
+        addButton.addTarget(self, action: #selector(didTapAdd(indexPath:text:)), for: .touchUpInside)
         addButton.translatesAutoresizingMaskIntoConstraints = false
         
         return addButton
@@ -83,22 +83,32 @@ class EventCreationViewController: UIViewController {
         tableView.dataSource = self
         tableView.backgroundColor = .systemBackground
         tableView.separatorStyle = .none
+        tableView.bounces = false
         
         let nibEvent = UINib(nibName: "EventCreationTableViewCell", bundle: nil)
         tableView.register(nibEvent, forCellReuseIdentifier: idEventCreationCell)
     }
     
-    @objc private func didTapAdd() {
+    @objc private func didTapAdd(indexPath: IndexPath, text: String?) {
         
+        let cell = tableView.cellForRow(at: indexPath) as? EventCreationTableViewCell
+        
+        cell?.label.text = text
+        
+        switch indexPath {
+        case [0,0]: presenter?.didEditName(text ?? "")
+        case [0,1]: presenter?.didEditDescription(text ?? "")
+        case [1,0]: presenter?.didEditDateStart(text?.convertToDate() ?? Date())
+        default:
+            presenter?.didEditDateEnd(text?.convertToDate() ?? Date())
+        }
         print("button clicked")
-        presenter?.didTapAddButton()
     }
 }
 
 extension EventCreationViewController: UITableViewDataSource {
    
     func numberOfSections(in tableView: UITableView) -> Int {
-        
         return 2
     }
     
@@ -121,15 +131,14 @@ extension EventCreationViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: idEventCreationCell, for: indexPath) as! EventCreationTableViewCell
-        cell.cellConfigure(indexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: idEventCreationCell, for: indexPath) as? EventCreationTableViewCell
+        cell?.cellConfigure(indexPath: indexPath)
     
-        return cell
+        return cell ?? EventCreationTableViewCell()
     }
             
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-           return 44
+        return 44.0
     }
 }
 
@@ -137,14 +146,14 @@ extension EventCreationViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cell = tableView.cellForRow(at: indexPath) as! EventCreationTableViewCell
+        let cell = tableView.cellForRow(at: indexPath) as? EventCreationTableViewCell
         
         switch indexPath {
-        case [0,0]: alertForCellName(label: cell.label, name: "Event name", placeholder: "Enter event name")
-        case [0,1]: alertForCellName(label: cell.label, name: "Event description", placeholder: "Enter event description")
-        case [1,0]: alertDate(label: cell.label)
+        case [0,0]: alertForCellName(label: cell?.label ?? UILabel(), name: "Event name", placeholder: "Enter event name", button: addButton)
+        case [0,1]: alertForCellName(label: cell?.label ?? UILabel(), name: "Event description", placeholder: "Enter event description", button: UIButton())
+        case [1,0]: alertDate(label: cell?.label ?? UILabel())
         default:
-            alertDate(label: cell.label)
+            alertDate(label: cell?.label ?? UILabel())
         }
     }
 }
