@@ -60,13 +60,6 @@ class EventCreationPresenter: EventCreationPresenterProtocol {
         
         guard  let dateStart = dateStart else { return }
         
-        if dateStart > currentDate {
-            
-            realmService.saveEventToRealm(name: name ?? "", dateStart: dateStart, dataEnd: dateEnd ?? Date(), description: description ?? "")
-            
-        } else {
-            
-            view?.showAlert(text: "Please, enter correct date")
-        }
+        dateStart > currentDate ? realmService.saveEventToRealm(name: name ?? "", dateStart: dateStart, dataEnd: dateEnd ?? Date(), description: description ?? "") : view?.showAlert(text: "Please, enter correct date")
     }
 }

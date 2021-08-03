@@ -81,7 +81,6 @@ extension CalendarViewController: FSCalendarDelegate {
 extension CalendarViewController: FSCalendarDataSource {
     
     func minimumDate(for calendar: FSCalendar) -> Date {
-        
         return Date()
     }
 }
@@ -89,7 +88,6 @@ extension CalendarViewController: FSCalendarDataSource {
 extension CalendarViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return eventsForSelectedDate?.count ?? 0
     }
     
@@ -121,7 +119,6 @@ extension CalendarViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        
         return 50
     }
 }

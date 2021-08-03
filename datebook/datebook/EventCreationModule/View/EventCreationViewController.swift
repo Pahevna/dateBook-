@@ -25,12 +25,14 @@ class EventCreationViewController: UIViewController {
     }()
     
     private let addButton: UIButton = {
-        let addButton = UIButton()
+        let addButton = UIButton(type: .system)
         addButton.setTitle("Add", for: .normal)
         addButton.setTitleColor(.gray, for: .normal)
         addButton.titleLabel?.font = UIFont(name: "TrebuchetMS", size: 17)
         addButton.titleLabel?.textAlignment = .center
-        addButton.addTarget(self, action: #selector(didTapAdd), for: .touchUpInside)
+        addButton.addTarget(self,
+                            action: #selector(didTapAdd),
+                            for: .touchUpInside)
         addButton.translatesAutoresizingMaskIntoConstraints = false
         
         return addButton
@@ -91,6 +93,7 @@ class EventCreationViewController: UIViewController {
     
     @objc private func didTapAdd() {
         
+        presenter?.didTapAddButton()
         print("button clicked")
     }
 }
@@ -102,7 +105,7 @@ extension EventCreationViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+       
         switch section {
         case 0: return 2
         default:
@@ -139,10 +142,14 @@ extension EventCreationViewController: UITableViewDelegate {
         
         switch indexPath {
         case [0,0]: alertForCellName(label: cell?.label ?? UILabel(), name: "Event name", placeholder: "Enter event name", button: addButton)
+            presenter?.didEditName(cell?.label.text ?? "")
         case [0,1]: alertForCellName(label: cell?.label ?? UILabel(), name: "Event description", placeholder: "Enter event description", button: UIButton())
+            presenter?.didEditDescription(cell?.label.text ?? "")
         case [1,0]: alertDate(label: cell?.label ?? UILabel())
+            presenter?.didEditDateStart(cell?.label.text?.convertToDate() ?? Date())
         default:
             alertDate(label: cell?.label ?? UILabel())
+            presenter?.didEditDateEnd(cell?.label.text?.convertToDate() ?? Date())
         }
     }
 }
