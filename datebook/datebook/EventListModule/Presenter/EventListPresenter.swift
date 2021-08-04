@@ -35,9 +35,15 @@ class EventListPresenter: EventListPresenterProtocol {
     func viewDidLoad() {
         
         realmService.getEvents(selectedDate: currentDate) { [weak self] result in
-            
+            guard let self = self else { return }
+            switch result {
+            case .success(let events):
+                self.events = events
+                self.view?.setEvents(events ?? [])
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
         }
-        
         view?.showEmptyView(text: "Choose a date")
     }
     
@@ -53,14 +59,12 @@ class EventListPresenter: EventListPresenterProtocol {
                 print(error.localizedDescription)
             }
         }
-        
         if events?.count == 0 {
             view?.showEmptyView(text: "No events for selected date")
         }
     }
     
     func showEventCreationModule() {
-        
         router?.showEventCreationModule()
     }
 }
