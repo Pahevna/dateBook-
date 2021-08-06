@@ -2,19 +2,17 @@
 //  DateTableViewCell.swift
 //  dateBook
 //
-//  Created by mac on 21.07.2021.
+//  Created by mac on 06.08.2021.
 //
 
 import UIKit
 
 class DateTableViewCell: UITableViewCell {
 
-    @IBOutlet private weak var label: UILabel!
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
-    class func cellHeight() -> CGFloat {
-        
-        return 44.0
-    }
+//    let cellNameArray = ["Starts","Ends"]
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,8 +22,9 @@ class DateTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func updateDate(date: Date) {
+    func updateText(text: String, date: Date) {
         
-        label.text = date.convertFromDateToString(dateFormat: "d MMM yyyy HH:mm")
+        label.text = text 
+        dateLabel.text = date.convertFromDateToString(dateFormat: "d MMM yyyy HH:mm")
     }
 }

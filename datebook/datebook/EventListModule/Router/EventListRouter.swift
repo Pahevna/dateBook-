@@ -22,6 +22,7 @@ class EventListRouter: EventListRouterProtocol {
     }
     
     func showEventCreationModule() {
+        
         let eventCreationModuleBuilder = EventCreationModuleBuilder()
         let eventCreationViewController = eventCreationModuleBuilder.buildEventCreationModule(navigationController: navigationController)
         navigationController.pushViewController(eventCreationViewController, animated: true)

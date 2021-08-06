@@ -17,48 +17,30 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zMk-jD-zPn">
-                        <rect key="frame" x="10" y="0.0" width="300" height="43"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3c-GW-fNz">
-                                <rect key="frame" x="15" y="11" width="44" height="21"/>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="18"/>
-                                <color key="textColor" systemColor="systemOrangeColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="S3c-GW-fNz" firstAttribute="centerY" secondItem="zMk-jD-zPn" secondAttribute="centerY" id="iax-XJ-slu"/>
-                            <constraint firstItem="S3c-GW-fNz" firstAttribute="leading" secondItem="zMk-jD-zPn" secondAttribute="leading" constant="15" id="xmL-s7-MsO"/>
-                        </constraints>
-                    </view>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gXv-ei-Z2r">
+                        <rect key="frame" x="5" y="5" width="310" height="34"/>
+                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="18"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="zMk-jD-zPn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="7sr-R7-FGd"/>
-                    <constraint firstAttribute="bottom" secondItem="zMk-jD-zPn" secondAttribute="bottom" constant="1" id="8o0-rD-2gg"/>
-                    <constraint firstAttribute="trailing" secondItem="zMk-jD-zPn" secondAttribute="trailing" constant="10" id="QqE-zP-gTx"/>
-                    <constraint firstItem="zMk-jD-zPn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Wxf-VI-e1e"/>
+                    <constraint firstAttribute="bottom" secondItem="gXv-ei-Z2r" secondAttribute="bottom" constant="5" id="4R3-2M-XJT"/>
+                    <constraint firstAttribute="trailing" secondItem="gXv-ei-Z2r" secondAttribute="trailing" constant="5" id="Tfx-zM-ygv"/>
+                    <constraint firstItem="gXv-ei-Z2r" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="rnM-Ex-A1n"/>
+                    <constraint firstItem="gXv-ei-Z2r" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="tEI-xz-wBq"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" systemColor="systemGray6Color"/>
             <connections>
-                <outlet property="label" destination="S3c-GW-fNz" id="xwf-9r-A6j"/>
-                <outlet property="view" destination="zMk-jD-zPn" id="Dw8-Dk-Ilm"/>
+                <outlet property="textField" destination="gXv-ei-Z2r" id="9U8-Sv-nmU"/>
             </connections>
             <point key="canvasLocation" x="140.57971014492756" y="91.741071428571431"/>
         </tableViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -10,14 +10,19 @@ import UIKit
 class EventCreationViewController: UIViewController {
     
     var presenter: EventCreationPresenterProtocol?
+    var datePickerIndexPath: IndexPath?
+    var inputTexts = ["Starts", "Ends"]
+    var inputDates: [Date] = []
     
     let idEventCreationCell = "idEventCreationCell"
+    let idDateCell = "idDateCell"
+    let idDatePickerCell = "idDatePickerCell"
     
     private let cancelButton: UIButton = {
         let cancelButton = UIButton()
         cancelButton.setTitle("Cancel", for: .normal)
         cancelButton.setTitleColor(.red, for: .normal)
-        cancelButton.titleLabel?.font = UIFont(name: "TrebuchetMS", size: 17) 
+        cancelButton.titleLabel?.font = UIFont(name: "TrebuchetMS", size: 17)
         cancelButton.titleLabel?.textAlignment = .center
         cancelButton.translatesAutoresizingMaskIntoConstraints = false
         
@@ -25,14 +30,12 @@ class EventCreationViewController: UIViewController {
     }()
     
     private let addButton: UIButton = {
-        let addButton = UIButton(type: .system)
+        let addButton = UIButton()
         addButton.setTitle("Add", for: .normal)
         addButton.setTitleColor(.gray, for: .normal)
         addButton.titleLabel?.font = UIFont(name: "TrebuchetMS", size: 17)
         addButton.titleLabel?.textAlignment = .center
-        addButton.addTarget(self,
-                            action: #selector(didTapAdd),
-                            for: .touchUpInside)
+        addButton.addTarget(self, action: #selector(didTapAdd), for: .touchUpInside)
         addButton.translatesAutoresizingMaskIntoConstraints = false
         
         return addButton
@@ -40,7 +43,6 @@ class EventCreationViewController: UIViewController {
     
     private let eventLabel = UILabel(text: "New Event", font: UIFont(name: "TrebuchetMS", size: 17), aligment: .center)
       
-    
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -56,6 +58,7 @@ class EventCreationViewController: UIViewController {
         
         setConstraints()
         setupTableView()
+        addInitailValues()
     }
     
     private func setConstraints() {
@@ -67,7 +70,7 @@ class EventCreationViewController: UIViewController {
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5),
             stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 75),
-            stackView.heightAnchor.constraint(equalToConstant: 20)
+            stackView.heightAnchor.constraint(equalToConstant: 30)
         ])
         
         view.addSubview(tableView)
@@ -79,58 +82,92 @@ class EventCreationViewController: UIViewController {
         ])
     }
     
+    private func addInitailValues() {
+        
+        inputDates = Array(repeating: Date(), count: inputTexts.count)
+    }
+    
+    private func indexPathToInsertDatePicker(indexPath: IndexPath) -> IndexPath {
+        
+        if let datePickerIndexPath = datePickerIndexPath, datePickerIndexPath.row < indexPath.row {
+            
+            return indexPath
+            
+        } else {
+            
+            return IndexPath(row: indexPath.row + 1, section: indexPath.section)
+        }
+    }
+
     private func setupTableView() {
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = .systemBackground
-        tableView.separatorStyle = .none
-        tableView.bounces = false
+        tableView.tableFooterView = UIView()
         
         let nibEvent = UINib(nibName: "EventCreationTableViewCell", bundle: nil)
         tableView.register(nibEvent, forCellReuseIdentifier: idEventCreationCell)
+        let nibDate = UINib(nibName: "DateTableViewCell", bundle: nil)
+        tableView.register(nibDate, forCellReuseIdentifier: idDateCell)
+        let nibDatePicker = UINib(nibName: "DatePickerTableViewCell", bundle: nil)
+        tableView.register(nibDatePicker, forCellReuseIdentifier: idDatePickerCell)
     }
     
     @objc private func didTapAdd() {
         
-        presenter?.didTapAddButton()
         print("button clicked")
+        presenter?.didTapAddButton()
     }
 }
 
 extension EventCreationViewController: UITableViewDataSource {
    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
-        switch section {
-        case 0: return 2
-        default:
-            return 2
-        }
-    }
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        
+//        return 2
+//    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 40))
         view.backgroundColor = .systemGray6
-        
         return view
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if datePickerIndexPath != nil {
+            
+            return inputTexts.count + 1
+            
+        } else {
+            
+            return inputTexts.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: idEventCreationCell, for: indexPath) as? EventCreationTableViewCell
-        cell?.cellConfigure(indexPath: indexPath)
-    
-        return cell ?? EventCreationTableViewCell()
+        if datePickerIndexPath == indexPath {
+        
+            let datePickerCell = tableView.dequeueReusableCell(withIdentifier: idDatePickerCell) as? DatePickerTableViewCell
+            datePickerCell?.updateCell(date: inputDates[indexPath.row - 1], indexPath: indexPath)
+            datePickerCell?.delegate = self
+            
+            return datePickerCell ?? UITableViewCell()
+            
+        } else {
+            let dateCell = tableView.dequeueReusableCell(withIdentifier: idDateCell) as? DateTableViewCell
+            dateCell?.updateText(text: inputTexts[indexPath.row], date: inputDates[indexPath.row])
+            
+            return dateCell ?? UITableViewCell()
+        }
     }
             
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44.0
+        
+        datePickerIndexPath == indexPath ? 162.0 : 44.0
+        
     }
 }
 
@@ -138,19 +175,38 @@ extension EventCreationViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cell = tableView.cellForRow(at: indexPath) as? EventCreationTableViewCell
+        tableView.beginUpdates()
         
-        switch indexPath {
-        case [0,0]: alertForCellName(label: cell?.label ?? UILabel(), name: "Event name", placeholder: "Enter event name", button: addButton)
-            presenter?.didEditName(cell?.label.text ?? "")
-        case [0,1]: alertForCellName(label: cell?.label ?? UILabel(), name: "Event description", placeholder: "Enter event description", button: UIButton())
-            presenter?.didEditDescription(cell?.label.text ?? "")
-        case [1,0]: alertDate(label: cell?.label ?? UILabel())
-            presenter?.didEditDateStart(cell?.label.text?.convertToDate() ?? Date())
-        default:
-            alertDate(label: cell?.label ?? UILabel())
-            presenter?.didEditDateEnd(cell?.label.text?.convertToDate() ?? Date())
+        if let datePickerIndexPath = datePickerIndexPath,
+           datePickerIndexPath.row - 1 == indexPath.row {
+            
+            tableView.deleteRows(at: [datePickerIndexPath], with: .fade)
+            self.datePickerIndexPath = nil
+        
+        } else {
+            
+            if let datePickerIndexPath = datePickerIndexPath {
+                
+                tableView.deleteRows(at: [datePickerIndexPath], with: .fade)
+            }
+            
+            datePickerIndexPath = indexPathToInsertDatePicker(indexPath: indexPath)
+            
+            guard let datePickerIndexPath = datePickerIndexPath else { return }
+            
+            tableView.insertRows(at: [datePickerIndexPath], with: .fade)
+            tableView.deselectRow(at: indexPath, animated: true)
         }
+        tableView.endUpdates()
+    }
+}
+
+extension EventCreationViewController: DatePickerDelegate {
+    
+    func didChangeDate(date: Date, indexPath: IndexPath) {
+        
+        inputDates[indexPath.row] = date
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
 }
 

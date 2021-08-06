@@ -8,24 +8,21 @@
 import UIKit
 
 class EventCreationTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var view: UIView!
     
-    let cellNameArray = [["Name","Description"],
-                         ["Starts","Ends"]]
+    @IBOutlet private weak var textField: UITextField!
+   
+    let cellNameArray = ["Name","Description"]
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        view.layer.cornerRadius = 10
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    func cellConfigure(indexPath: IndexPath) {
-        label.text = cellNameArray[indexPath.section][indexPath.row]
+    func updateText(indexPath: IndexPath) {
+        
+        textField.text = cellNameArray[indexPath.row]
     }
 }
