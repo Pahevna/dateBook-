@@ -81,6 +81,19 @@ class EventCreationViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         ])
     }
+    private func setupTableView() {
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.tableFooterView = UIView()
+        
+        let nibEvent = UINib(nibName: "EventCreationTableViewCell", bundle: nil)
+        tableView.register(nibEvent, forCellReuseIdentifier: idEventCreationCell)
+        let nibDate = UINib(nibName: "DateTableViewCell", bundle: nil)
+        tableView.register(nibDate, forCellReuseIdentifier: idDateCell)
+        let nibDatePicker = UINib(nibName: "DatePickerTableViewCell", bundle: nil)
+        tableView.register(nibDatePicker, forCellReuseIdentifier: idDatePickerCell)
+    }
     
     private func addInitailValues() {
         
@@ -98,20 +111,6 @@ class EventCreationViewController: UIViewController {
             return IndexPath(row: indexPath.row + 1, section: indexPath.section)
         }
     }
-
-    private func setupTableView() {
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.tableFooterView = UIView()
-        
-        let nibEvent = UINib(nibName: "EventCreationTableViewCell", bundle: nil)
-        tableView.register(nibEvent, forCellReuseIdentifier: idEventCreationCell)
-        let nibDate = UINib(nibName: "DateTableViewCell", bundle: nil)
-        tableView.register(nibDate, forCellReuseIdentifier: idDateCell)
-        let nibDatePicker = UINib(nibName: "DatePickerTableViewCell", bundle: nil)
-        tableView.register(nibDatePicker, forCellReuseIdentifier: idDatePickerCell)
-    }
     
     @objc private func didTapAdd() {
         
@@ -122,10 +121,10 @@ class EventCreationViewController: UIViewController {
 
 extension EventCreationViewController: UITableViewDataSource {
    
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        
-//        return 2
-//    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 2
+    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
@@ -148,26 +147,36 @@ extension EventCreationViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if datePickerIndexPath == indexPath {
-        
-            let datePickerCell = tableView.dequeueReusableCell(withIdentifier: idDatePickerCell) as? DatePickerTableViewCell
-            datePickerCell?.updateCell(date: inputDates[indexPath.row - 1], indexPath: indexPath)
-            datePickerCell?.delegate = self
+        if indexPath.section == 0 {
             
-            return datePickerCell ?? UITableViewCell()
+            let eventCreationCell = tableView.dequeueReusableCell(withIdentifier: idEventCreationCell, for: indexPath) as? EventCreationTableViewCell
+            eventCreationCell?.updateText(indexPath: indexPath)
             
+            return eventCreationCell ?? UITableViewCell()
+    
         } else {
-            let dateCell = tableView.dequeueReusableCell(withIdentifier: idDateCell) as? DateTableViewCell
-            dateCell?.updateText(text: inputTexts[indexPath.row], date: inputDates[indexPath.row])
             
-            return dateCell ?? UITableViewCell()
+            if datePickerIndexPath == indexPath {
+            
+                let datePickerCell = tableView.dequeueReusableCell(withIdentifier: idDatePickerCell) as? DatePickerTableViewCell
+                datePickerCell?.updateCell(date: inputDates[indexPath.row - 1], indexPath: indexPath)
+                datePickerCell?.delegate = self
+                
+                return datePickerCell ?? UITableViewCell()
+                
+            } else {
+                
+                let dateCell = tableView.dequeueReusableCell(withIdentifier: idDateCell) as? DateTableViewCell
+                dateCell?.updateText(text: inputTexts[indexPath.row], date: inputDates[indexPath.row])
+                
+                return dateCell ?? UITableViewCell()
+            }
         }
     }
             
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         datePickerIndexPath == indexPath ? 162.0 : 44.0
-        
     }
 }
 
