@@ -7,7 +7,15 @@
 
 import UIKit
 
+enum TypeTextField {
+    case name
+    case description
+}
+
 class EventCreationTableViewCell: UITableViewCell {
+    
+    var typeTextField = TypeTextField.name
+    var completionHandler: ((String, TypeTextField) -> ())?
     
     @IBOutlet private weak var textField: UITextField!
    
@@ -23,6 +31,23 @@ class EventCreationTableViewCell: UITableViewCell {
     
     func updateText(indexPath: IndexPath) {
         
-        textField.text = cellNameArray[indexPath.row]
+        textField.placeholder = cellNameArray[indexPath.row]
     }
 }
+
+extension EventCreationTableViewCell: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let currentText = textField.text ?? ""
+        
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        
+        completionHandler?(updatedText, typeTextField)
+            
+        return false
+    }
+}
+

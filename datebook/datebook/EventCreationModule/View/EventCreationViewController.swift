@@ -52,7 +52,7 @@ class EventCreationViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         navigationController?.navigationBar.tintColor = .orange
         view.backgroundColor = .systemBackground
         
@@ -96,7 +96,7 @@ class EventCreationViewController: UIViewController {
     }
     
     private func addInitailValues() {
-        
+    
         inputDates = Array(repeating: Date(), count: inputTexts.count)
     }
     
@@ -135,7 +135,7 @@ extension EventCreationViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if datePickerIndexPath != nil {
+        if datePickerIndexPath != nil, section == 1 {
             
             return inputTexts.count + 1
             
@@ -223,9 +223,12 @@ extension EventCreationViewController: EventCreationViewProtocol {
     
     func showAlert(text: String) {
 
-        let alert = UIAlertController(title: "Error", message: text,
+        let alert = UIAlertController(title: "Error",
+                                      message: text,
                                       preferredStyle: .alert)
-        let okButton = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let okButton = UIAlertAction(title: "OK",
+                                     style: .default,
+                                     handler: nil)
         alert.addAction(okButton)
         present(alert, animated: true, completion: nil)
     }

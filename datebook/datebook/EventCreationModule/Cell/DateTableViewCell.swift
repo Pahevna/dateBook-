@@ -12,8 +12,6 @@ class DateTableViewCell: UITableViewCell {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
-//    let cellNameArray = ["Starts","Ends"]
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
