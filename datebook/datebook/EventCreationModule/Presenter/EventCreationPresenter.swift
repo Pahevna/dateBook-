@@ -37,22 +37,18 @@ class EventCreationPresenter: EventCreationPresenterProtocol {
     }
     
     func didEditName(_ name: String) {
-        
         self.name = name
     }
     
     func didEditDescription(_ description: String) {
-        
         self.description = description
     }
     
     func didEditDateStart(_ dateStart: Date) {
-        
         self.dateStart = dateStart
     }
     
     func didEditDateEnd(_ dateEnd: Date) {
-        
         self.dateEnd = dateEnd
     }
     

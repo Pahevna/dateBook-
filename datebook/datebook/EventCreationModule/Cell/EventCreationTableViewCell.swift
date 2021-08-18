@@ -17,7 +17,7 @@ class EventCreationTableViewCell: UITableViewCell {
     var typeTextField = TypeTextField.name
     var completionHandler: ((String, TypeTextField) -> ())?
     
-    @IBOutlet private weak var textField: UITextField!
+    @IBOutlet weak var textField: UITextField!
    
     let cellNameArray = ["Name","Description"]
     

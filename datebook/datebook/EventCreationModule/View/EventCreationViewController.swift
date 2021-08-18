@@ -14,6 +14,7 @@ class EventCreationViewController: UIViewController {
     var inputTexts = ["Starts", "Ends"]
     var inputDates: [Date] = []
     
+    
     let idEventCreationCell = "idEventCreationCell"
     let idDateCell = "idDateCell"
     let idDatePickerCell = "idDatePickerCell"
@@ -63,7 +64,10 @@ class EventCreationViewController: UIViewController {
     
     private func setConstraints() {
         
-        let stackView = UIStackView(arrangedSubviews: [cancelButton,eventLabel,addButton], axis: .horizontal, spacing: 30, distribution: .fillEqually)
+        let stackView = UIStackView(arrangedSubviews: [cancelButton,eventLabel,addButton],
+                                    axis: .horizontal,
+                                    spacing: 30,
+                                    distribution: .fillEqually)
         
         view.addSubview(stackView)
         NSLayoutConstraint.activate([
@@ -96,7 +100,6 @@ class EventCreationViewController: UIViewController {
     }
     
     private func addInitailValues() {
-    
         inputDates = Array(repeating: Date(), count: inputTexts.count)
     }
     
@@ -113,8 +116,6 @@ class EventCreationViewController: UIViewController {
     }
     
     @objc private func didTapAdd() {
-        
-        print("button clicked")
         presenter?.didTapAddButton()
     }
 }
@@ -122,7 +123,6 @@ class EventCreationViewController: UIViewController {
 extension EventCreationViewController: UITableViewDataSource {
    
     func numberOfSections(in tableView: UITableView) -> Int {
-        
         return 2
     }
     
@@ -151,9 +151,17 @@ extension EventCreationViewController: UITableViewDataSource {
             
             let eventCreationCell = tableView.dequeueReusableCell(withIdentifier: idEventCreationCell, for: indexPath) as? EventCreationTableViewCell
             eventCreationCell?.updateText(indexPath: indexPath)
-            
+            eventCreationCell?.completionHandler = { [weak self] (updateText, typeText) in
+                
+                switch typeText {
+                case .name:
+                    self?.presenter?.didEditName(updateText)
+                default:
+                    self?.presenter?.didEditDescription(updateText)
+                }
+            }
             return eventCreationCell ?? UITableViewCell()
-    
+            
         } else {
             
             if datePickerIndexPath == indexPath {
@@ -206,6 +214,7 @@ extension EventCreationViewController: UITableViewDelegate {
             tableView.insertRows(at: [datePickerIndexPath], with: .fade)
             tableView.deselectRow(at: indexPath, animated: true)
         }
+        
         tableView.endUpdates()
     }
 }
