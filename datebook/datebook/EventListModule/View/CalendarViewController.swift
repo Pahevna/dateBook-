@@ -22,6 +22,7 @@ class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //print("User Realm User file location: \(Realm.Configuration.defaultConfiguration.fileURL)")
         configureLabel()
         configureCalendar()
         setupTableView()

@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		043A064D26AEDC8A008F8AF5 /* AlertDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A064C26AEDC8A008F8AF5 /* AlertDate.swift */; };
-		043A065C26AEF273008F8AF5 /* AlertForCellName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A065B26AEF273008F8AF5 /* AlertForCellName.swift */; };
 		043A066226BD10D1008F8AF5 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A066026BD10D1008F8AF5 /* DateTableViewCell.swift */; };
 		043A066326BD10D1008F8AF5 /* DateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043A066126BD10D1008F8AF5 /* DateTableViewCell.xib */; };
 		043A066C26BD1863008F8AF5 /* DatePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A066A26BD1863008F8AF5 /* DatePickerTableViewCell.swift */; };
@@ -62,8 +60,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		043A064C26AEDC8A008F8AF5 /* AlertDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlertDate.swift; path = datebook/EventCreationModule/Alert/AlertDate.swift; sourceTree = SOURCE_ROOT; };
-		043A065B26AEF273008F8AF5 /* AlertForCellName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlertForCellName.swift; path = datebook/EventCreationModule/Alert/AlertForCellName.swift; sourceTree = SOURCE_ROOT; };
 		043A066026BD10D1008F8AF5 /* DateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateTableViewCell.swift; path = datebook/EventCreationModule/Cell/DateTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		043A066126BD10D1008F8AF5 /* DateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DateTableViewCell.xib; path = datebook/EventCreationModule/Cell/DateTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		043A066A26BD1863008F8AF5 /* DatePickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DatePickerTableViewCell.swift; path = datebook/EventCreationModule/Cell/DatePickerTableViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -139,15 +135,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		043A065126AEDC90008F8AF5 /* Alert */ = {
-			isa = PBXGroup;
-			children = (
-				043A064C26AEDC8A008F8AF5 /* AlertDate.swift */,
-				043A065B26AEF273008F8AF5 /* AlertForCellName.swift */,
-			);
-			path = Alert;
-			sourceTree = "<group>";
-		};
 		04400D1C26961E5B00342FF5 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,7 +173,6 @@
 				045011502670D50800E8147D /* Builder */,
 				04400D1C26961E5B00342FF5 /* Router */,
 				04400D3526A6E4AE00342FF5 /* Cell */,
-				043A065126AEDC90008F8AF5 /* Alert */,
 			);
 			path = EventCreationModule;
 			sourceTree = "<group>";
@@ -629,12 +615,10 @@
 				04789E7E26308C5A00C824AC /* AppDelegate.swift in Sources */,
 				0450114C2670D4FB00E8147D /* EventCreationModuleBuilder.swift in Sources */,
 				0450116C2670DA3200E8147D /* EventListRouter.swift in Sources */,
-				043A064D26AEDC8A008F8AF5 /* AlertDate.swift in Sources */,
 				04D8EC9F263C54D3000DB051 /* ListOfEventsTableViewCell.swift in Sources */,
 				045011432670D35100E8147D /* EventCreationPresenter.swift in Sources */,
 				04789E8026308C5A00C824AC /* SceneDelegate.swift in Sources */,
 				04400D1826961E5600342FF5 /* EventCreationRouter.swift in Sources */,
-				043A065C26AEF273008F8AF5 /* AlertForCellName.swift in Sources */,
 				04400D3026A6E4A100342FF5 /* EventCreationTableViewCell.swift in Sources */,
 				04400D102695ADDC00342FF5 /* ConvertString.swift in Sources */,
 				04789EC026309D9100C824AC /* EventModel.swift in Sources */,

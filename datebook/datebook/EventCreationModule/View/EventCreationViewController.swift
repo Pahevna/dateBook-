@@ -106,11 +106,8 @@ class EventCreationViewController: UIViewController {
     private func indexPathToInsertDatePicker(indexPath: IndexPath) -> IndexPath {
         
         if let datePickerIndexPath = datePickerIndexPath, datePickerIndexPath.row < indexPath.row {
-            
             return indexPath
-            
         } else {
-            
             return IndexPath(row: indexPath.row + 1, section: indexPath.section)
         }
     }
@@ -136,11 +133,8 @@ extension EventCreationViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if datePickerIndexPath != nil, section == 1 {
-            
             return inputTexts.count + 1
-            
         } else {
-            
             return inputTexts.count
         }
     }
@@ -183,7 +177,6 @@ extension EventCreationViewController: UITableViewDataSource {
     }
             
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
         datePickerIndexPath == indexPath ? 162.0 : 44.0
     }
 }
