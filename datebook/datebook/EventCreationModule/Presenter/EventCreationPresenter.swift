@@ -54,8 +54,10 @@ class EventCreationPresenter: EventCreationPresenterProtocol {
     
     func didTapAddButton() {
         
-        guard  let dateStart = dateStart else { return }
-        
-        dateStart > currentDate ? realmService.saveEventToRealm(name: name ?? "", dateStart: dateStart, dataEnd: dateEnd ?? Date(), description: description ?? "") : view?.showAlert(text: "Please, enter correct date")
+        if dateStart == nil || dateEnd == nil || name == "" {
+            view?.showAlert(text: "Please, ")
+        } else {
+            realmService.saveEventToRealm(name: name ?? "", dateStart: dateStart ?? Date(), dataEnd: dateEnd ?? Date(), description: description ?? "")
+        }
     }
 }
