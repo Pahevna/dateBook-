@@ -55,7 +55,7 @@ class EventCreationPresenter: EventCreationPresenterProtocol {
     func didTapAddButton() {
         
         if dateStart == nil || dateEnd == nil || name == "" {
-            view?.showAlert(text: "Please, ")
+            view?.showAlert(text: "Requered fields: Starts, Ends, Name")
         } else {
             realmService.saveEventToRealm(name: name ?? "", dateStart: dateStart ?? Date(), dataEnd: dateEnd ?? Date(), description: description ?? "")
         }

@@ -19,30 +19,6 @@ class EventCreationViewController: UIViewController {
     let idDateCell = "idDateCell"
     let idDatePickerCell = "idDatePickerCell"
     
-    private let cancelButton: UIButton = {
-        let cancelButton = UIButton()
-        cancelButton.setTitle("Cancel", for: .normal)
-        cancelButton.setTitleColor(.red, for: .normal)
-        cancelButton.titleLabel?.font = UIFont(name: "TrebuchetMS", size: 17)
-        cancelButton.titleLabel?.textAlignment = .center
-        cancelButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        return cancelButton
-    }()
-    
-    private let addButton: UIButton = {
-        let addButton = UIButton()
-        addButton.setTitle("Add", for: .normal)
-        addButton.setTitleColor(.gray, for: .normal)
-        addButton.titleLabel?.font = UIFont(name: "TrebuchetMS", size: 17)
-        addButton.titleLabel?.textAlignment = .center
-        addButton.addTarget(self, action: #selector(didTapAdd), for: .touchUpInside)
-        addButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        return addButton
-    }()
-    
-    private let eventLabel = UILabel(text: "New Event", font: UIFont(name: "TrebuchetMS", size: 17), aligment: .center)
       
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -55,6 +31,9 @@ class EventCreationViewController: UIViewController {
         super.viewDidLoad()
     
         navigationController?.navigationBar.tintColor = .orange
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didTapAdd))
+        navigationItem.title = "New Event"
+        
         view.backgroundColor = .systemBackground
         
         setConstraints()
@@ -63,25 +42,12 @@ class EventCreationViewController: UIViewController {
     }
     
     private func setConstraints() {
-        
-        let stackView = UIStackView(arrangedSubviews: [cancelButton,eventLabel,addButton],
-                                    axis: .horizontal,
-                                    spacing: 30,
-                                    distribution: .fillEqually)
-        
-        view.addSubview(stackView)
-        NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5),
-            stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 75),
-            stackView.heightAnchor.constraint(equalToConstant: 30)
-        ])
-        
+
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            tableView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 10),
+            tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         ])
     }
