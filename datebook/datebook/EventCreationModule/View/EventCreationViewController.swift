@@ -14,12 +14,10 @@ class EventCreationViewController: UIViewController {
     var inputTexts = ["Starts", "Ends"]
     var inputDates: [Date] = []
     
-    
     let idEventCreationCell = "idEventCreationCell"
     let idDateCell = "idDateCell"
     let idDatePickerCell = "idDatePickerCell"
     
-      
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -184,6 +182,7 @@ extension EventCreationViewController: DatePickerDelegate {
         
         inputDates[indexPath.row] = date
         tableView.reloadRows(at: [indexPath], with: .none)
+        presenter?.didEditDateStart(date)
     }
 }
 
