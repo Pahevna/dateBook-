@@ -21,7 +21,7 @@
                         <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="18"/>
                         <textInputTraits key="textInputTraits"/>
                         <connections>
-                            <outlet property="delegate" destination="-1" id="eA5-11-Tl5"/>
+                            <outlet property="delegate" destination="KGk-i7-Jjw" id="chv-xB-2q7"/>
                         </connections>
                     </textField>
                 </subviews>

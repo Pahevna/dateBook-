@@ -30,7 +30,6 @@ class EventCreationTableViewCell: UITableViewCell {
     }
     
     func updateText(indexPath: IndexPath) {
-        
         textField.placeholder = cellNameArray[indexPath.row]
     }
 }
@@ -47,7 +46,6 @@ extension EventCreationTableViewCell: UITextFieldDelegate {
         
         completionHandler?(updatedText, typeTextField)
             
-        return false
+        return true 
     }
 }
-

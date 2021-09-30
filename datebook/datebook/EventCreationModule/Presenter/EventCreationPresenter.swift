@@ -37,7 +37,7 @@ class EventCreationPresenter: EventCreationPresenterProtocol {
     }
     
     func didEditName(_ name: String) {
-        self.name = name
+       self.name = name
     }
     
     func didEditDescription(_ description: String) {

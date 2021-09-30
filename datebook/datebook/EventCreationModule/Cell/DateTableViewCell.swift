@@ -21,7 +21,6 @@ class DateTableViewCell: UITableViewCell {
     }
     
     func updateText(text: String, date: Date) {
-        
         label.text = text 
         dateLabel.text = date.convertFromDateToString(dateFormat: "d MMM yyyy HH:mm")
     }

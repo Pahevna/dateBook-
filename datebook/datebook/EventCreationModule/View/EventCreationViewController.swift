@@ -82,20 +82,18 @@ class EventCreationViewController: UIViewController {
 }
 
 extension EventCreationViewController: UITableViewDataSource {
-   
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 40))
         view.backgroundColor = .systemGray6
         return view
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         if datePickerIndexPath != nil, section == 1 {
             return inputTexts.count + 1
         } else {
@@ -104,10 +102,15 @@ extension EventCreationViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if indexPath.section == 0 {
-            
             let eventCreationCell = tableView.dequeueReusableCell(withIdentifier: idEventCreationCell, for: indexPath) as? EventCreationTableViewCell
+            
+            if indexPath.row == 0 {
+                eventCreationCell?.typeTextField = .name
+            } else {
+                eventCreationCell?.typeTextField = .description
+            }
+            
             eventCreationCell?.updateText(indexPath: indexPath)
             eventCreationCell?.completionHandler = { [weak self] (updateText, typeText) in
                 
@@ -148,7 +151,6 @@ extension EventCreationViewController: UITableViewDataSource {
 extension EventCreationViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         tableView.beginUpdates()
         
         if let datePickerIndexPath = datePickerIndexPath,
@@ -171,7 +173,6 @@ extension EventCreationViewController: UITableViewDelegate {
             tableView.insertRows(at: [datePickerIndexPath], with: .fade)
             tableView.deselectRow(at: indexPath, animated: true)
         }
-        
         tableView.endUpdates()
     }
 }

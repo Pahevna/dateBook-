@@ -33,7 +33,6 @@ class DatePickerTableViewCell: UITableViewCell {
     }
     
     func updateCell(date: Date, indexPath: IndexPath) {
-        
         datePicker.setDate(date, animated: true)
         self.indexPath = indexPath
     }
