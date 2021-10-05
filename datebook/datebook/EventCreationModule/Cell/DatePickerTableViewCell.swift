@@ -11,10 +11,16 @@ protocol DatePickerDelegate: class {
     func didChangeDate(date: Date, indexPath: IndexPath)
 }
 
+enum TypeDatePicker {
+    case dateStart
+    case dateEnd
+}
+
 class DatePickerTableViewCell: UITableViewCell {
 
     @IBOutlet weak var datePicker: UIDatePicker!
     
+    var typeDatePicker = TypeDatePicker.dateStart
     var indexPath: IndexPath?
     weak var delegate: DatePickerDelegate?
     

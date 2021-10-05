@@ -126,8 +126,15 @@ extension EventCreationViewController: UITableViewDataSource {
         } else {
             
             if datePickerIndexPath == indexPath {
-            
+                
                 let datePickerCell = tableView.dequeueReusableCell(withIdentifier: idDatePickerCell) as? DatePickerTableViewCell
+                
+                if indexPath.row == 1 {
+                    datePickerCell?.typeDatePicker = .dateStart
+                } else {
+                    datePickerCell?.typeDatePicker = .dateEnd
+                }
+                
                 datePickerCell?.updateCell(date: inputDates[indexPath.row - 1], indexPath: indexPath)
                 datePickerCell?.delegate = self
                 
@@ -142,7 +149,7 @@ extension EventCreationViewController: UITableViewDataSource {
             }
         }
     }
-            
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         datePickerIndexPath == indexPath ? 162.0 : 44.0
     }
@@ -183,7 +190,12 @@ extension EventCreationViewController: DatePickerDelegate {
         
         inputDates[indexPath.row] = date
         tableView.reloadRows(at: [indexPath], with: .none)
-        presenter?.didEditDateStart(date)
+        
+        if indexPath.row == 1 {
+            presenter?.didEditDateStart(date)
+        } else {
+            presenter?.didEditDateEnd(date)
+        }
     }
 }
 
