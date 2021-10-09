@@ -21,7 +21,6 @@ class EventCreationRouter: EventCreationRouterProtocol {
     }
     
     func popToRoot() {
-        
         navigationController.popToRootViewController(animated: true)
     }
 }

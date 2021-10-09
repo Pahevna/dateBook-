@@ -15,7 +15,6 @@
 		04400D1826961E5600342FF5 /* EventCreationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04400D1726961E5500342FF5 /* EventCreationRouter.swift */; };
 		04400D3026A6E4A100342FF5 /* EventCreationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04400D2E26A6E4A100342FF5 /* EventCreationTableViewCell.swift */; };
 		04400D3126A6E4A100342FF5 /* EventCreationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04400D2F26A6E4A100342FF5 /* EventCreationTableViewCell.xib */; };
-		04400D3B26A8320900342FF5 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04400D3A26A8320800342FF5 /* UIStackView.swift */; };
 		04400D4026A8359900342FF5 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04400D3F26A8359900342FF5 /* UILabel.swift */; };
 		04501124266E4C7F00E8147D /* EventCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04501123266E4C7F00E8147D /* EventCreationViewController.swift */; };
 		045011432670D35100E8147D /* EventCreationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045011422670D35100E8147D /* EventCreationPresenter.swift */; };
@@ -68,7 +67,6 @@
 		04400D1726961E5500342FF5 /* EventCreationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventCreationRouter.swift; path = datebook/EventCreationModule/Router/EventCreationRouter.swift; sourceTree = SOURCE_ROOT; };
 		04400D2E26A6E4A100342FF5 /* EventCreationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventCreationTableViewCell.swift; path = datebook/EventCreationModule/Cell/EventCreationTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		04400D2F26A6E4A100342FF5 /* EventCreationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EventCreationTableViewCell.xib; path = datebook/EventCreationModule/Cell/EventCreationTableViewCell.xib; sourceTree = SOURCE_ROOT; };
-		04400D3A26A8320800342FF5 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIStackView.swift; path = datebook/EventListModule/Extensions/UIKit/UIStackView.swift; sourceTree = SOURCE_ROOT; };
 		04400D3F26A8359900342FF5 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UILabel.swift; path = datebook/EventListModule/Extensions/UIKit/UILabel.swift; sourceTree = SOURCE_ROOT; };
 		04501123266E4C7F00E8147D /* EventCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventCreationViewController.swift; path = datebook/EventCreationModule/View/EventCreationViewController.swift; sourceTree = SOURCE_ROOT; };
 		045011422670D35100E8147D /* EventCreationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventCreationPresenter.swift; path = datebook/EventCreationModule/Presenter/EventCreationPresenter.swift; sourceTree = SOURCE_ROOT; };
@@ -159,7 +157,6 @@
 		04400D3926A831E500342FF5 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				04400D3A26A8320800342FF5 /* UIStackView.swift */,
 				04400D3F26A8359900342FF5 /* UILabel.swift */,
 			);
 			path = UIKit;
@@ -609,7 +606,6 @@
 				04789E8226308C5A00C824AC /* CalendarViewController.swift in Sources */,
 				04D8EC8C2638807E000DB051 /* ConvertDate.swift in Sources */,
 				043A066C26BD1863008F8AF5 /* DatePickerTableViewCell.swift in Sources */,
-				04400D3B26A8320900342FF5 /* UIStackView.swift in Sources */,
 				0465B41C26340F1900C72A03 /* RealmService.swift in Sources */,
 				04400D4026A8359900342FF5 /* UILabel.swift in Sources */,
 				04789E7E26308C5A00C824AC /* AppDelegate.swift in Sources */,

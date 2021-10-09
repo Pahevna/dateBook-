@@ -50,7 +50,9 @@ class EventListPresenter: EventListPresenterProtocol {
     func didSelectDate(_ date: Date) {
         
         realmService.getEvents(selectedDate: date) { [weak self] result in
+            
             guard let self = self else { return }
+            
             switch result {
             case.success(let events):
                 self.events = events

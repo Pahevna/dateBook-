@@ -13,6 +13,5 @@ class EventModel: Object {
     @objc dynamic var desc = ""
     @objc dynamic var dateStart = Date()
     @objc dynamic var dateEnd = Date()
-
 }
 

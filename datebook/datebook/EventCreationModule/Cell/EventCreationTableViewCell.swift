@@ -43,7 +43,6 @@ extension EventCreationTableViewCell: UITextFieldDelegate {
         guard let stringRange = Range(range, in: currentText) else { return false }
         
         let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
-        
         completionHandler?(updatedText, typeTextField)
             
         return true 

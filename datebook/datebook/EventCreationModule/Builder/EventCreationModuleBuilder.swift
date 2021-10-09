@@ -25,4 +25,3 @@ class EventCreationModuleBuilder: EventCreationModuleBuilderProtocol {
         return view
     }
 }
-
