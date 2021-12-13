@@ -20,7 +20,6 @@ protocol EventCreationPresenterProtocol: class {
 }
 
 class EventCreationPresenter: EventCreationPresenterProtocol {
-   
     weak var view: EventCreationViewProtocol?
     var router: EventCreationRouterProtocol?
     private var name: String?

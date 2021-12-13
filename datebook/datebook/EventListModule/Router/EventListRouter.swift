@@ -14,7 +14,6 @@ protocol EventListRouterProtocol {
 }
 
 class EventListRouter: EventListRouterProtocol {
-    
     var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
@@ -22,9 +21,9 @@ class EventListRouter: EventListRouterProtocol {
     }
     
     func showEventCreationModule() {
-        
         let eventCreationModuleBuilder = EventCreationModuleBuilder()
         let eventCreationViewController = eventCreationModuleBuilder.buildEventCreationModule(navigationController: navigationController)
+        
         navigationController.pushViewController(eventCreationViewController, animated: true)
     }
 }

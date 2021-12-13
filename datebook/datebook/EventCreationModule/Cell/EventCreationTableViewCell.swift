@@ -13,7 +13,6 @@ enum TypeTextField {
 }
 
 class EventCreationTableViewCell: UITableViewCell {
-    
     var typeTextField = TypeTextField.name
     var completionHandler: ((String, TypeTextField) -> ())?
     

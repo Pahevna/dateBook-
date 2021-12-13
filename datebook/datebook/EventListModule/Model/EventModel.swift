@@ -8,7 +8,6 @@
 import RealmSwift
 
 class EventModel: Object {
-    
     @objc dynamic var name = ""
     @objc dynamic var desc = ""
     @objc dynamic var dateStart = Date()

@@ -22,7 +22,6 @@ class ListOfEventsTableViewCell: UITableViewCell {
     }
     
     func configureCell(event: EventModel) {
-        
         eventLabel?.text = event.name
         dataStartLabel?.text = event.dateStart.convertFromDateToString(dateFormat: "HH:mm")
         dataEndLabel?.text = event.dateEnd.convertFromDateToString(dateFormat: "HH:mm")

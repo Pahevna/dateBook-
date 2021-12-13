@@ -15,7 +15,6 @@ protocol EventCreationModuleBuilderProtocol {
 class EventCreationModuleBuilder: EventCreationModuleBuilderProtocol {
     
     func buildEventCreationModule(navigationController: UINavigationController) -> UIViewController {
-        
         let view = EventCreationViewController()
         let realmService = RealmService()
         let router = EventCreationRouter(navigationController: navigationController)

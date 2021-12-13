@@ -40,8 +40,8 @@ class EventCreationViewController: UIViewController {
     }
     
     private func setConstraints() {
-
         view.addSubview(tableView)
+        
         NSLayoutConstraint.activate([
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
@@ -50,7 +50,6 @@ class EventCreationViewController: UIViewController {
         ])
     }
     private func setupTableView() {
-        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
@@ -84,7 +83,7 @@ class EventCreationViewController: UIViewController {
 extension EventCreationViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        2
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -94,6 +93,7 @@ extension EventCreationViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         if datePickerIndexPath != nil, section == 1 {
             return inputTexts.count + 1
         } else {
@@ -202,7 +202,6 @@ extension EventCreationViewController: DatePickerDelegate {
 extension EventCreationViewController: EventCreationViewProtocol {
     
     func showAlert(text: String) {
-
         let alert = UIAlertController(title: "Error",
                                       message: text,
                                       preferredStyle: .alert)
