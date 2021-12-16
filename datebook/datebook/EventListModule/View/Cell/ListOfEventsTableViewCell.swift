@@ -9,9 +9,10 @@ import UIKit
 
 class ListOfEventsTableViewCell: UITableViewCell {
     
-    @IBOutlet var eventLabel: UILabel!
-    @IBOutlet var dataStartLabel: UILabel!
-    @IBOutlet var dataEndLabel: UILabel!
+    @IBOutlet private var eventLabel: UILabel!
+    @IBOutlet private var dateStartLabel: UILabel!
+    @IBOutlet private var dateEndLabel: UILabel!
+    @IBOutlet private var descriptionLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,7 +24,8 @@ class ListOfEventsTableViewCell: UITableViewCell {
     
     func configureCell(event: EventModel) {
         eventLabel?.text = event.name
-        dataStartLabel?.text = event.dateStart.convertFromDateToString(dateFormat: "HH:mm")
-        dataEndLabel?.text = event.dateEnd.convertFromDateToString(dateFormat: "HH:mm")
+        dateStartLabel?.text = event.dateStart.convertFromDateToString(dateFormat: "HH:mm")
+        dateEndLabel?.text = event.dateEnd.convertFromDateToString(dateFormat: "HH:mm")
+        descriptionLabel.text = event.desc 
     }
 }

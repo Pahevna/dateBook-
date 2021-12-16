@@ -24,10 +24,10 @@ class EventCreationViewController: UIViewController {
         
         return tableView
     }()
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         navigationController?.navigationBar.tintColor = .orange
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didTapAdd))
         navigationItem.title = "New Event"
@@ -89,12 +89,13 @@ extension EventCreationViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 40))
         view.backgroundColor = .systemGray6
+        
         return view
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if datePickerIndexPath != nil, section == 1 {
+        if datePickerIndexPath != nil && section == 1 {
             return inputTexts.count + 1
         } else {
             return inputTexts.count
@@ -165,11 +166,10 @@ extension EventCreationViewController: UITableViewDelegate {
             
             tableView.deleteRows(at: [datePickerIndexPath], with: .fade)
             self.datePickerIndexPath = nil
-        
+            
         } else {
             
             if let datePickerIndexPath = datePickerIndexPath {
-                
                 tableView.deleteRows(at: [datePickerIndexPath], with: .fade)
             }
             
@@ -180,6 +180,7 @@ extension EventCreationViewController: UITableViewDelegate {
             tableView.insertRows(at: [datePickerIndexPath], with: .fade)
             tableView.deselectRow(at: indexPath, animated: true)
         }
+        
         tableView.endUpdates()
     }
 }
@@ -187,7 +188,6 @@ extension EventCreationViewController: UITableViewDelegate {
 extension EventCreationViewController: DatePickerDelegate {
     
     func didChangeDate(date: Date, indexPath: IndexPath) {
-        
         inputDates[indexPath.row] = date
         tableView.reloadRows(at: [indexPath], with: .none)
         

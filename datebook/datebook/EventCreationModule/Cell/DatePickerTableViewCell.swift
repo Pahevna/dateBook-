@@ -26,7 +26,6 @@ class DatePickerTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         initView()
     }
 
