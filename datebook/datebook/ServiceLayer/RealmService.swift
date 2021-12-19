@@ -20,7 +20,10 @@ class RealmService: RealmServiceProtocol {
         do {
             let realm = try Realm()
             try realm.write {
-                let event = EventModel(value: ["name": name, "desc": description, "dateStart": dateStart, "dateEnd": dateEnd])
+                let event = EventModel(value: ["name": name,
+                                               "desc": description,
+                                               "dateStart": dateStart,
+                                               "dateEnd": dateEnd])
                 realm.add(event)
             }
         } catch let error as NSError {

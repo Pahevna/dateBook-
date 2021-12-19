@@ -8,7 +8,7 @@
 import Foundation
 
 protocol EventCreationViewProtocol: class {
-    func showAlert(text: String)
+    func showAlert(title: String, text: String)
 }
 
 protocol EventCreationPresenterProtocol: class {
@@ -54,9 +54,10 @@ class EventCreationPresenter: EventCreationPresenterProtocol {
     func didTapAddButton() {
         
         if dateStart == nil || dateEnd == nil || name == "" {
-            view?.showAlert(text: "Requered fields: Starts, Ends, Name")
+            view?.showAlert(title: "Error", text: "Required fields: Starts, Ends, Name")
         } else {
             realmService.saveEventToRealm(name: name ?? "", dateStart: dateStart ?? Date(), dateEnd: dateEnd ?? Date(), description: description ?? "")
+            view?.showAlert(title: "Succes", text: "Event created")
         }
     }
 }

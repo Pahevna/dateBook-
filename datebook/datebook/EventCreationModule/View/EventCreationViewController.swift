@@ -28,7 +28,7 @@ class EventCreationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.tintColor = .orange
+        navigationController?.navigationBar.tintColor = .systemOrange
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didTapAdd))
         navigationItem.title = "New Event"
         
@@ -67,7 +67,6 @@ class EventCreationViewController: UIViewController {
     }
     
     private func indexPathToInsertDatePicker(indexPath: IndexPath) -> IndexPath {
-        
         if let datePickerIndexPath = datePickerIndexPath, datePickerIndexPath.row < indexPath.row {
             return indexPath
         } else {
@@ -95,7 +94,7 @@ extension EventCreationViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if datePickerIndexPath != nil && section == 1 {
+        if datePickerIndexPath != nil, section == 1 {
             return inputTexts.count + 1
         } else {
             return inputTexts.count
@@ -180,7 +179,6 @@ extension EventCreationViewController: UITableViewDelegate {
             tableView.insertRows(at: [datePickerIndexPath], with: .fade)
             tableView.deselectRow(at: indexPath, animated: true)
         }
-        
         tableView.endUpdates()
     }
 }
@@ -191,7 +189,7 @@ extension EventCreationViewController: DatePickerDelegate {
         inputDates[indexPath.row] = date
         tableView.reloadRows(at: [indexPath], with: .none)
         
-        if indexPath.row == 1 {
+        if indexPath.row == 0 {
             presenter?.didEditDateStart(date)
         } else {
             presenter?.didEditDateEnd(date)
@@ -201,8 +199,8 @@ extension EventCreationViewController: DatePickerDelegate {
 
 extension EventCreationViewController: EventCreationViewProtocol {
     
-    func showAlert(text: String) {
-        let alert = UIAlertController(title: "Error",
+    func showAlert(title: String, text: String) {
+        let alert = UIAlertController(title: title,
                                       message: text,
                                       preferredStyle: .alert)
         let okButton = UIAlertAction(title: "OK",
