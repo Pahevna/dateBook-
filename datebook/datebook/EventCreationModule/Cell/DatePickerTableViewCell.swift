@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol DatePickerDelegate: class {
+protocol DatePickerDelegate: AnyObject {
     func didChangeDate(date: Date, indexPath: IndexPath)
 }
 

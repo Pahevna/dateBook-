@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol EventCreationViewProtocol: class {
+protocol EventCreationViewProtocol: AnyObject {
     func showAlert(title: String, text: String)
 }
 
-protocol EventCreationPresenterProtocol: class {
+protocol EventCreationPresenterProtocol: AnyObject {
     func didEditName(_ name: String)
     func didEditDescription(_ description: String)
     func didEditDateStart(_ dateStart: Date)
@@ -52,9 +52,8 @@ class EventCreationPresenter: EventCreationPresenterProtocol {
     }
     
     func didTapAddButton() {
-        
-        if dateStart == nil || dateEnd == nil || name == "" {
-            view?.showAlert(title: "Error", text: "Required fields: Starts, Ends, Name")
+        if name == "" {
+            view?.showAlert(title: "Error", text: "Required field: Name")
         } else {
             realmService.saveEventToRealm(name: name ?? "", dateStart: dateStart ?? Date(), dateEnd: dateEnd ?? Date(), description: description ?? "")
             view?.showAlert(title: "Succes", text: "Event created")

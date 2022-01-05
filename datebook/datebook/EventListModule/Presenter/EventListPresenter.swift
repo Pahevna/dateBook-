@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol EventListViewProtocol: class {
+protocol EventListViewProtocol: AnyObject {
     func setEvents(_ events: [EventModel])
     func showEmptyView(text: String)
 }
 
-protocol EventListPresenterProtocol: class {
+protocol EventListPresenterProtocol: AnyObject {
     func didSelectDate(_ date: Date)
     func viewDidLoad()
     func showEventCreationModule()

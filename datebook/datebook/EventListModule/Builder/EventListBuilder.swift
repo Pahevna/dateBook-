@@ -22,7 +22,7 @@ class EventListBuilder: EventListBuilderProtocol {
         let router = EventListRouter(navigationController: navigationController)
         let presenter = EventListPresenter(view: view, realmService: realmService, router: router)
         view.presenter = presenter
-        navigationController.setViewControllers([view], animated: false)
+        navigationController.setViewControllers([view], animated: false) 
 
         return view
     }
