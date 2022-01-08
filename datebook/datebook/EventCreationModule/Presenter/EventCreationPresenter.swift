@@ -22,10 +22,10 @@ protocol EventCreationPresenterProtocol: AnyObject {
 class EventCreationPresenter: EventCreationPresenterProtocol {
     weak var view: EventCreationViewProtocol?
     var router: EventCreationRouterProtocol?
-    private var name: String?
-    private var description: String?
-    private var dateStart: Date?
-    private var dateEnd: Date?
+    private var name = ""
+    private var description = ""
+    private var dateStart = Date()
+    private var dateEnd = Date()
     private let realmService: RealmServiceProtocol
     private let currentDate = Date()
     
@@ -52,11 +52,20 @@ class EventCreationPresenter: EventCreationPresenterProtocol {
     }
     
     func didTapAddButton() {
-        if name == "" {
-            view?.showAlert(title: "Error", text: "Required field: Name")
+       
+        if dateStart >= dateEnd {
+            view?.showAlert(title: "Error", text: "incorrect event date")
+        }
+        
+        if name == "" || description == "" {
+            view?.showAlert(title: "Error", text: "please, fill all fields")
         } else {
-            realmService.saveEventToRealm(name: name ?? "", dateStart: dateStart ?? Date(), dateEnd: dateEnd ?? Date(), description: description ?? "")
-            view?.showAlert(title: "Succes", text: "Event created")
+            realmService.saveEventToRealm(name: name,
+                                          dateStart: dateStart,
+                                          dateEnd: dateEnd,
+                                          description: description)
+            view?.showAlert(title: "Succes", text: "event created")
+            router?.popToRoot()
         }
     }
 }
