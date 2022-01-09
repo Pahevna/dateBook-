@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042EB67D278B032100A21B6B /* EventListPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042EB67C278B032100A21B6B /* EventListPresenterTest.swift */; };
+		042EB67F278B645300A21B6B /* EventListRouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042EB67E278B645300A21B6B /* EventListRouterTest.swift */; };
 		043A066226BD10D1008F8AF5 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A066026BD10D1008F8AF5 /* DateTableViewCell.swift */; };
 		043A066326BD10D1008F8AF5 /* DateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043A066126BD10D1008F8AF5 /* DateTableViewCell.xib */; };
 		043A066C26BD1863008F8AF5 /* DatePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A066A26BD1863008F8AF5 /* DatePickerTableViewCell.swift */; };
@@ -59,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		042EB67C278B032100A21B6B /* EventListPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventListPresenterTest.swift; path = datebookTests/EventListPresenterTest.swift; sourceTree = SOURCE_ROOT; };
+		042EB67E278B645300A21B6B /* EventListRouterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventListRouterTest.swift; path = datebookTests/EventListRouterTest.swift; sourceTree = SOURCE_ROOT; };
 		043A066026BD10D1008F8AF5 /* DateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateTableViewCell.swift; path = datebook/EventCreationModule/Cell/DateTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		043A066126BD10D1008F8AF5 /* DateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = DateTableViewCell.xib; path = datebook/EventCreationModule/Cell/DateTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		043A066A26BD1863008F8AF5 /* DatePickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DatePickerTableViewCell.swift; path = datebook/EventCreationModule/Cell/DatePickerTableViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -133,6 +137,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		042EB67B278B02BF00A21B6B /* TestEventListModule */ = {
+			isa = PBXGroup;
+			children = (
+				042EB67C278B032100A21B6B /* EventListPresenterTest.swift */,
+				042EB67E278B645300A21B6B /* EventListRouterTest.swift */,
+			);
+			name = TestEventListModule;
+			sourceTree = "<group>";
+		};
 		04400D1C26961E5B00342FF5 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +260,7 @@
 		04789E9326308C5C00C824AC /* dateBookTests */ = {
 			isa = PBXGroup;
 			children = (
+				042EB67B278B02BF00A21B6B /* TestEventListModule */,
 				04789E9426308C5C00C824AC /* dateBookTests.swift */,
 				04789E9626308C5C00C824AC /* Info.plist */,
 			);
@@ -629,6 +643,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				04789E9526308C5C00C824AC /* dateBookTests.swift in Sources */,
+				042EB67F278B645300A21B6B /* EventListRouterTest.swift in Sources */,
+				042EB67D278B032100A21B6B /* EventListPresenterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

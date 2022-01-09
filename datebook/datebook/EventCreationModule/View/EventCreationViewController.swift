@@ -204,8 +204,9 @@ extension EventCreationViewController: EventCreationViewProtocol {
                                       message: text,
                                       preferredStyle: .alert)
         let okButton = UIAlertAction(title: "OK",
-                                     style: .default,
-                                     handler: nil)
+                                     style: .default) { [weak self] _ in
+            self?.presenter?.popToRootViewController()
+        }
         alert.addAction(okButton)
         present(alert, animated: true, completion: nil)
     }

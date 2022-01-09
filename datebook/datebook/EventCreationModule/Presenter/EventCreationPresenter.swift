@@ -17,6 +17,7 @@ protocol EventCreationPresenterProtocol: AnyObject {
     func didEditDateStart(_ dateStart: Date)
     func didEditDateEnd(_ dateEnd: Date)
     func didTapAddButton()
+    func popToRootViewController() 
 }
 
 class EventCreationPresenter: EventCreationPresenterProtocol {
@@ -53,19 +54,22 @@ class EventCreationPresenter: EventCreationPresenterProtocol {
     
     func didTapAddButton() {
        
-        if dateStart >= dateEnd {
-            view?.showAlert(title: "Error", text: "incorrect event date")
-        }
-        
         if name == "" || description == "" {
             view?.showAlert(title: "Error", text: "please, fill all fields")
+        }
+        
+        if dateStart >= dateEnd || dateStart < currentDate || dateEnd < currentDate || dateStart.get(.day) != dateEnd.get(.day) {
+            view?.showAlert(title: "Error", text: "incorrect event date")
         } else {
             realmService.saveEventToRealm(name: name,
                                           dateStart: dateStart,
                                           dateEnd: dateEnd,
                                           description: description)
             view?.showAlert(title: "Succes", text: "event created")
-            router?.popToRoot()
         }
+    }
+    
+    func popToRootViewController() {
+        router?.popToRoot()
     }
 }

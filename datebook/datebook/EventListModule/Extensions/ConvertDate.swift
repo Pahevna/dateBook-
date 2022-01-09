@@ -16,4 +16,9 @@ extension Date {
         
         return dateString
     }
+    
+    func get(_ component: Calendar.Component, calendar: Calendar = Calendar.current) -> Int {
+        return calendar.component(component, from: self)
+    }
 }
+
