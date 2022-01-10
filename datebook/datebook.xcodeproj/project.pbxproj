@@ -35,7 +35,7 @@
 		04789EA026308C5C00C824AC /* dateBookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04789E9F26308C5C00C824AC /* dateBookUITests.swift */; };
 		04789EC026309D9100C824AC /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04789EBF26309D9100C824AC /* EventModel.swift */; };
 		04B6E8B92635DCE7005BAE8A /* EventListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B6E8B82635DCE7005BAE8A /* EventListBuilder.swift */; };
-		04D8EC8C2638807E000DB051 /* ConvertDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8EC8B2638807E000DB051 /* ConvertDate.swift */; };
+		04D8EC8C2638807E000DB051 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8EC8B2638807E000DB051 /* Date.swift */; };
 		04D8EC9F263C54D3000DB051 /* ListOfEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8EC9D263C54D3000DB051 /* ListOfEventsTableViewCell.swift */; };
 		04D8ECA0263C54D3000DB051 /* ListOfEventsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D8EC9E263C54D3000DB051 /* ListOfEventsTableViewCell.xib */; };
 		45929BE137AC0A452EFE65D0 /* Pods_dateBook_dateBookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51824AE6CAD60AED7F706B34 /* Pods_dateBook_dateBookUITests.framework */; };
@@ -95,7 +95,7 @@
 		04789EA126308C5C00C824AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04789EBF26309D9100C824AC /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		04B6E8B82635DCE7005BAE8A /* EventListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EventListBuilder.swift; path = datebook/EventListModule/Builder/EventListBuilder.swift; sourceTree = SOURCE_ROOT; };
-		04D8EC8B2638807E000DB051 /* ConvertDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConvertDate.swift; path = datebook/EventListModule/Extensions/ConvertDate.swift; sourceTree = SOURCE_ROOT; };
+		04D8EC8B2638807E000DB051 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Date.swift; path = datebook/EventListModule/Extensions/Date.swift; sourceTree = SOURCE_ROOT; };
 		04D8EC9D263C54D3000DB051 /* ListOfEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListOfEventsTableViewCell.swift; path = datebook/EventListModule/View/Cell/ListOfEventsTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		04D8EC9E263C54D3000DB051 /* ListOfEventsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ListOfEventsTableViewCell.xib; path = datebook/EventListModule/View/Cell/ListOfEventsTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		1C8B3B8C6F602055D2ACB417 /* Pods-dateBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dateBook.release.xcconfig"; path = "Target Support Files/Pods-dateBook/Pods-dateBook.release.xcconfig"; sourceTree = "<group>"; };
@@ -344,7 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				04400D3926A831E500342FF5 /* UIKit */,
-				04D8EC8B2638807E000DB051 /* ConvertDate.swift */,
+				04D8EC8B2638807E000DB051 /* Date.swift */,
 				04400D0F2695ADDC00342FF5 /* ConvertString.swift */,
 			);
 			path = Extensions;
@@ -618,7 +618,7 @@
 			files = (
 				043A066226BD10D1008F8AF5 /* DateTableViewCell.swift in Sources */,
 				04789E8226308C5A00C824AC /* CalendarViewController.swift in Sources */,
-				04D8EC8C2638807E000DB051 /* ConvertDate.swift in Sources */,
+				04D8EC8C2638807E000DB051 /* Date.swift in Sources */,
 				043A066C26BD1863008F8AF5 /* DatePickerTableViewCell.swift in Sources */,
 				0465B41C26340F1900C72A03 /* RealmService.swift in Sources */,
 				04400D4026A8359900342FF5 /* UILabel.swift in Sources */,

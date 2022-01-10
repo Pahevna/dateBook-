@@ -56,9 +56,10 @@ class EventCreationPresenter: EventCreationPresenterProtocol {
        
         if name == "" || description == "" {
             view?.showAlert(title: "Error", text: "please, fill all fields")
+            return
         }
         
-        if dateStart >= dateEnd || dateStart < currentDate || dateEnd < currentDate || dateStart.get(.day) != dateEnd.get(.day) {
+        if isNotValidateDate() {
             view?.showAlert(title: "Error", text: "incorrect event date")
         } else {
             realmService.saveEventToRealm(name: name,
@@ -71,5 +72,9 @@ class EventCreationPresenter: EventCreationPresenterProtocol {
     
     func popToRootViewController() {
         router?.popToRoot()
+    }
+    
+    private func isNotValidateDate() -> Bool {
+        return dateStart >= dateEnd || dateStart < currentDate || dateEnd < currentDate || dateStart.get(.day) != dateEnd.get(.day)
     }
 }
