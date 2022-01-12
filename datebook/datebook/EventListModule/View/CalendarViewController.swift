@@ -18,6 +18,7 @@ class CalendarViewController: UIViewController {
     private var calendar: FSCalendar!
     private var emptyLabel: UILabel!
     private var eventsForSelectedDate: [EventModel]?
+    private var date = Date()
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,12 @@ class CalendarViewController: UIViewController {
         configureCalendar()
         setupTableView()
         presenter?.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        presenter?.didSelectDate(date)
     }
     
     @IBAction func addEvent (_ sender: UIBarButtonItem) {
@@ -123,7 +130,7 @@ extension CalendarViewController: UITableViewDelegate {
 }
 
 extension CalendarViewController: EventListViewProtocol {
-   
+  
     func setEvents(_ events: [EventModel]) {
         eventsForSelectedDate = events
         tableView.isHidden = false

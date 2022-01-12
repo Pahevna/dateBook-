@@ -10,13 +10,13 @@ import UIKit
 class EventCreationViewController: UIViewController {
     
     var presenter: EventCreationPresenterProtocol?
-    var datePickerIndexPath: IndexPath?
-    var inputTexts = ["Starts", "Ends"]
-    var inputDates: [Date] = []
     
-    let idEventCreationCell = "idEventCreationCell"
-    let idDateCell = "idDateCell"
-    let idDatePickerCell = "idDatePickerCell"
+    private var datePickerIndexPath: IndexPath?
+    private var inputTexts = ["Starts", "Ends"]
+    private var inputDates = [Date]() 
+    private let idEventCreationCell = "idEventCreationCell"
+    private let idDateCell = "idDateCell"
+    private let idDatePickerCell = "idDatePickerCell"
     
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -186,6 +186,7 @@ extension EventCreationViewController: UITableViewDelegate {
 extension EventCreationViewController: DatePickerDelegate {
     
     func didChangeDate(date: Date, indexPath: IndexPath) {
+        
         inputDates[indexPath.row] = date
         tableView.reloadRows(at: [indexPath], with: .none)
         
@@ -199,14 +200,22 @@ extension EventCreationViewController: DatePickerDelegate {
 
 extension EventCreationViewController: EventCreationViewProtocol {
     
-    func showAlert(title: String, text: String) {
-        let alert = UIAlertController(title: title,
-                                      message: text,
+    func showSuccess() {
+        let alert = UIAlertController(title: "Succes",
+                                      message: "event created",
                                       preferredStyle: .alert)
-        let okButton = UIAlertAction(title: "OK",
-                                     style: .default) { [weak self] _ in
+        let okButton = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
             self?.presenter?.popToRootViewController()
         }
+        alert.addAction(okButton)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func showError(text: String) {
+        let alert = UIAlertController(title: "Error",
+                                      message: text,
+                                      preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(okButton)
         present(alert, animated: true, completion: nil)
     }

@@ -8,7 +8,8 @@
 import Foundation
 
 protocol EventCreationViewProtocol: AnyObject {
-    func showAlert(title: String, text: String)
+    func showSuccess()
+    func showError(text: String)
 }
 
 protocol EventCreationPresenterProtocol: AnyObject {
@@ -23,8 +24,8 @@ protocol EventCreationPresenterProtocol: AnyObject {
 class EventCreationPresenter: EventCreationPresenterProtocol {
     weak var view: EventCreationViewProtocol?
     var router: EventCreationRouterProtocol?
-    private var name = ""
-    private var description = ""
+    private var name = String()
+    private var description = String()
     private var dateStart = Date()
     private var dateEnd = Date()
     private let realmService: RealmServiceProtocol
@@ -54,19 +55,19 @@ class EventCreationPresenter: EventCreationPresenterProtocol {
     
     func didTapAddButton() {
        
-        if name == "" || description == "" {
-            view?.showAlert(title: "Error", text: "please, fill all fields")
+        if name.isEmpty || description.isEmpty {
+            view?.showError(text: "please, fill all fields")
             return
         }
         
         if isNotValidateDate() {
-            view?.showAlert(title: "Error", text: "incorrect event date")
+            view?.showError(text: "incorrect event date")
         } else {
             realmService.saveEventToRealm(name: name,
                                           dateStart: dateStart,
                                           dateEnd: dateEnd,
                                           description: description)
-            view?.showAlert(title: "Succes", text: "event created")
+            view?.showSuccess()
         }
     }
     
@@ -75,6 +76,7 @@ class EventCreationPresenter: EventCreationPresenterProtocol {
     }
     
     private func isNotValidateDate() -> Bool {
-        return dateStart >= dateEnd || dateStart < currentDate || dateEnd < currentDate || dateStart.get(.day) != dateEnd.get(.day)
+        
+        return dateStart > dateEnd || dateStart < currentDate || dateEnd < currentDate || dateStart.get(.day) != dateEnd.get(.day)
     }
 }
