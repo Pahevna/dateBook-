@@ -14,11 +14,11 @@ enum TypeTextField {
 
 class EventCreationTableViewCell: UITableViewCell {
     var typeTextField = TypeTextField.name
-    var completionHandler: ((String, TypeTextField) -> ())?
+    var completionHandler: ((String, TypeTextField) -> Void)?
     
     @IBOutlet weak var textField: UITextField!
    
-    let cellNameArray = ["Name","Description"]
+    let cellNameArray = ["Name", "Description"]
     
     override func awakeFromNib() {
         super.awakeFromNib()

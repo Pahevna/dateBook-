@@ -9,7 +9,7 @@ import Foundation
 
 extension String {
     
-    func convertToDate()-> Date {
+    func convertToDate() -> Date {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone.current
         dateFormatter.locale = NSLocale(localeIdentifier: "Ru_ru") as Locale

@@ -11,21 +11,21 @@ import XCTest
 class MockView: EventListViewProtocol {
     func setEvents(_ events: [EventModel]) {
     }
-    
+
     func showEmptyView(text: String) {
     }
 }
 
 class MockRealmService: RealmServiceProtocol {
     var events: [EventModel]!
-    
+
     init() {}
-    
+
     convenience init(events: [EventModel]?) {
         self.init()
         self.events = events
     }
-    
+
     func saveEventToRealm(name: String, dateStart: Date, dateEnd: Date, description: String) {
     }
     
@@ -40,7 +40,7 @@ class MockRealmService: RealmServiceProtocol {
 }
 
 class EventListPresenterTest: XCTestCase {
-    
+
     var view: MockView!
     var presenter: EventListPresenter!
     var realmService: RealmServiceProtocol!
@@ -80,7 +80,7 @@ class EventListPresenterTest: XCTestCase {
         XCTAssertNotEqual(catchEvents?.count, 0)
         XCTAssertEqual(catchEvents?.count, events.count)
     }
-    
+
     func testGetFailureEvents() {
         let event = EventModel(value: ["name": "Foo", "desc": "Baz", "dateStart": Date(), "dateEnd": Date()])
         events.append(event)

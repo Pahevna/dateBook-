@@ -18,7 +18,7 @@ protocol EventCreationPresenterProtocol: AnyObject {
     func didEditDateStart(_ dateStart: Date)
     func didEditDateEnd(_ dateEnd: Date)
     func didTapAddButton()
-    func popToRootViewController() 
+    func popToRootViewController()
 }
 
 class EventCreationPresenter: EventCreationPresenterProtocol {
@@ -30,21 +30,21 @@ class EventCreationPresenter: EventCreationPresenterProtocol {
     private var dateEnd = Date()
     private let realmService: RealmServiceProtocol
     private let currentDate = Date()
-    
+
     required init(view: EventCreationViewProtocol, realmService: RealmServiceProtocol, router: EventCreationRouterProtocol) {
         self.view = view
         self.realmService = realmService
-        self.router = router 
+        self.router = router
     }
     
     func didEditName(_ name: String) {
-       self.name = name
+        self.name = name
     }
-    
+
     func didEditDescription(_ description: String) {
         self.description = description
     }
-    
+
     func didEditDateStart(_ dateStart: Date) {
         self.dateStart = dateStart
     }

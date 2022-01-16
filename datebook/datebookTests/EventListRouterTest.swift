@@ -10,7 +10,7 @@ import XCTest
 
 class MockNavigationController: UINavigationController {
     var presentedVC: UIViewController?
-    
+
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         self.presentedVC = viewController
         super.pushViewController(viewController, animated: animated)
@@ -28,7 +28,7 @@ class EventListRouterTest: XCTestCase {
     override func tearDownWithError() throws {
         router = nil
     }
-    
+
     func testEventListRouter() {
         router.showEventCreationModule()
         let eventCreationViewController = navigationController.presentedVC

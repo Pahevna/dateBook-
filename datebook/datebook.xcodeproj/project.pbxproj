@@ -380,6 +380,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04789EA426308C5C00C824AC /* Build configuration list for PBXNativeTarget "dateBook" */;
 			buildPhases = (
+				043F601F279463F4002CCB95 /* ShellScript */,
 				49A3DF2A2546A0D7C9A3CC2C /* [CP] Check Pods Manifest.lock */,
 				04789E7626308C5A00C824AC /* Sources */,
 				04789E7726308C5A00C824AC /* Frameworks */,
@@ -509,6 +510,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		043F601F279463F4002CCB95 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
 		28291593E4016C6B9307FB0C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
