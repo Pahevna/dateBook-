@@ -3,4 +3,6 @@ disabled_rules:
 - empty_enum_arguments
 line_length:
 - 250 # warning 
-- 300 # error 
+- 300 # error
+excluded:
+- Pods 
