@@ -108,7 +108,7 @@ extension CalendarViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        70.0
+        64.0
     }
 }
 
@@ -129,7 +129,7 @@ extension CalendarViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        55.0
+        65.0
     }
 }
 

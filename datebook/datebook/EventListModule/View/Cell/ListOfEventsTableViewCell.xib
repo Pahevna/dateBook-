@@ -11,79 +11,84 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="118" id="KGk-i7-Jjw" customClass="ListOfEventsTableViewCell" customModule="dateBook" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="617" height="118"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="83" id="KGk-i7-Jjw" customClass="ListOfEventsTableViewCell" customModule="dateBook" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="625" height="83"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM" customClass="ListOfEventsTableViewCell" customModule="dateBook" customModuleProvider="target">
-                <rect key="frame" x="0.0" y="0.0" width="617" height="118"/>
+                <rect key="frame" x="0.0" y="0.0" width="625" height="83"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fnQ-H9-K5C">
-                        <rect key="frame" x="0.0" y="0.0" width="617" height="118"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MoS-V6-NLJ">
+                        <rect key="frame" x="5" y="5" width="615" height="73"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ulk-Bj-WO0">
-                                <rect key="frame" x="10" y="0.0" width="597" height="118"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufg-dH-eQY">
-                                        <rect key="frame" x="0.0" y="0.0" width="40" height="118"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="gAQ-r3-9pX" userLabel="width = 80"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUs-Oh-ae3">
-                                        <rect key="frame" x="50" y="0.0" width="40" height="118"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="YyX-IT-Pjd" userLabel="width = 80"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8V4-MA-LMV">
-                                        <rect key="frame" x="100" y="0.0" width="80" height="118"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="dOW-YG-ONp"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9N1-GT-VuQ">
-                                        <rect key="frame" x="190" y="0.0" width="407" height="118"/>
-                                        <fontDescription key="fontDescription" name="TrebuchetMS-Italic" family="Trebuchet MS" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7E-TX-CPq">
+                                <rect key="frame" x="10" y="5" width="50" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="fiN-n1-1LS"/>
+                                    <constraint firstAttribute="height" constant="20" id="wv9-iP-U7t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAC-SA-oQV">
+                                <rect key="frame" x="80" y="5" width="50" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="GCW-Vs-SBP"/>
+                                    <constraint firstAttribute="height" constant="20" id="o88-GV-Xl7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLu-h4-ilY">
+                                <rect key="frame" x="150" y="5" width="465" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="j6h-Uz-NGY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="diJ-dm-0Ha">
+                                <rect key="frame" x="10" y="35" width="605" height="33"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS-Italic" family="Trebuchet MS" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="ulk-Bj-WO0" secondAttribute="trailing" constant="10" id="FLr-q0-0Kd"/>
-                            <constraint firstItem="ulk-Bj-WO0" firstAttribute="top" secondItem="fnQ-H9-K5C" secondAttribute="top" id="J5X-7X-3rq"/>
-                            <constraint firstAttribute="bottom" secondItem="ulk-Bj-WO0" secondAttribute="bottom" id="QFR-HA-dnE"/>
-                            <constraint firstItem="ulk-Bj-WO0" firstAttribute="leading" secondItem="fnQ-H9-K5C" secondAttribute="leading" constant="10" id="cKl-Kn-5O3"/>
+                            <constraint firstItem="aLu-h4-ilY" firstAttribute="top" secondItem="MoS-V6-NLJ" secondAttribute="top" constant="5" id="BQM-RD-QTU"/>
+                            <constraint firstItem="diJ-dm-0Ha" firstAttribute="leading" secondItem="MoS-V6-NLJ" secondAttribute="leading" constant="10" id="GPE-tT-DcB"/>
+                            <constraint firstItem="BAC-SA-oQV" firstAttribute="top" secondItem="MoS-V6-NLJ" secondAttribute="top" constant="5" id="OaN-7x-Ca6"/>
+                            <constraint firstAttribute="trailing" secondItem="aLu-h4-ilY" secondAttribute="trailing" id="Oo4-fW-MQw"/>
+                            <constraint firstItem="aLu-h4-ilY" firstAttribute="leading" secondItem="BAC-SA-oQV" secondAttribute="trailing" constant="20" id="T6M-jJ-hok"/>
+                            <constraint firstAttribute="trailing" secondItem="diJ-dm-0Ha" secondAttribute="trailing" id="bSb-YZ-fpA"/>
+                            <constraint firstItem="BAC-SA-oQV" firstAttribute="top" secondItem="MoS-V6-NLJ" secondAttribute="top" constant="5" id="d4J-AR-dAK"/>
+                            <constraint firstItem="D7E-TX-CPq" firstAttribute="leading" secondItem="MoS-V6-NLJ" secondAttribute="leading" constant="10" id="dWo-Ex-5NK"/>
+                            <constraint firstItem="diJ-dm-0Ha" firstAttribute="top" secondItem="D7E-TX-CPq" secondAttribute="bottom" constant="10" id="eL1-lm-dJN"/>
+                            <constraint firstAttribute="bottom" secondItem="diJ-dm-0Ha" secondAttribute="bottom" constant="5" id="pBV-Ox-r01"/>
+                            <constraint firstItem="BAC-SA-oQV" firstAttribute="leading" secondItem="D7E-TX-CPq" secondAttribute="trailing" constant="20" id="pm7-OT-FFd"/>
+                            <constraint firstItem="D7E-TX-CPq" firstAttribute="top" secondItem="MoS-V6-NLJ" secondAttribute="top" constant="5" id="qh8-my-4az"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="fnQ-H9-K5C" secondAttribute="bottom" id="6bd-xY-ZVa"/>
-                    <constraint firstAttribute="trailing" secondItem="fnQ-H9-K5C" secondAttribute="trailing" id="ROY-PM-7XQ"/>
-                    <constraint firstItem="fnQ-H9-K5C" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="TpP-Vy-9aG"/>
-                    <constraint firstItem="fnQ-H9-K5C" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="uu5-YH-XHD"/>
+                    <constraint firstItem="MoS-V6-NLJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="4Yn-XR-YRd"/>
+                    <constraint firstAttribute="bottom" secondItem="MoS-V6-NLJ" secondAttribute="bottom" constant="5" id="55e-tr-SYd"/>
+                    <constraint firstAttribute="trailing" secondItem="MoS-V6-NLJ" secondAttribute="trailing" constant="5" id="Nd2-HK-yEf"/>
+                    <constraint firstItem="MoS-V6-NLJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="rm8-jJ-xDf"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="dateEndLabel" destination="UUs-Oh-ae3" id="SVw-Jc-XrG"/>
-                <outlet property="dateStartLabel" destination="ufg-dH-eQY" id="ytA-Lx-Fcd"/>
-                <outlet property="descriptionLabel" destination="9N1-GT-VuQ" id="RSr-fB-5Ib"/>
-                <outlet property="eventLabel" destination="8V4-MA-LMV" id="eTD-ei-ddH"/>
+                <outlet property="dateEndLabel" destination="BAC-SA-oQV" id="Re2-y9-cjU"/>
+                <outlet property="dateStartLabel" destination="D7E-TX-CPq" id="gUm-Ml-giA"/>
+                <outlet property="descriptionLabel" destination="diJ-dm-0Ha" id="5nb-tX-MLc"/>
+                <outlet property="eventLabel" destination="aLu-h4-ilY" id="pWh-k3-Ocx"/>
             </connections>
-            <point key="canvasLocation" x="207.97101449275365" y="-32.142857142857139"/>
+            <point key="canvasLocation" x="177.536231884058" y="-90.736607142857139"/>
         </tableViewCell>
     </objects>
     <resources>
