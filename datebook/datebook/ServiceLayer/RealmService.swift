@@ -38,7 +38,9 @@ class RealmService: RealmServiceProtocol {
             let filteredEvents = Array(events.filter {
                 $0.dateStart.convertFromDateToString(dateFormat: "MM/dd/yyyy") ==
                 selectedDate.convertFromDateToString(dateFormat: "MM/dd/yyyy") })
-            completion(.success(filteredEvents))
+            
+            let sortedEvents = filteredEvents.sorted { $0.dateStart < $1.dateStart }
+            completion(.success(sortedEvents))
         } catch let error as NSError {
             completion(.failure(error))
         }
