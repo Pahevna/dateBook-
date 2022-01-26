@@ -15,6 +15,7 @@ protocol EventListViewProtocol: AnyObject {
 protocol EventListPresenterProtocol: AnyObject {
     func didSelectDate(_ date: Date)
     func viewDidLoad()
+    func swipeAction(event: EventModel)
     func showEventCreationModule()
 }
 
@@ -24,7 +25,7 @@ class EventListPresenter: EventListPresenterProtocol {
     private let realmService: RealmServiceProtocol
     private var events: [EventModel]?
     private var currentDate = Date()
-  
+    
     required init(view: EventListViewProtocol, realmService: RealmServiceProtocol, router: EventListRouterProtocol) {
         self.view = view
         self.realmService = realmService
@@ -63,6 +64,10 @@ class EventListPresenter: EventListPresenterProtocol {
         if events?.count == 0 {
             view?.showEmptyView(text: "No events for selected date")
         }
+    }
+    
+    func swipeAction(event: EventModel) {
+        realmService.deleteEvent(event)
     }
     
     func showEventCreationModule() {

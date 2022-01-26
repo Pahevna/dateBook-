@@ -11,12 +11,12 @@ import RealmSwift
 protocol RealmServiceProtocol {
     func saveEventToRealm(name: String, dateStart: Date, dateEnd: Date, description: String)
     func getEvents(selectedDate: Date, completion: @escaping (Result<[EventModel]?, Error>) -> Void)
+    func deleteEvent(_ event: EventModel)
 }
 
 class RealmService: RealmServiceProtocol {
     
     func saveEventToRealm(name: String, dateStart: Date, dateEnd: Date, description: String) {
-        
         do {
             let realm = try Realm()
             try realm.write {
@@ -30,7 +30,7 @@ class RealmService: RealmServiceProtocol {
             fatalError(error.localizedDescription)
         }
     }
-
+    
     func getEvents(selectedDate: Date, completion: @escaping (Result<[EventModel]?, Error>) -> Void) {
         do {
             let realm = try Realm()
@@ -43,6 +43,17 @@ class RealmService: RealmServiceProtocol {
             completion(.success(sortedEvents))
         } catch let error as NSError {
             completion(.failure(error))
+        }
+    }
+    
+    func deleteEvent(_ event: EventModel) {
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.delete(event)
+            }
+        } catch let error as NSError {
+            fatalError(error.localizedDescription)
         }
     }
 }

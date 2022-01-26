@@ -18,7 +18,7 @@ class CalendarViewController: UIViewController {
     private var calendar: FSCalendar!
     private var emptyLabel: UILabel!
     private var eventsForSelectedDate: [EventModel]?
-    private var date = Date()
+    private var selectedDate = Date()
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,7 @@ class CalendarViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        presenter?.didSelectDate(date)
+        presenter?.didSelectDate(selectedDate)
     }
     
     @IBAction func addEvent (_ sender: UIBarButtonItem) {
@@ -130,6 +130,25 @@ extension CalendarViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         65.0
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, _ in
+            
+            guard let eventModel = self.eventsForSelectedDate?[indexPath.row] else { return }
+            
+            self.eventsForSelectedDate = self.eventsForSelectedDate?.filter { $0 != eventModel }
+            self.presenter?.swipeAction(event: eventModel)
+            tableView.reloadData()
+            
+            if indexPath.row == 0 {
+                self.showEmptyView(text: "No events for selected date")
+            }
+        }
+        let swipe = UISwipeActionsConfiguration(actions: [deleteAction])
+        
+        return swipe
     }
 }
 
