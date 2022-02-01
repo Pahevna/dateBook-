@@ -37,6 +37,7 @@ class EventCreationViewController: UIViewController {
         setConstraints()
         setupTableView()
         addInitailValues()
+        addTaps()
     }
     
     private func setConstraints() {
@@ -76,6 +77,16 @@ class EventCreationViewController: UIViewController {
     
     @objc private func didTapAdd() {
         presenter?.didTapAddButton()
+    }
+    
+    private func addTaps() {
+        let tapScreen = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        tapScreen.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapScreen)
+    }
+    
+    @objc private func hideKeyboard() {
+        view.endEditing(true)
     }
 }
 
