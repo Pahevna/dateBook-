@@ -29,7 +29,9 @@ class EventCreationViewController: UIViewController {
         super.viewDidLoad()
         
         navigationController?.navigationBar.tintColor = .systemOrange
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didTapAdd))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
+                                                            target: self,
+                                                            action: #selector(didTapAdd))
         navigationItem.title = "New Event"
         
         view.backgroundColor = .systemBackground
@@ -197,15 +199,10 @@ extension EventCreationViewController: UITableViewDelegate {
 extension EventCreationViewController: DatePickerDelegate {
     
     func didChangeDate(date: Date, indexPath: IndexPath) {
-        
         inputDates[indexPath.row] = date
         tableView.reloadRows(at: [indexPath], with: .none)
         
-        if indexPath.row == 0 {
-            presenter?.didEditDateStart(date)
-        } else {
-            presenter?.didEditDateEnd(date)
-        }
+        indexPath.row == 0 ? presenter?.didEditDateStart(date) : presenter?.didEditDateEnd(date)
     }
 }
 
