@@ -71,6 +71,7 @@ class CalendarViewController: UIViewController {
     private func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
+        
         let nib = UINib(nibName: "ListOfEventsTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "cell")
     }
